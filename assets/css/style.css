@@ -1,0 +1,119 @@
+/* Global css starts here */
+:root{
+    --primary-color: #1c164e;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    position: relative;
+}
+html{
+    scroll-behavior: smooth;
+}
+a:hover{
+    color: var(--primary-color) !important;
+    text-decoration: none;
+    color: white;
+}
+.mr-4{
+    margin-right: 20px;
+}
+.mt-4{
+    margin-top: 20px;
+}
+.d-flex{
+    display: flex;
+}
+.justify-content-center{
+    text-align: center;
+    justify-content: center;
+}
+.my-auto{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.section-heading{
+    color: var(--primary-color);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.section-content{
+    font-size: 17px;
+    font-weight: 500;
+}
+.primary-btn{
+    border-radius: 20px;
+    padding: 13px 30px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to right, #1c164e 55%, #468aff 109%);
+}
+/* Global css ends here */
+
+/* navbar starts here */
+.navbar{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.navbar-brand{
+    padding: 2px 15px !important;
+}
+.navbar-inverse{
+    background-color: #2220 !important;
+    border: none !important;
+    letter-spacing: 1px;
+}
+.navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+    background-color: #08080800 !important;
+    color: var(--primary-color) !important;
+    letter-spacing: 1px;
+}
+.bg-white{
+    position:fixed;
+    top:0;
+    background:#333;
+    width:100%;
+    height:50px;
+  }
+.icon-bar{
+    background: var(--primary-color) !important;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border: none !important;
+}
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+    background: none;
+}
+nav.scrolled {
+    background:white !important;
+  }
+/* navbar ends here */
+
+/* Hero section starts here */
+.hero-section{
+   background-image: url(../img/hero-bg.jpg);
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   width: 100%;
+   padding-top: 30vh;
+   padding-bottom: 30vh;
+   height: auto;
+}
+/* Hero section ends here */
+
+/* social section starts here */
+.social-section{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background: var(--primary-color);
+}
+/* social section ends here */
+
+#section1 {padding-top:50px;height:500px;color: #fff; background-color: #1E88E5;}
+#section2 {padding-top:50px;height:500px;color: #fff; background-color: #673ab7;}
+#section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
+#section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
+#section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
