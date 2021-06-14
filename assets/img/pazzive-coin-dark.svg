@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="286px" height="286px" viewBox="0 0 286 286" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Z coin dark</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#0C2F5B" offset="0%"></stop>
+            <stop stop-color="#280345" offset="99.9480988%"></stop>
+        </linearGradient>
+        <linearGradient x1="-12.2512868%" y1="-12.8279417%" x2="92.4661571%" y2="91.4680588%" id="linearGradient-2">
+            <stop stop-color="#A600FF" offset="0%"></stop>
+            <stop stop-color="#00EDFF" offset="99.9535621%"></stop>
+        </linearGradient>
+        <linearGradient x1="-12.2512868%" y1="-12.4157522%" x2="92.4661571%" y2="91.196003%" id="linearGradient-3">
+            <stop stop-color="#A600FF" offset="0%"></stop>
+            <stop stop-color="#00EDFF" offset="99.9535621%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Z-coin-dark" transform="translate(2.000000, 2.000000)">
+            <circle id="Oval-Copy-17" stroke="url(#linearGradient-2)" stroke-width="4" fill="url(#linearGradient-1)" cx="141" cy="141" r="141"></circle>
+            <g id="Group-12-Copy" transform="translate(78.000000, 78.000000)" fill="url(#linearGradient-3)" fill-rule="nonzero">
+                <g id="Group-6">
+                    <path d="M1.42459204,0 L126.415363,1.1945045 L0,126 L0,104.45457 L91.1648187,16.0006683 L17.4238187,16.0006683 L17.424592,52.7736303 L1.42459204,52.7736303 L1.42459204,0 Z M126,22.7161466 L126,45.1365018 L48.0582571,126 L24.8851261,126 L126,22.7161466 Z M126,66.0780408 L126,90.8569822 L92.6600174,126 L70.3741761,126 L126,66.0780408 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
