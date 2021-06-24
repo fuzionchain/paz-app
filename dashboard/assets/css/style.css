@@ -1,5 +1,6 @@
 /* Global styling starts here */
 :root{
+    --primary-color: #1c164e;
     --secondry-color: #007bff;
 }
 *{
@@ -12,6 +13,9 @@ body, html{
 a{
     text-decoration: none;
 }
+a:hover{
+    text-decoration: none;
+}
 nav{
     background: #f3f5fa !important;
 }
@@ -21,6 +25,13 @@ section{
     background: #f3f5fa;
 }
 .primary-btn{
+    background: var(--primary-color);
+    color: white;
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 600;
+}
+.secondry-btn{
     background: var(--secondry-color);
     color: white;
     padding: 10px 23px;
