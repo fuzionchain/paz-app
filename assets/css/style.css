@@ -425,6 +425,9 @@ nav.scrolled {
     brightness(102%) contrast(102%);
   margin-right: 8px;
 }
+.footer-icon-img:hover{
+  transform: scale(1.5);
+}
 .important-links li a {
   color: #9d9d9d;
 }
