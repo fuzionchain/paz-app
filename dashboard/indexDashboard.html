@@ -12,10 +12,12 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- Bootstrap 4 css link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- AOS css -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navbar starts here -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
         <a class="navbar-brand" href="#">
             <img src="./assets/img/paz-light.svg" alt="" width="150px">
@@ -29,15 +31,16 @@
         </div>
     </div>
       </nav>
+
     <!-- Navbar ends here -->
 
       <!-- Reward share section starts here -->
-  <section class="reward-share-section">
+  <section class="reward-share-section mt-5">
     <div class="container">
       <div class="row mt-5">
         <div class="offset-md-4"></div>
         <div class="col-md-4">
-          <div class="card">
+          <div class="card" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
             <img src="./assets/img/pazzive-coin-light.svg" alt="" class="card-icon">
             <h5 class="pt-3 card-heading">HODL</h5>
             <h5 class="card-heading">Your Reward Share</h5>
@@ -51,15 +54,58 @@
       </div>
 
       <div class="row mt-5">
-        <div class="col-md-12">
           <div class="col-md-12">
-            <div class="card">
-              <h6>My collectable BNB: 0.00000 BNB</h6>
-              <p>*Forecasted Annual BNB Rewards: 0.000 BNB</p>
+            <div class="card" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+              <h5>My collectable BNB: 0.00000 BNB</h5>
+              <p class="primary-txt"><b>*Forecasted Annual BNB Rewards: 0.000 BNB</b></p>
               <p>*Pool and Rewards are always changing based on buys, sells, collects by others and your percentage holdings.</p>
-              <p class="card-content">Next Collect Date: You need to Buy and Hold Tokens to Earn BNB</p>
-              <a href="#" class="primary-btn">Collect my BNB</a>
+              <h6 class="card-content">Next Collect Date: You need to Buy and Hold Tokens to Earn BNB</h6>
+              <a href="#" class="primary-btn mt-4">Collect my BNB</a>
             </div>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mt-5">
+          <div class="card" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+            <img src="./assets/img/card-icon-1.png" alt="" class="card-icon">
+            <h5 class="card-heading mt-3">Max Transaction Amount</h5>
+            <p>$ 2,406,590.86</p>
+          </div>
+        </div>
+        <div class="col-md-4 mt-5">
+          <div class="card" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+            <img src="./assets/img/card-icon-2.png" alt="" class="card-icon">
+            <h5 class="card-heading mt-3">Total liquidity pool</h5>
+            <p>$ 2,406,576.62</p>
+          </div>
+        </div>
+        <div class="col-md-4 mt-5">
+          <div class="card" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+            <img src="./assets/img/card-icon-3.png" alt="" class="card-icon">
+            <h5 class="card-heading mt-3">Current 1 mil $HODL Price</h5>
+            <p>$ 0.01707257</p>
+          </div>
+        </div>
+      <div class="col-md-4 mt-4">
+          <div class="card" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+            <img src="./assets/img/card-icon-4.png" alt="" class="card-icon">
+            <h5 class="card-heading mt-3">Total BNB in liquidity pool</h5>
+            <p>BNB 4,157.442</p>
+          </div>
+        </div>
+        <div class="col-md-4 mt-4">
+          <div class="card" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+            <img src="./assets/img/card-icon-5.png" alt="" class="card-icon">
+            <h5 class="card-heading mt-3">Total BNB in reward pool</h5>
+            <p>BNB 150.574</p>
+          </div>
+        </div>
+        <div class="col-md-4 mt-4">
+          <div class="card" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+            <img src="./assets/img/card-icon-6.png" alt="" class="card-icon">
+            <h5 class="card-heading mt-3">Your $HODL balance</h5>
+            <p>$HODL 0</p>
           </div>
         </div>
       </div>
@@ -67,9 +113,21 @@
  </section>
  <!-- Reward share section ends here -->
 
+ <!-- Return to Top -->
+<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+ <footer>
+ </footer>
     <!-- All js files -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Navbar color change -->
+    <script src="./assets/js/script.js"></script>
+    <!-- AOS animation js  -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
 </body>
 </html>
