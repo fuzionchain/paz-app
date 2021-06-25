@@ -1,12 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- css style sheet -->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pazz</title>
+    <link rel="icon" href="./assets/img/pazzive-coin-light.png">
+    <title>Pazz</title>
+    <!-- Custom Css link -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Bootstrap 4 css link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- AOS css -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    
+    <!-- Navbar starts here -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="./assets/img/paz-light.svg" alt="" width="150px">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="ml-auto">
+            <a href="indexDashboard.html" class="secondry-btn">Connect</a>
+        </div>
+    </div>
+      </nav>
+
+    <!-- Navbar ends here -->
+
+      <!-- Reward share section starts here -->
+  <section class="reward-share-section mt-5">
+    <div class="container">
+      <div class="row mt-5">
+        <div class="offset-md-4"></div>
+        <div class="col-md-4">
+          <div class="card" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+            <img src="./assets/img/pazzive-coin-light.svg" alt="" class="card-icon">
+            <h5 class="pt-3 card-heading">HODL</h5>
+            <h5 class="card-heading">Your Reward Share</h5>
+            <h5 class="card-heading">0.000 %</h5>
+            <p class="card-content">Buy More To Increase Your BNB Reward Share!
+                Accumulating Wealth Was Never This Simple!</p>
+            <a href="#" class="primary-btn">Buy $HODL</a>
+          </div>
+        </div>
+        <div class="offset-md-4"></div>
+      </div>
+
+      <div class="row mt-5 mb-5">
+          <div class="col-md-12">
+            <div class="card" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+              <h4>You are not connected or not using Binance Smart Chain network</h4>
+              <h4>To use the app, make sure:</h4>
+              <h4>You are using the Binance Smart Chain network You need to connect wallet to continue</h4>
+              <h4 class="mt-4">Please switch to BSC Network if you use:</h4>
+              <h5>Metamask</h5>
+              <h5>TrustWallet</h5>
+            </div>
+          </div>
+      </div>
+
+    </div>
+ </section>
+ <!-- Reward share section ends here -->
+
+
+
+    <!-- All js files -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Navbar color change -->
+    <script src="./assets/js/script.js"></script>
+    <!-- AOS animation js  -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
 </body>
 </html>

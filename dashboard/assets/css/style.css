@@ -139,7 +139,20 @@ section{
     transition: all 0.3s ease;
 }
 /* Reward section ends here */
-
+.calculator-label{
+    position: fixed;
+    top: 50%;
+    right: -55px;
+    background: var(--secondry-color);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    color: #fff;
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    font-size: 16px;
+    letter-spacing: 0;
+    z-index: 1;
+}
 /* footer starts here */
 footer{
     background: linear-gradient(to right, #12d3ff 0%, #0033cc5c 103%);
