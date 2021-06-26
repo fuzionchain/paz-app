@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/img/pazzive-coin-light.png">
-    <meta property="og:site_name" content="Pazzive Calculator" />
-    <meta property="og:title" content="Pazzive Calculator - Put your investments on auto-pilot!" />
-    <meta property="og:description" content="Pazzive - Earn BUSD by holding PAZ!" />
+    <meta property="og:site_name" content="Pazzive" />
+    <meta property="og:title" content="Pazzive - Earn BUSD by holding PAZ!" />
+    <meta property="og:description" content="Pazzive - Accumulating Wealth Was Never This Simple!" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://develop.dx27hd910sf2y.amplifyapp.com/assets/img/pazzive-coin-dark.png" />
     <meta property="og:url" content="https://paz.fuzion.team" />
@@ -17,81 +17,120 @@
     <!-- Custom Css link -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- Bootstrap 4 css link -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- AOS css -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
     <!-- Navbar starts here -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-        <a class="navbar-brand" href="../index.html">
-            <img src="./assets/img/paz-light.svg" alt="" width="150px">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="ml-auto">
-            <a href="unlocked.html" class="secondry-btn">Connect</a>
+            <a class="navbar-brand" href="../index.html">
+                <img src="./assets/img/paz-light.svg" alt="" width="150px">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="ml-auto">
+                <button class="secondry-btn" id="myBtn">Connect</button>
+            </div>
         </div>
-    </div>
-      </nav>
+    </nav>
 
     <!-- Navbar ends here -->
 
-      <!-- Reward share section starts here -->
-  <section class="reward-share-section mt-5">
-    <div class="container">
-      <div class="row mt-5">
-        <div class="offset-md-4"></div>
-        <div class="col-md-4">
-          <div class="card" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
-            <img src="./assets/img/pazzive-coin-light.svg" alt="" class="card-icon">
-            <h5 class="pt-3 card-heading">PAZZIVE</h5>
-            <h5 class="card-heading">Your Reward Share</h5>
-            <h5 class="card-heading">0.000 %</h5>
-            <p class="card-content">Buy More To Increase Your BUSD Reward Share!
-                Accumulating Wealth Was Never This Simple!</p>
-            <a href="#" class="primary-btn">Buy $PAZ</a>
-          </div>
-        </div>
-        <div class="offset-md-4"></div>
-      </div>
-
-      <div class="row mt-5 mb-5">
-          <div class="col-md-12">
-            <div class="card" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
-              <h4>You are not connected or not using Binance Smart Chain network</h4>
-              <h4>To use the app, make sure:</h4>
-              <h4>You are using the Binance Smart Chain network You need to connect wallet to continue</h4>
-              <h4 class="mt-4">Please switch to BSC Network if you use:</h4>
-              <h5>Metamask</h5>
-              <h5>TrustWallet</h5>
+    <!-- Disclaimer Model starts here -->
+    <div id="myModal" class="modal"> 
+        <div class="modal-content">
+            <h4 class="text-center">Disclaimer</h4>
+            <p class="pt-3">Trading cryptocurrencies carries a <span class="primary-txt"><b>high level of risk,</b></span> and may not be suitable for all investors. <b class="primary-txt">Before deciding to trade cryptocurrency</b> you should carefully consider your investment objectives, level of experience, and risk appetite. The possibility exists that you could sustain a loss of some or all of your initial investment and therefore you should not invest money that you cannot afford to lose. ICO's, IEO's, STO's and any other form of offering will not guarantee a return on your investment.</p>
+            <p class="py-2"><b class="primary-txt">You should be aware of all the risks associated with cryptocurrency trading, and seek advice from an independent financial advisor</b></p>
+            <p>Any opinions, news, research, analyses, prices, or other information contained on this website is provided as general market commentary, and does not constitute investment advice. PAZ and its affiliates will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. All opinions expressed on this site are owned by the respective writer and should never be considered as advice in any form.</p>
+            <p class="mb-3">PAZ
+                and its affiliates makes no representation or warranties as to the accuracy and or timelines of the information contained herein. A qualified professional should be consulted before making any financial decisions.</p>
+            <div class="form-inline mb-3 primary-txt">
+            <input type="checkbox" required>&nbsp;&nbsp;I understand and accept that I will trade/invest PAZZIVE at my own risks
             </div>
-          </div>
-      </div>
-
+            <a href="unlocked.html" class="secondry-btn m-auto">Confirm</a>
+        </div>
     </div>
- </section>
- <!-- Reward share section ends here -->
+    <!-- Disclaimer Model ends here -->
+
+    <!-- Reward share section starts here -->
+    <section class="reward-share-section mt-5">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="offset-md-4"></div>
+                <div class="col-md-4">
+                    <div class="card" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+                        <img src="./assets/img/pazzive-coin-light.svg" alt="" class="card-icon">
+                        <h5 class="pt-3 card-heading">PAZZIVE</h5>
+                        <h5 class="card-heading">Your Reward Share</h5>
+                        <h5 class="card-heading">0.000 %</h5>
+                        <p class="card-content">Buy More To Increase Your BUSD Reward Share!
+                            Accumulating Wealth Was Never This Simple!</p>
+                        <a href="#" class="primary-btn">Buy $PAZ</a>
+                    </div>
+                </div>
+                <div class="offset-md-4"></div>
+            </div>
+
+            <div class="row mt-5 mb-5">
+                <div class="col-md-12">
+                    <div class="card" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+                        <h4>You are not connected or not using Binance Smart Chain network</h4>
+                        <h4>To use the app, make sure:</h4>
+                        <h4>You are using the Binance Smart Chain network You need to connect wallet to continue</h4>
+                        <h4 class="mt-4">Please switch to BSC Network if you use:</h4>
+                        <h5>Metamask</h5>
+                        <h5>TrustWallet</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Reward share section ends here -->
 
 
 
     <!-- All js files -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <!-- Navbar color change -->
     <script src="./assets/js/script.js"></script>
     <!-- AOS animation js  -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init();
+        AOS.init();
     </script>
     <script>
-     
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+
     </script>
 
 </body>
+
 </html>
