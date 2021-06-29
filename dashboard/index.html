@@ -34,27 +34,40 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="ml-auto">
-                <button class="secondry-btn" id="myBtn">Connect</button>
-            </div>
         </div>
     </nav>
 
     <!-- Navbar ends here -->
 
     <!-- Disclaimer Model starts here -->
-    <div id="myModal" class="modal"> 
+    <div id="myModal" class="modal">
         <div class="modal-content">
             <h4 class="text-center">Disclaimer</h4>
-            <p class="pt-3">Trading cryptocurrencies carries a <span class="primary-txt"><b>high level of risk,</b></span> and may not be suitable for all investors. <b class="primary-txt">Before deciding to trade cryptocurrency</b> you should carefully consider your investment objectives, level of experience, and risk appetite. The possibility exists that you could sustain a loss of some or all of your initial investment and therefore you should not invest money that you cannot afford to lose. ICO's, IEO's, STO's and any other form of offering will not guarantee a return on your investment.</p>
-            <p class="py-2"><b class="primary-txt">You should be aware of all the risks associated with cryptocurrency trading, and seek advice from an independent financial advisor</b></p>
-            <p>Any opinions, news, research, analyses, prices, or other information contained on this website is provided as general market commentary, and does not constitute investment advice. PAZ and its affiliates will not accept liability for any loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. All opinions expressed on this site are owned by the respective writer and should never be considered as advice in any form.</p>
+            <p class="pt-3">Trading cryptocurrencies carries a <span class="primary-txt"><b>high level of
+                        risk,</b></span> and may not be suitable for all investors. <b class="primary-txt">Before
+                    deciding to trade cryptocurrency</b> you should carefully consider your investment objectives, level
+                of experience, and risk appetite. The possibility exists that you could sustain a loss of some or all of
+                your initial investment and therefore you should not invest money that you cannot afford to lose. ICO's,
+                IEO's, STO's and any other form of offering will not guarantee a return on your investment.</p>
+            <p class="py-2"><b class="primary-txt">You should be aware of all the risks associated with cryptocurrency
+                    trading, and seek advice from an independent financial advisor</b></p>
+            <p>Any opinions, news, research, analyses, prices, or other information contained on this website is
+                provided as general market commentary, and does not constitute investment advice. PAZ and its affiliates
+                will not accept liability for any loss or damage, including without limitation to, any loss of profit,
+                which may arise directly or indirectly from use of or reliance on such information. All opinions
+                expressed on this site are owned by the respective writer and should never be considered as advice in
+                any form.</p>
             <p class="mb-3">PAZ
-                and its affiliates makes no representation or warranties as to the accuracy and or timelines of the information contained herein. A qualified professional should be consulted before making any financial decisions.</p>
+                and its affiliates makes no representation or warranties as to the accuracy and or timelines of the
+                information contained herein. A qualified professional should be consulted before making any financial
+                decisions.</p>
             <div class="form-inline mb-3 primary-txt">
-                <div class="form-inline"><input type="checkbox" required>&nbsp;&nbsp;I understand and accept that I will trade/invest PAZZIVE at my own risks</div>
-                <div class="form-inline"><input type="checkbox" required>&nbsp;&nbsp;I understand and accept that this app works smothly with Metamask/TrustWallet</div>
+                <ul>
+                    <li><input type="checkbox" required>&nbsp;&nbsp;I understand and accept that I will
+                        trade/invest PAZZIVE at my own risks</li>
+                    <li><input type="checkbox" required>&nbsp;&nbsp;I understand and accept that this
+                        app works smothly with Metamask/TrustWallet</li>
+                </ul>
             </div>
             <a href="unlocked.html" class="buy-btn">Confirm</a>
         </div>
@@ -62,38 +75,34 @@
     <!-- Disclaimer Model ends here -->
 
     <!-- Reward share section starts here -->
-    <section class="reward-share-section mt-5">
+    <section class="reward-share-section mt-3">
         <div class="container">
             <div class="row mt-5">
-                <div class="offset-md-4"></div>
-                <div class="col-md-4">
-                    <div class="card" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+                <div class="offset-md-3"></div>
+                <div class="col-md-6">
+                    <div class="card" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true" style="width: 83%;">
                         <img src="./assets/img/pazzive-coin-dark.svg" alt="" class="card-icon">
+                        <p class="text-center pt-3">Welcome to Pazzive Dapp</p>
                         <div class="card-body">
-                        <h5 class="pt-3 card-heading">PAZZIVE</h5>
-                        <h5>Your Reward Share</h5>
-                        <h5>0.000 %</h5>
-                        <p class="card-content">Buy More To Increase Your BUSD Reward Share!
-                            Accumulating Wealth Was Never This Simple!</p>
-                        <a href="#" class="buy-btn mt-2">Buy $PAZ</a>
-                    </div>
+                            <h5 class="pt-3 card-heading">You are not connected to Pazzive Dapp yet</h5>
+                            <p class="card-content">To use the Dapp, make sure:
+                                You are using the Binance Smart Chain network
+                                and you need to connect wallet to use</p>
+                            <p>We suggest to use:</p>
+                            <ul>
+                                <li><a href="https://docs.binance.org/smart-chain/wallet/metamask.html" target="_blank" class="primary-txt">Metamask</a></li>
+                                <li><a href="https://docs.binance.org/smart-chain/wallet/trustwallet.html" class="primary-txt" target="_blank">TrustWallet</a></li>
+                                <li><a href="https://docs.binance.org/smart-chain/wallet/binance.html" class="primary-txt" target="_blank">Binance Chain Extension Wallet</a></li>
+                                <li><a href="https://guide.moonrat.finance/how-to-connect-moonrats-dapp-to-wallet" class="primary-txt" target="_blank">SafePal</a></li>
+                            </ul>
+                        </div>
+                        <a href="#" class="buy-btn mt-2" id="connectBtn">Connect to a wallet</a>
+                        <a class="text-center primary-txt pt-2" href="https://docs.ricefarm.fi/guides/use-trustwallet-on-desktop" target="_blank">How to connect Pazzive's Dapp to wallet</a>
                     </div>
                 </div>
-                <div class="offset-md-4"></div>
+                <div class="offset-md-3"></div>
             </div>
 
-            <div class="row mt-5 mb-5">
-                <div class="col-md-12">
-                    <div class="card" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
-                        <h5>You are not connected or not using Binance Smart Chain network</h5>
-                        <h5>To use the app, make sure:</h5>
-                        <h5>You are using the Binance Smart Chain network You need to connect wallet to continue</h5>
-                        <h5 class="mt-4">Please switch to BSC Network if you use:</h5>
-                        <h5>Metamask</h5>
-                        <h5>TrustWallet</h5>
-                    </div>
-                </div>
-            </div>
 
         </div>
     </section>
@@ -119,7 +128,7 @@
         AOS.init();
     </script>
     <script>
-       
+
 
     </script>
 

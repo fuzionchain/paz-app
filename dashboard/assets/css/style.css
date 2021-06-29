@@ -15,6 +15,10 @@ body, html{
 a{
     text-decoration: none;
 }
+ul li{
+    text-decoration: none;
+    list-style-type: none;
+}
 a:hover{
     text-decoration: none !important;
     color: white !important;
@@ -73,21 +77,22 @@ section{
 
 /* Reward section starts here */
 .card{
-    padding: 40px 10px;
+    padding: 20px 10px;
     background: #06022d91 !important;
     text-align: center;
     margin: 0 auto;
     border: none;
-    border-radius: 8px;
+    border-radius: 20px !important;
     box-shadow: 0px 1px 5px 2px var(--secondry-color);
     -webkit-box-shadow: 0px 1px 5px 2px var(--secondry-color);
     -moz-box-shadow: 0px 1px 5px 2px var(--secondry-color);
     color: white;
+
 }
 .card-body{
     background: var(--primary-color);
-    margin-top: 10px;
     color: white;
+    padding: 0px 10px !important;
 }
 .card-icon{
     width: 80px;
@@ -155,7 +160,7 @@ section{
     display: none;
     position: fixed;
     z-index: 1;
-    padding-top: 90px;
+    padding-top: 50px;
     left: 0;
     top: 0;
     width: 100%; 
@@ -167,12 +172,12 @@ section{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 40% !important;
+    width: 60% !important;
     outline: 0;
     border-radius: 10px !important;
     margin: 0 auto !important;
     PADDING: 20px;
-    font-size: 12px;
+    font-size: 15px;
     background-color: #0a0625 !important;
     color: white;
   }
@@ -196,3 +201,42 @@ footer{
     height: 100px;
 }
 /* footer ends here */
+
+
+
+/* Media queries */
+
+/* For tablet */
+@media only screen and (max-width: 1150px){
+    .card {
+        width: 100% !important;
+    }
+    .secondry-btn{
+        font-size: 12px;
+        padding: 8px 11px;
+    }
+    .buy-btn{
+        width: 100% !important;
+    }
+
+}
+
+
+/* for mobile */
+@media only screen and (max-width: 600px){
+    .modal-content{
+        PADDING: 7px;
+        font-size: 10px;
+        width: 96% !important;
+    }
+    .secondry-btn{
+        padding: 8px 13px;
+        font-size: 9px;
+    }
+    .calculator-label{
+        display: none;
+    }
+    .buy-btn{
+        width: 100% !important;
+    }
+}
