@@ -2,7 +2,7 @@
 
 /* Global styling starts here */
 :root{
-    --primary-color: #941aff;
+    --primary-color: #1c164e;
     --secondry-color: #12d3ff;
 }
 *{
@@ -10,7 +10,7 @@
     padding: 0px;
 }
 body, html{
-    background: #f3f5fa;
+    background: var(--primary-color) !important;
 }
 a{
     text-decoration: none;
@@ -22,7 +22,7 @@ a:hover{
 section{
     padding-top: 2%;
     padding-bottom: 2%;
-    background: #f3f5fa;
+    background: var(--primary-color) !important;
 }
 .primary-btn{
     background: var(--secondry-color);
@@ -46,6 +46,17 @@ section{
     font-weight: 700 !important;
     border: none;
 }
+.buy-btn{
+    background: linear-gradient(to right, #12d3ff 0%, #0033cc5c 103%);
+    color: white;
+    border-radius: 50px;
+    font-weight: normal !important;
+    padding: 8px 70px;
+    text-align: center;
+}
+.buy-btn:hover{
+    background: linear-gradient(to right, #12d3ff 20%, #0033cc5c 100%)
+}
 .primary-txt{
     color: var(--secondry-color);
 }
@@ -56,55 +67,39 @@ section{
     padding-top: 10px !important;
     padding-bottom: 10px !important;
 }
-.black{
-    position:fixed;
-    top:0;
-    background:#333 !important;
-    width:100%;
-    height:50px;
-  }
-  .black ul{
-    list-style-type:none;
-    padding:0;
-  }
-  .black ul li{
-    display:inline-block;
-    width:100px;
-    color:red;
-  }
-  .blue{
-    position:fixed;
-    top:0;
-    background:blue;
-    width:100%;
-    height:50px;
-  }
+
 /* navbar ends here */
 
 
 /* Reward section starts here */
 .card{
-    padding: 50px 30px;
-    background: white;
+    padding: 40px 10px;
+    background: #06022d91 !important;
     text-align: center;
     margin: 0 auto;
     border: none;
     border-radius: 8px;
-    box-shadow: 0px 1px 4px 2px rgb(0 0 0 / 13%);
-    -webkit-box-shadow: 0px 1px 4px 2px rgb(0 0 0 / 13%);
-    -moz-box-shadow: 0px 1px 4px 2px rgb(0 0 0 / 13%);
+    box-shadow: 0px 1px 5px 2px var(--secondry-color);
+    -webkit-box-shadow: 0px 1px 5px 2px var(--secondry-color);
+    -moz-box-shadow: 0px 1px 5px 2px var(--secondry-color);
+    color: white;
+}
+.card-body{
+    background: var(--primary-color);
+    margin-top: 10px;
+    color: white;
 }
 .card-icon{
     width: 80px;
     margin: 0 auto;
 }
 .card-content{
-    font-size: 17px;
-    font-weight: 600;
-    color: #464646;
+    font-size: 15px;
+    font-weight: normal;
+    color: white;
 }
 .card-heading{
-    color: #464646;
+    color: var(--secondry-color);
 }
 #return-to-top {
     position: fixed;
@@ -160,26 +155,26 @@ section{
     display: none;
     position: fixed;
     z-index: 1;
-    padding-top: 100px;
+    padding-top: 90px;
     left: 0;
     top: 0;
     width: 100%; 
     height: 100%; 
     overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
   }
   .modal-content {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 35% !important;
+    width: 40% !important;
     outline: 0;
     border-radius: 10px !important;
     margin: 0 auto !important;
     PADDING: 20px;
     font-size: 12px;
+    background-color: #0a0625 !important;
+    color: white;
   }
   .close {
     color: #aaaaaa;
