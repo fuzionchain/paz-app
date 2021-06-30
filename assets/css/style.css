@@ -465,21 +465,21 @@ nav.scrolled {
 }
 .video-container{
   position: relative !important;
-  width: 100% !important;
   overflow: hidden !important;
-  padding-top: 100% !important;
+  padding-top: 34% !important;
+  background: var(--primary-color);
 }
 .responsive-iframe {
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 65%;
-  height: 37%;
-  border: none;
-  margin: 0 auto;
-  background: var(--primary-color) !important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    border: none;
+    margin: 0 auto;
+    background: var(--primary-color) !important;
 }
 /* Media queries */
 
