@@ -207,6 +207,15 @@ footer{
 
 /* Media queries */
 
+/* laptop screen */
+@media only screen and (max-width: 1400px){
+    .modal{
+        top: 1% !important;
+    }
+    .modal-content{
+        width: 60% !important;
+    }
+}
 /* For tablet */
 @media only screen and (max-width: 1150px){
     .card {
@@ -218,6 +227,9 @@ footer{
     }
     .buy-btn{
         width: 100% !important;
+    }
+    .modal-content{
+        width: 80% !important;
     }
 
 }
