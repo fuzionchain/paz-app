@@ -1,2 +1,2 @@
 # paz-app
-Earn Pazzive Stable Income with PAZ
+Pazzive Application / Dashboard
