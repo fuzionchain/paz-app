@@ -44,7 +44,7 @@ section{
 }
 .secondry-btn{
     background: var(--secondry-color);
-    color: white;
+    color: white !important;
     padding: 8px 25px;
     border-radius: 50px;
     font-weight: 700 !important;
