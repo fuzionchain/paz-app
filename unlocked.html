@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- css style sheet -->
 
 <head>
   <meta charset="UTF-8">
@@ -84,7 +83,7 @@
             <div class="card-body pt-3">
               <img src="./assets/img/card-icon-1.png" alt="" class="card-icon">
               <h5 class="card-heading mt-3">Max Transaction Amount</h5>
-              <p>$ 2,406,590.86</p>
+              <p>$ <span id="max_transaction"></span></p>
             </div>
           </div>
         </div>
@@ -93,7 +92,7 @@
             <div class="card-body pt-3">
               <img src="./assets/img/card-icon-2.png" alt="" class="card-icon">
               <h5 class="card-heading mt-3">Total liquidity pool</h5>
-              <p>$ 2,406,576.62</p>
+              <p>$ <span id="total_liquidity_pool"></span></p>
             </div>
           </div>
         </div>
@@ -142,14 +141,8 @@
     Reward Calculator
   </span>
 
-  
-
   <footer>
   </footer>
-
- 
-
-
 
   <!-- All js files -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -166,11 +159,20 @@
   <!-- AOS animation js  -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <!-- Read contract script -->
-  <script src="./assets/js/readContract.js"></script>
+  
   <script>
     AOS.init();
   </script>
 
+  <!-- read contract script -->
+  <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
+  <script src="./assets/js/readContract.js"></script>
+  <script>
+    if(typeof web3 !== 'undefined'){
+  console.log('MetaMask is installed!');
+  web3 = new Web3(web3.currentProvider);
+}
+  </script>
 </body>
 
 </html>

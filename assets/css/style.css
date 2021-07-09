@@ -57,6 +57,7 @@ section{
     font-weight: normal !important;
     padding: 8px 70px;
     text-align: center;
+    border: none;
 }
 .buy-btn:hover{
     background: linear-gradient(to right, #12d3ff 20%, #0033cc5c 100%)
