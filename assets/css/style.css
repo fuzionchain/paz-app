@@ -65,6 +65,11 @@ section{
 .primary-txt{
     color: var(--secondry-color);
 }
+button:active,
+button:focus{
+    -moz-outline-style: none !important;
+    outline: none;
+}
 /* Global styling ends here */
 
 /* navbar starts here */

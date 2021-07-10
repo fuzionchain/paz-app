@@ -12,14 +12,13 @@ $(window).scroll(function(){
 });
 
  // Disclaimer modal
- var modal = document.getElementById("myModal");
- var btn = document.getElementById("connectBtn");
- var span = document.getElementsByClassName("close")[0];
- btn.onclick = function() {
-   modal.style.display = "block";
- }
- window.onclick = function(event) {
-   if (event.target == modal) {
-     modal.style.display = "none";
-   }
- }
+
+window.onload = function(){
+  $('#disclaimerModal').modal('show');
+}
+
+var modal = document.getElementById("disclaimerModal");
+btn.onclick = function(){
+  modal.style.display = "none";
+}
+ 
