@@ -14,6 +14,7 @@ body, html{
 }
 a{
     text-decoration: none;
+    cursor: pointer !important;
 }
 ul li{
     text-decoration: none;
@@ -22,6 +23,7 @@ ul li{
 a:hover{
     text-decoration: none !important;
     color: white !important;
+    cursor: pointer !important;
 }
 section{
     padding-top: 2%;
@@ -64,6 +66,11 @@ section{
 }
 .primary-txt{
     color: var(--secondry-color);
+}
+button:active,
+button:focus{
+    -moz-outline-style: none !important;
+    outline: none;
 }
 /* Global styling ends here */
 
@@ -180,9 +187,46 @@ section{
     margin: 0 auto !important;
     PADDING: 20px;
     font-size: 15px;
-    background-color: #0a0625 !important;
+    background-color: #160f46 !important;
     color: white;
+    animation: fadein 2s;
+    -moz-animation: fadein 2s;
+    -webkit-animation: fadein 2s; 
+    -o-animation: fadein 2s;
   }
+  @keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+  
   .close {
     color: #aaaaaa;
     float: right;
@@ -196,6 +240,49 @@ section{
     display: none;
   }
 /* pop up modal ends here */
+
+/* Account modal starts here */
+.account-modal {
+    display: none;
+    z-index: 1; 
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #241b61c9;
+    position: absolute;
+  }
+  .account-modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    border-radius: 24px;
+    margin-top: 8%;
+    position: relative;
+  }
+  .account-modal-content h5{
+      color: var(--primary-color);
+      font-weight: bold;
+  }
+  .account-modal-content p{
+      color: var(--primary-color);
+      font-weight: bold;
+  }
+
+  .account-modal-close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px !important;
+    position: absolute;
+    top: 16px;
+    right: 10;
+    right: 15px;
+  }
+/* Account model ends here */
 
 /* footer starts here */
 footer{
@@ -232,7 +319,12 @@ footer{
     .modal-content{
         width: 80% !important;
     }
-
+    .account-modal-content{
+        width: 70%;
+    }
+    .account-modal-content button{
+        width: 35%;
+    }
 }
 
 
@@ -252,5 +344,14 @@ footer{
     }
     .buy-btn{
         width: 100% !important;
+    }
+    .account-modal-content{
+        width: 95%;
+    }
+    .account-modal-content p{
+        font-size: 12px;
+    }
+    .account-modal-content button{
+        width: 35%;
     }
 }
