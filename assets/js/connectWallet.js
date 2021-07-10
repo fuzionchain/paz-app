@@ -72,7 +72,7 @@ async function fetchAccountData() {
   // Short account
   const firstPart = selectedAccount.slice(0 ,4);
   const secondPart = selectedAccount.slice(selectedAccount.length - 4, selectedAccount.length);
-  const shortAccount = firstPart + '...' + secondPart;
+  const shortAccount = `${firstPart}...${secondPart}`
   document.querySelector("#shortAddress").textContent = shortAccount;
 
 
