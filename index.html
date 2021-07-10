@@ -27,8 +27,8 @@
     <div id="prepare">
         <!-- Navbar starts here -->
         <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="../index.html">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="https://paz.fuzion.team/">
                     <img src="./assets/img/paz-dark.svg" alt="" width="150px">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -42,8 +42,8 @@
         <!-- Navbar ends here -->
 
         <!-- Disclaimer Modal starts here -->
-        <div id="myModal" class="modal">
-            <div class="modal-content">
+        <div id="disclaimerModal" class="modal">
+            <div class="modal-content" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-once="true">
                 <h4>Disclaimer</h4>
                 <p class="pt-2">Trading cryptocurrencies carries a <span class="primary-txt"><b>high level of
                             risk,</b></span> and may not be suitable for all investors. <b class="primary-txt">Before
@@ -79,7 +79,7 @@
                             app works smothly with Metamask/TrustWallet</li>
                     </ul>
                 </div>
-                <a href="unlocked.html" class="buy-btn mx-auto" style="width: 50%">Confirm</a>
+                <a id="confirmBtn" data-dismiss="modal" class="buy-btn mx-auto" style="width: 50%">Confirm</a>
             </div>
         </div>
         <!-- Disclaimer Modal ends here -->
@@ -127,11 +127,11 @@
     </div>
 
 
-    <div id="connected" style="display: none">
+    <div id="connected" class="position-relative" style="display: none">
         <!-- Navbar starts here -->
         <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="../index.html">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="https://paz.fuzion.team/">
                     <img src="./assets/img/paz-dark.svg" alt="" width="150px">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -141,17 +141,28 @@
                 </button>
 
                 <div class="ml-auto">
-                    <a class="secondry-btn pt-2 mr-2">
-                        <span id="selected-account"></span>
+                    <a class="secondry-btn pt-2 mr-2" type="button" id="showAccountBtn">
+                        <span id="shortAddress"></span>
                     </a>
-                    <button class="secondry-btn" id="btn-disconnect">
-                        LOGOUT
-                    </button>
                 </div>
             </div>
         </nav>
 
         <!-- Navbar ends here -->
+
+        <!-- Show Account Modal starts here -->
+        <div id="showAccountModal" class="account-modal">
+            <div class="account-modal-content">
+               <h5>Your wallet</h5>
+              <span class="close account-modal-close float-right">&times;</span>
+              <hr>
+              <b><p id="selected-account"></p></b>
+              <div class="d-flex justify-content-center">
+              <button class="secondry-btn" id="btn-disconnect">LOGOUT</button>
+              </div>
+            </div> 
+        </div>
+        <!-- Show Account Modal ends here -->
 
         <!--- Reward share section starts here --->
         <section class="reward-share-section mt-5">
@@ -273,6 +284,8 @@
             </template>
         </div>
 
+        </div>
+
         <!-- All js files -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -302,7 +315,7 @@
         <script src="./assets/js/connectWallet.js"></script>
         <!-- read contract Script -->
         <script src="./assets/js/readContract.js"></script>
-
+         
 </body>
 
 </html>

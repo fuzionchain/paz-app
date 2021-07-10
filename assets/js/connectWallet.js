@@ -17,8 +17,6 @@ function init() {
   // as otherwise MetaMask won't be available
   if (location.protocol !== "https:") {
     // https://ethereum.stackexchange.com/a/62217/620
-    const alert = document.querySelector("#alert-error-https");
-    alert.style.display = "block";
     document.querySelector("#btn-connect").setAttribute("disabled", "disabled");
     return;
   }
@@ -70,6 +68,13 @@ async function fetchAccountData() {
   selectedAccount = accounts[0];
 
   document.querySelector("#selected-account").textContent = selectedAccount;
+
+  // Short account
+  const firstPart = selectedAccount.slice(0 ,4);
+  const secondPart = selectedAccount.slice(selectedAccount.length - 4, selectedAccount.length);
+  const shortAccount = `${firstPart}...${secondPart}`
+  document.querySelector("#shortAddress").textContent = shortAccount;
+
 
   // Get a handl
   const template = document.querySelector("#template-balance");
