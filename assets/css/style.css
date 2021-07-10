@@ -319,7 +319,12 @@ footer{
     .modal-content{
         width: 80% !important;
     }
-
+    .account-modal-content{
+        width: 70%;
+    }
+    .account-modal-content button{
+        width: 35%;
+    }
 }
 
 
