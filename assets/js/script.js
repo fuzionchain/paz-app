@@ -34,3 +34,12 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+// copy to clip board
+
+const copyBtn = document.getElementById('copyBtn');
+const inputField = document.getElementById('addressInput');
+    copyBtn.onclick = function(){
+        inputField.select();
+        document.execCommand("Copy");
+    }

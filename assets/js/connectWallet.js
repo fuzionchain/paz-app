@@ -75,6 +75,13 @@ async function fetchAccountData() {
   const shortAccount = `${firstPart}...${secondPart}`
   document.querySelector("#shortAddress").textContent = shortAccount;
 
+   //Bscscan link href
+  const link = document.getElementById('bscscan-link');
+  link.href = `https://bscscan.com/address/${selectedAccount}`
+
+  // clipboard input value
+  const copyLink = document.getElementById('addressInput');
+  copyLink.value = selectedAccount;
 
   // Get a handl
   const template = document.querySelector("#template-balance");
@@ -141,17 +148,17 @@ async function onConnect() {
   }
 
   // Subscribe to accounts change
-  provider.on("accountsChanged", (accounts) => {
+  provider.on("accountsChanged", () => {
     fetchAccountData();
   });
 
   // Subscribe to chainId change
-  provider.on("chainChanged", (chainId) => {
+  provider.on("chainChanged", () => {
     fetchAccountData();
   });
 
   // Subscribe to networkId change
-  provider.on("networkChanged", (networkId) => {
+  provider.on("networkChanged", () => {
     fetchAccountData();
   });
 
@@ -190,3 +197,4 @@ window.addEventListener("load", async () => {
     .querySelector("#btn-disconnect")
     .addEventListener("click", onDisconnect);
 });
+

@@ -17,8 +17,7 @@
     <!-- Custom Css link -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- Bootstrap 4 css link -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- AOS css -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -157,7 +156,15 @@
               <span class="close account-modal-close float-right">&times;</span>
               <hr>
               <b><p id="selected-account"></p></b>
-              <div class="d-flex justify-content-center">
+              <div class="row">
+                  <div class="col-12 d-flex">
+                    <a id="bscscan-link" target="_blank" class="bscscan-link">View on BscScan</a>
+                    <input type="text" id="addressInput" class="copiedTxt">
+                   <button id="copyBtn" class="copyBtn">Copy</button>
+                  </div>
+              </div>
+              
+              <div class="d-flex justify-content-center mt-3">
               <button class="secondry-btn" id="btn-disconnect">LOGOUT</button>
               </div>
             </div> 
@@ -264,8 +271,8 @@
             Reward Calculator
         </span>
 
-        <footer>
-        </footer>
+        <!-- <footer>
+        </footer> -->
 
         <div style="display: none;">
             <div id="network">
@@ -304,18 +311,16 @@
             AOS.init();
         </script>
         <!-- web3 script -->
-        <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"
-            integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://unpkg.com/web3@1.2.11/dist/web3.min.js"></script>
         <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
         <script type="text/javascript" src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"></script>
-        <script type="text/javascript"
-            src="https://unpkg.com/@walletconnect/web3-provider@1.2.1/dist/umd/index.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider@1.2.1/dist/umd/index.min.js"></script>
         <script type="text/javascript" src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"></script>
         <script src="./assets/js/connectWallet.js"></script>
         <!-- read contract Script -->
-        <script src="./assets/js/readContract.js"></script>
-         
+        <script src="./assets/js/readContract.js"></script>    
+      
 </body>
 
 </html>

@@ -16,14 +16,17 @@ a{
     text-decoration: none;
     cursor: pointer !important;
 }
+button{
+    cursor: pointer !important;
+}
 ul li{
     text-decoration: none;
     list-style-type: none;
 }
 a:hover{
     text-decoration: none !important;
-    color: white !important;
     cursor: pointer !important;
+    color: white !important;
 }
 section{
     padding-top: 2%;
@@ -252,7 +255,7 @@ button:focus{
     height: 100%;
     overflow: auto;
     background-color: #241b61c9;
-    position: absolute;
+    position: fixed;
   }
   .account-modal-content {
     background-color: #fefefe;
@@ -282,6 +285,40 @@ button:focus{
     right: 10;
     right: 15px;
   }
+  .copiedTxt{
+    color: white;
+    border: none;
+    width: 0.1px;
+    position: absolute;
+    top: 0;
+    z-index: -10000000;
+  }
+  .copyBtn{
+    color: #221a5d;
+    font-size: 13px;
+    border: 2px solid rgb(34, 26, 93);
+    padding: 6px 40px;
+    font-weight: bold;
+    border-radius: 20px;
+    background: white;
+  }
+  .copyBtn:hover{
+    color: #221a5d !important;
+  }
+  .bscscan-link{
+    margin-right: 15px;
+    color: #221a5d;
+    font-size: 13px;
+    border: 2px solid rgb(34, 26, 93);
+    padding: 6px 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    background: white;
+  }
+  .bscscan-link:hover{
+    color: #221a5d !important;
+  }
+  
 /* Account model ends here */
 
 /* footer starts here */
