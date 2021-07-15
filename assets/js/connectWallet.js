@@ -69,11 +69,12 @@ async function fetchAccountData() {
 
   document.querySelector("#selected-account").textContent = selectedAccount;
 
-  // Short account
-  const firstPart = selectedAccount.slice(0 ,4);
+  // Short account address
+  const firstPart = selectedAccount.slice(0 ,6);
   const secondPart = selectedAccount.slice(selectedAccount.length - 4, selectedAccount.length);
   const shortAccount = `${firstPart}...${secondPart}`
   document.querySelector("#shortAddress").textContent = shortAccount;
+  document.querySelector("#shortAccount").textContent = shortAccount;
 
    //Bscscan link href
   const link = document.getElementById('bscscan-link');
