@@ -54,7 +54,7 @@ section{
     border-radius: 50px;
     font-weight: 700 !important;
     border: none;
-    background: radial-gradient(circle, rgb(14 210 255) 13%, rgb(19 192 238 / 99%) 21%, rgb(107 90 234) 91%);
+    background: radial-gradient(circle, rgb(27 0 251) 13%, rgb(0 30 247 / 99%) 21%, rgb(107 90 234) 91%);
 }
 hr{
     border-top: 1px solid rgb(255 255 255 / 28%) !important;
@@ -235,10 +235,11 @@ button:focus{
 }
   
   .close {
-    color: #aaaaaa;
+    color: white !important;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    opacity: 1 !important;
   }
   button:active{
       border: none !important;
@@ -277,6 +278,7 @@ button:focus{
   .account-modal-content h5{
       color: white;
       font-weight: bold;
+      margin-bottom: 10px;
   }
   .account-modal-content p{
       color: white;
@@ -284,13 +286,14 @@ button:focus{
   }
 
   .account-modal-close {
-    color: #aaaaaa;
+    color: white !important;
     float: right;
     font-size: 28px !important;
     position: absolute;
     top: 16px;
     right: 10;
     right: 15px;
+    opacity: 1 !important;
   }
   .copiedTxt{
     color: white;
@@ -301,29 +304,25 @@ button:focus{
     z-index: -10000000;
   }
   .copyBtn{
+    margin-right: 13px;
     font-size: 13px;
-    border: 2px solid rgb(34, 26, 93);
+    border: 2px solid rgb(255 255 255);
     padding: 6px 42px;
-    font-weight: bold;
+    font-weight: 500;
     border-radius: 10px;
-    background: radial-gradient(circle, rgb(146 30 255) 13%, rgb(145 31 255) 21%, rgb(36 186 255) 91%);
     color: white;
+    background: transparent;
   }
-  .copyBtn:hover{
-    background: radial-gradient(circle, rgb(146 30 255 / 73%) 13%, rgb(145 31 255 / 61%) 21%, rgb(36 186 255 / 88%) 91%);
-  }
+
   .bscscan-link{
-    margin-right: 15px;
+    margin-right: 13px;
     font-size: 13px;
-    border: 2px solid rgb(34, 26, 93);
-    padding: 6px 10px;
-    font-weight: bold;
+    border: 2px solid rgb(255 255 255);
+    padding: 6px 15px;
+    font-weight: 500;
     border-radius: 10px;
-    background: radial-gradient(circle, rgb(146 30 255) 13%, rgb(145 31 255) 21%, rgb(36 186 255) 91%);
     color: white;
-  }
-  .bscscan-link:hover{
-    background: radial-gradient(circle, rgb(146 30 255 / 73%) 13%, rgb(145 31 255 / 61%) 21%, rgb(36 186 255 / 88%) 91%);
+    background: transparent;
   }
   
 /* Account model ends here */
