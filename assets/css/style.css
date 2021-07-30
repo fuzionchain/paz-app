@@ -1,39 +1,50 @@
 /*************** Pazz Dashboard styling  *******************/
 
+
 /* Global styling starts here */
-:root{
+
+:root {
     --primary-color: #1c164e;
     --secondry-color: #12d3ff;
 }
-*{
+
+* {
     margin: 0px;
     padding: 0px;
 }
-body, html{
+
+body,
+html {
     background: var(--primary-color) !important;
 }
-a{
+
+a {
     text-decoration: none;
     cursor: pointer !important;
 }
-button{
+
+button {
     cursor: pointer !important;
 }
-ul li{
+
+ul li {
     text-decoration: none;
     list-style-type: none;
 }
-a:hover{
+
+a:hover {
     text-decoration: none !important;
     cursor: pointer !important;
     color: white !important;
 }
-section{
+
+section {
     padding-top: 2%;
     padding-bottom: 2%;
     background: var(--primary-color) !important;
 }
-.primary-btn{
+
+.primary-btn {
     background: var(--secondry-color);
     color: white;
     padding: 8px 25px;
@@ -42,12 +53,14 @@ section{
     margin: 0 auto;
     border: 3px solid var(--secondry-color);
 }
-.primary-btn:hover{
+
+.primary-btn:hover {
     background: transparent;
     color: var(--secondry-color);
     color: var(--secondry-color) !important;
 }
-.secondry-btn{
+
+.secondry-btn {
     background: var(--secondry-color);
     color: white !important;
     padding: 5px 25px;
@@ -56,10 +69,12 @@ section{
     border: none;
     background: radial-gradient(circle, rgb(27 0 251) 13%, rgb(0 30 247 / 99%) 21%, rgb(107 90 234) 91%);
 }
-hr{
+
+hr {
     border-top: 1px solid rgb(255 255 255 / 28%) !important;
 }
-.buy-btn{
+
+.buy-btn {
     background: linear-gradient(to right, #12d3ff 0%, #0033cc5c 103%);
     color: white;
     border-radius: 50px;
@@ -68,30 +83,158 @@ hr{
     text-align: center;
     border: none;
 }
-.buy-btn:hover{
+
+.buy-btn:hover {
     background: linear-gradient(to right, #12d3ff 20%, #0033cc5c 100%)
 }
-.primary-txt{
+
+.primary-txt {
     color: var(--secondry-color);
 }
+
 button:active,
-button:focus{
+button:focus {
     -moz-outline-style: none !important;
     outline: none;
 }
+
+.btn-main {
+    position: relative;
+    height: 43px;
+    overflow: hidden;
+    transition: .5s;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 50px;
+    background: linear-gradient(to right, #12d3ff 0%, #921cff 103%);
+}
+
+.btn-main button {
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .7px;
+    background: #0f0a3c;
+    margin: 2px;
+    -webkit-mask: url(https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png);
+    mask: url(https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png);
+    -webkit-mask-size: 3000% 100%;
+    mask-size: 3000% 100%;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    -webkit-animation: ani2 .7s steps(29) forwards;
+    animation: ani2 .7s steps(29) forwards;
+}
+
+.btn-main button:hover {
+    -webkit-animation: ani .7s steps(29) forwards;
+    animation: ani .7s steps(29) forwards
+}
+
+.mas {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    font-size: 15px;
+    overflow: hidden;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 700;
+    letter-spacing: .7px;
+}
+
+.bb-btn {
+    background-image: linear-gradient(90deg, #6f7c8e, #6f7c8e)
+}
+
+.blue-btn button {
+    background: #39475c
+}
+
+.connectBtn button {
+    -webkit-mask: url(https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png);
+    mask: url(https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png);
+    -webkit-mask-size: 2300% 100%;
+    mask-size: 2300% 100%;
+    -webkit-animation: ani2 .7s steps(22) forwards;
+    animation: ani2 .7s steps(22) forwards
+}
+
+.connectBtn button:hover {
+    -webkit-animation: ani .7s steps(22) forwards;
+    animation: ani .7s steps(22) forwards
+}
+
+.collect-btn-width {
+    width: 30%;
+}
+
+@-webkit-keyframes ani {
+    0% {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0
+    }
+    to {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0
+    }
+}
+
+@keyframes ani {
+    0% {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0
+    }
+    to {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0
+    }
+}
+
+@-webkit-keyframes ani2 {
+    0% {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0
+    }
+    to {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0
+    }
+}
+
+@keyframes ani2 {
+    0% {
+        -webkit-mask-position: 100% 0;
+        mask-position: 100% 0
+    }
+    to {
+        -webkit-mask-position: 0 0;
+        mask-position: 0 0
+    }
+}
+
+
 /* Global styling ends here */
 
+
 /* navbar starts here */
-.navbar{
+
+.navbar {
     padding-top: 10px !important;
     padding-bottom: 10px !important;
 }
+
 
 /* navbar ends here */
 
 
 /* Reward section starts here */
-.card{
+
+.card {
     padding: 20px 10px;
     background: #06022d91 !important;
     text-align: center;
@@ -102,25 +245,29 @@ button:focus{
     -webkit-box-shadow: 0px 1px 5px 2px var(--secondry-color);
     -moz-box-shadow: 0px 1px 5px 2px var(--secondry-color);
     color: white;
-
 }
-.card-body{
+
+.card-body {
     background: var(--primary-color);
     color: white;
     padding: 0px 10px !important;
 }
-.card-icon{
+
+.card-icon {
     width: 80px;
     margin: 0 auto;
 }
-.card-content{
+
+.card-content {
     font-size: 15px;
     font-weight: normal;
     color: white;
 }
-.card-heading{
+
+.card-heading {
     color: var(--secondry-color);
 }
+
 #return-to-top {
     position: fixed;
     bottom: 20px;
@@ -141,6 +288,7 @@ button:focus{
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
+
 #return-to-top i {
     color: #fff;
     margin: 0;
@@ -154,8 +302,11 @@ button:focus{
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
+
+
 /* Reward section ends here */
-.calculator-label{
+
+.calculator-label {
     position: fixed;
     top: 50%;
     right: -55px;
@@ -170,7 +321,9 @@ button:focus{
     z-index: 1;
 }
 
+
 /* pop up modal starts here */
+
 .modal {
     display: none;
     position: absolute !important;
@@ -178,12 +331,12 @@ button:focus{
     padding-top: 50px;
     left: 0;
     top: 5% !important;
-    width: 100%; 
-    height: 100%; 
+    width: 100%;
+    height: 100%;
     overflow: auto;
-    
-  }
-  .modal-content {
+}
+
+.modal-content {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -198,61 +351,74 @@ button:focus{
     color: white;
     animation: fadein 2s;
     -moz-animation: fadein 2s;
-    -webkit-animation: fadein 2s; 
+    -webkit-animation: fadein 2s;
     -o-animation: fadein 2s;
-  }
-  @keyframes fadein {
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
 }
-@-moz-keyframes fadein { /* Firefox */
+
+@keyframes fadein {
     from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-webkit-keyframes fadein { /* Safari and Chrome */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-o-keyframes fadein { /* Opera */
-    from {
-        opacity:0;
+        opacity: 0;
     }
     to {
         opacity: 1;
     }
 }
-  
-  .close {
+
+@-moz-keyframes fadein {
+    /* Firefox */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+    /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadein {
+    /* Opera */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.close {
     color: white !important;
     float: right;
     font-size: 28px;
     font-weight: bold;
     opacity: 1 !important;
-  }
-  button:active{
-      border: none !important;
-  }
-  .hide {
+}
+
+button:active {
+    border: none !important;
+}
+
+.hide {
     display: none;
-  }
+}
+
+
 /* pop up modal ends here */
 
+
 /* Account modal starts here */
+
 .account-modal {
     display: none;
-    z-index: 1; 
+    z-index: 1;
     padding-top: 100px;
     left: 0;
     top: 0;
@@ -261,8 +427,9 @@ button:focus{
     overflow: auto;
     background-color: #241b61c9;
     position: fixed;
-  }
-  .account-modal-content {
+}
+
+.account-modal-content {
     background-color: #160f46;
     margin: auto;
     padding: 20px;
@@ -274,18 +441,20 @@ button:focus{
     box-shadow: -2px 1px 9px 0px rgb(0 78 255 / 77%);
     -webkit-box-shadow: -2px 1px 9px 0px rgb(0 78 255 / 77%);
     -moz-box-shadow: -2px 1px 9px 0px rgb(0 78 255 / 77%);
-  }
-  .account-modal-content h5{
-      color: white;
-      font-weight: bold;
-      margin-bottom: 10px;
-  }
-  .account-modal-content p{
-      color: white;
-      font-weight: bold;
-  }
+}
 
-  .account-modal-close {
+.account-modal-content h5 {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.account-modal-content p {
+    color: white;
+    font-weight: bold;
+}
+
+.account-modal-close {
     color: white !important;
     float: right;
     font-size: 28px !important;
@@ -294,16 +463,18 @@ button:focus{
     right: 10;
     right: 15px;
     opacity: 1 !important;
-  }
-  .copiedTxt{
+}
+
+.copiedTxt {
     color: white;
     border: none;
     width: 0.1px;
     position: absolute;
     top: 0;
     z-index: -10000000;
-  }
-  .copyBtn{
+}
+
+.copyBtn {
     margin-right: 13px;
     font-size: 13px;
     border: 2px solid rgb(255 255 255);
@@ -312,9 +483,9 @@ button:focus{
     border-radius: 10px;
     color: white;
     background: transparent;
-  }
+}
 
-  .bscscan-link{
+.bscscan-link {
     margin-right: 13px;
     font-size: 13px;
     border: 2px solid rgb(255 255 255);
@@ -323,78 +494,85 @@ button:focus{
     border-radius: 10px;
     color: white;
     background: transparent;
-  }
-  
+}
+
+
 /* Account model ends here */
 
+
 /* footer starts here */
-footer{
+
+footer {
     background: linear-gradient(to right, #12d3ff 0%, #0033cc5c 103%);
     height: 100px;
 }
-/* footer ends here */
 
+
+/* footer ends here */
 
 
 /* Media queries */
 
+
 /* laptop screen */
-@media only screen and (max-width: 1400px){
-    .modal{
+
+@media only screen and (max-width: 1400px) {
+    .modal {
         top: 1% !important;
     }
-    .modal-content{
+    .modal-content {
         width: 60% !important;
     }
 }
+
+
 /* For tablet */
-@media only screen and (max-width: 1150px){
+
+@media only screen and (max-width: 1150px) {
     .card {
         width: 100% !important;
     }
-    .secondry-btn{
+    .secondry-btn {
         font-size: 12px;
         padding: 8px 11px;
     }
-    .buy-btn{
+    .buy-btn {
         width: 100% !important;
     }
-    .modal-content{
+    .modal-content {
         width: 80% !important;
     }
-    .account-modal-content{
+    .account-modal-content {
         width: 70%;
-    }
-    .account-modal-content button{
-        width: 35%;
     }
 }
 
 
 /* for mobile */
-@media only screen and (max-width: 600px){
-    .modal-content{
+
+@media only screen and (max-width: 600px) {
+    .modal-content {
         PADDING: 7px;
         font-size: 10px;
         width: 96% !important;
     }
-    .secondry-btn{
+    .secondry-btn {
         padding: 8px 13px;
         font-size: 9px;
     }
-    .calculator-label{
+    .calculator-label {
         display: none;
     }
-    .buy-btn{
+    .buy-btn {
         width: 100% !important;
     }
-    .account-modal-content{
+    .account-modal-content {
         width: 95%;
     }
-    .account-modal-content p{
+    .account-modal-content p {
         font-size: 12px;
     }
-    .account-modal-content button{
-        width: 35%;
+    .collect-btn-width {
+        width: 100%;
     }
 }
