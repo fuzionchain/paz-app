@@ -519,6 +519,36 @@ footer {
 /* footer ends here */
 
 
+/* Network error */
+
+#networkError {
+    background: #1c164e;
+    height: auto;
+}
+
+.warning-heading {
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+}
+
+.warning-block {
+    text-align: center;
+    padding-top: 20%;
+}
+
+.warning-subheading {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+.warning-icon {
+    margin-top: -7px;
+    width: 25px;
+}
+
+
 /* Media queries */
 
 
