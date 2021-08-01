@@ -523,7 +523,8 @@ footer {
 
 #networkError {
     background: #1c164e;
-    height: auto;
+    height: 100vh;
+    position: relative;
 }
 
 .warning-heading {
@@ -534,7 +535,10 @@ footer {
 
 .warning-block {
     text-align: center;
-    padding-top: 20%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .warning-subheading {
@@ -580,9 +584,6 @@ footer {
     .modal-content {
         width: 80% !important;
     }
-    .account-modal-content {
-        width: 70%;
-    }
 }
 
 
@@ -616,5 +617,8 @@ footer {
     .accountBtn {
         width: 135px;
         height: 35px;
+    }
+    .warning-heading {
+        font-size: 17px;
     }
 }
