@@ -113,9 +113,8 @@ async function fetchAccountData() {
     // Display fully loaded UI for wallet data
     document.querySelector("#prepare").style.display = "none";
     document.querySelector("#connected").style.display = "block";
-
     // Display Network Error
-    if (chainId != 56 || chainId != 97) {
+    if (chainId != (56 || 97)) {
         document.querySelector("#prepare").style.display = "none";
         document.querySelector("#connected").style.display = "none";
         document.querySelector("#networkError").style.display = "block";
