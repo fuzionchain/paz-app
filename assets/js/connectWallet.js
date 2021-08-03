@@ -114,10 +114,12 @@ async function fetchAccountData() {
     document.querySelector("#prepare").style.display = "none";
     document.querySelector("#connected").style.display = "block";
     // Display Network Error
-    if (chainId != (56 || 97)) {
+    if (chainId != 56 && chainId != 97) {
         document.querySelector("#prepare").style.display = "none";
         document.querySelector("#connected").style.display = "none";
         document.querySelector("#networkError").style.display = "block";
+    } else {
+        document.querySelector("#networkError").style.display = "none";
     }
 }
 
