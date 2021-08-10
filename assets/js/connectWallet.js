@@ -1,260 +1,727 @@
-"use strict";
-
-const Web3Modal = window.Web3Modal.default;
-const WalletConnectProvider = window.WalletConnectProvider.default;
-const Fortmatic = window.Fortmatic;
-const evmChains = window.evmChains;
-
-let web3Modal;
+let network;
+let connection;
+let accounts;
 let provider;
-let selectedAccount;
+let thisURL = window.location.origin.toString();
 
-/**
- * Setup the orchestra
- */
-function init() {
-  // Check that the web page is run in a secure context,
-  // as otherwise MetaMask won't be available
-  if (location.protocol !== "https:") {
-    document.querySelector("#btn-connect").setAttribute("disabled", "disabled");
-    return;
-  }
-
-  console.log("data within the init function");
-  // Tell Web3modal what providers we have available.
-  // Built-in web browser provider (only one can exist as a time)
-  // like MetaMask, Brave or Opera is added automatically by Web3modal
-  const providerOptions = {
-    walletconnect: {
-      package: WalletConnectProvider,
-      options: {
-        // test key - don't copy as your mileage may vary
-        infuraId: "8043bb2cf99347b1bfadfb233c5325c0",
+let Accounttype = "0";
+let contractAddress = "0x68590a47578E5060a29fd99654f4556dBfa05D10";
+let abi = [
+  {
+    inputs: [
+      {
+        internalType: "address payable",
+        name: "routerAddress",
+        type: "address",
       },
-    },
-
-    fortmatic: {
-      package: Fortmatic,
-      options: {
-        // TESTNET api key
-        key: "pk_test_391E26A3B43A3350",
+    ],
+    stateMutability: "nonpayable",
+    type: "constructor",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "owner",
+        type: "address",
       },
-    },
-  };
+      {
+        indexed: true,
+        internalType: "address",
+        name: "spender",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "value",
+        type: "uint256",
+      },
+    ],
+    name: "Approval",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: "address",
+        name: "recipient",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "ethReceived",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "nextAvailableClaimDate",
+        type: "uint256",
+      },
+    ],
+    name: "ClaimBNBSuccessfully",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "previousOwner",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "newOwner",
+        type: "address",
+      },
+    ],
+    name: "OwnershipTransferred",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "tokensSwapped",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "ethReceived",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "tokensIntoLiqudity",
+        type: "uint256",
+      },
+    ],
+    name: "SwapAndLiquify",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      { indexed: false, internalType: "bool", name: "enabled", type: "bool" },
+    ],
+    name: "SwapAndLiquifyEnabledUpdated",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "address",
+        name: "from",
+        type: "address",
+      },
+      { indexed: true, internalType: "address", name: "to", type: "address" },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "value",
+        type: "uint256",
+      },
+    ],
+    name: "Transfer",
+    type: "event",
+  },
+  {
+    inputs: [],
+    name: "_liquidityFee",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "_maxTxAmount",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "_taxFee",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "activateContract",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "address", name: "owner", type: "address" },
+      { internalType: "address", name: "spender", type: "address" },
+    ],
+    name: "allowance",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "address", name: "spender", type: "address" },
+      { internalType: "uint256", name: "amount", type: "uint256" },
+    ],
+    name: "approve",
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "address", name: "account", type: "address" }],
+    name: "balanceOf",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "address", name: "ofAddress", type: "address" }],
+    name: "calculateBNBReward",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "claimBNBReward",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "decimals",
+    outputs: [{ internalType: "uint8", name: "", type: "uint8" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "address", name: "spender", type: "address" },
+      { internalType: "uint256", name: "subtractedValue", type: "uint256" },
+    ],
+    name: "decreaseAllowance",
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "uint256", name: "tAmount", type: "uint256" }],
+    name: "deliver",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "disableEasyRewardFrom",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "disruptiveCoverageFee",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "address", name: "recipient", type: "address" },
+      { internalType: "uint256", name: "amount", type: "uint256" },
+    ],
+    name: "disruptiveTransfer",
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    stateMutability: "payable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "disruptiveTransferEnabledFrom",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "easyRewardCycleBlock",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "address", name: "account", type: "address" }],
+    name: "excludeFromFee",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "address", name: "account", type: "address" }],
+    name: "excludeFromReward",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "geUnlockTime",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getRewardCycleBlock",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "address", name: "account", type: "address" }],
+    name: "includeInFee",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "address", name: "account", type: "address" }],
+    name: "includeInReward",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "address", name: "spender", type: "address" },
+      { internalType: "uint256", name: "addedValue", type: "uint256" },
+    ],
+    name: "increaseAllowance",
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "address", name: "account", type: "address" }],
+    name: "isExcludedFromFee",
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "address", name: "account", type: "address" }],
+    name: "isExcludedFromReward",
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "uint256", name: "time", type: "uint256" }],
+    name: "lock",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "name",
+    outputs: [{ internalType: "string", name: "", type: "string" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "address", name: "", type: "address" }],
+    name: "nextAvailableClaimDate",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "owner",
+    outputs: [{ internalType: "address", name: "", type: "address" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "pancakePair",
+    outputs: [{ internalType: "address", name: "", type: "address" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "pancakeRouter",
+    outputs: [
+      {
+        internalType: "contract IPancakeRouter02",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "uint256", name: "tAmount", type: "uint256" },
+      { internalType: "bool", name: "deductTransferFee", type: "bool" },
+    ],
+    name: "reflectionFromToken",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "renounceOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "rewardCycleBlock",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "rewardThreshold",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "address", name: "_address", type: "address" },
+      { internalType: "bool", name: "value", type: "bool" },
+    ],
+    name: "setExcludeFromMaxTx",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "uint256", name: "liquidityFee", type: "uint256" },
+    ],
+    name: "setLiquidityFeePercent",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "uint256", name: "maxTxPercent", type: "uint256" },
+    ],
+    name: "setMaxTxPercent",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "bool", name: "_enabled", type: "bool" }],
+    name: "setSwapAndLiquifyEnabled",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "uint256", name: "taxFee", type: "uint256" }],
+    name: "setTaxFeePercent",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "swapAndLiquifyEnabled",
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "symbol",
+    outputs: [{ internalType: "string", name: "", type: "string" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "threshHoldTopUpRate",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "uint256", name: "rAmount", type: "uint256" }],
+    name: "tokenFromReflection",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "totalFees",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "totalSupply",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "address", name: "recipient", type: "address" },
+      { internalType: "uint256", name: "amount", type: "uint256" },
+    ],
+    name: "transfer",
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      { internalType: "address", name: "sender", type: "address" },
+      { internalType: "address", name: "recipient", type: "address" },
+      { internalType: "uint256", name: "amount", type: "uint256" },
+    ],
+    name: "transferFrom",
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [{ internalType: "address", name: "newOwner", type: "address" }],
+    name: "transferOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "unlock",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "winningDoubleRewardPercentage",
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+    stateMutability: "view",
+    type: "function",
+  },
+  { stateMutability: "payable", type: "receive" },
+];
+let mainContract = undefined;
 
-  web3Modal = new Web3Modal({
-    cacheProvider: false, // optional
-    providerOptions, // required
-    disableInjectedProvider: false, // optional. For MetaMask / Brave / Opera.
-  });
-}
+let zeroAddress = "0xA5a90C315d490C5b952EF9D613d9d9fd8802284d"; //we need to change this with real zeroAddress
+let bscScan = "https://bscscan.com/address/" + contractAddress;
 
-/**
- * Kick in the UI action after Web3modal dialog has chosen a provider
- */
-async function fetchAccountData() {
-  // Get a Web3 instance for the wallet
-  const web3 = new Web3(provider);
-  // Get connected chain id from Ethereum node
-  const chainId = await web3.eth.getChainId();
-  // Load chain information over an HTTP API
-  const chainData = evmChains.getChain(chainId);
-  document.querySelector("#network-name").textContent = chainData.name;
-  // Get list of accounts of the connected wallet
-  const accounts = await web3.eth.getAccounts();
+let user = {
+  ref: undefined,
+  address: "",
+};
 
-  // MetaMask does not give you all accounts, only the selected account
-
-  selectedAccount = accounts[0];
-
-  document.querySelector("#selected-account").textContent = selectedAccount;
-
-  // Short account address
-  const firstPart = selectedAccount.slice(0, 6);
-  const secondPart = selectedAccount.slice(
-    selectedAccount.length - 4,
-    selectedAccount.length
-  );
-  const shortAccount = `${firstPart}...${secondPart}`;
-  document.querySelector("#shortAddress").textContent = shortAccount;
-  document.querySelector("#shortAddress-2").textContent = shortAccount;
-  document.querySelector("#shortAccount").textContent = shortAccount;
-
-  //Bscscan link href
-  const link = document.getElementById("bscscan-link");
-  link.href = `https://bscscan.com/address/${selectedAccount}`;
-
-  // clipboard input value
-  const copyLink = document.getElementById("addressInput");
-  copyLink.value = selectedAccount;
-
-  // Get a handl
-  const template = document.querySelector("#template-balance");
-  const accountContainer = document.querySelector("#accounts");
-
-  // Purge UI elements any previously loaded accounts
-  accountContainer.innerHTML = "";
-
-  // Go through all accounts and get their ETH balance
-  const rowResolvers = accounts.map(async (address) => {
-    const balance = await web3.eth.getBalance(address);
-    // ethBalance is a BigNumber instance
-    // https://github.com/indutny/bn.js/
-    const ethBalance = web3.utils.fromWei(balance, "ether");
-    const humanFriendlyBalance = parseFloat(ethBalance).toFixed(4);
-    // Fill in the templated row and put in the document
-    const clone = template.content.cloneNode(true);
-    clone.querySelector(".address").textContent = address;
-    clone.querySelector(".balance").textContent = humanFriendlyBalance;
-    accountContainer.appendChild(clone);
-  });
-
-  // Because rendering account does its own RPC commucation
-  // with Ethereum node, we do not want to display any results
-  // until data for all accounts is loaded
-  await Promise.all(rowResolvers);
-
-  // Display fully loaded UI for wallet data
-  document.querySelector("#prepare").style.display = "none";
-  document.querySelector("#connected").style.display = "block";
-  // Display Network Error
-  if (chainId != 56 && chainId != 97) {
-    document.querySelector("#prepare").style.display = "none";
-    document.querySelector("#connected").style.display = "none";
-    document.querySelector("#networkError").style.display = "block";
-  } else {
-    document.querySelector("#networkError").style.display = "none";
-  }
-}
-
-/**
- * Fetch account data for UI when
- * - User switches accounts in wallet
- * - User switches networks in wallet
- * - User connects wallet initially
- */
-async function refreshAccountData() {
-  const userAccountData = JSON.parse(sessionStorage.getItem("userData"));
-
-  if (userAccountData != null) {
-    console.log(userAccountData, "IF 2 condition is working");
-    // If any current data is displayed when
-    // the user is switching acounts in the wallet
-    // immediate hide this data
-    document.querySelector("#connected").style.display = "none";
-    document.querySelector("#prepare").style.display = "block";
-
-    // Disable button while UI is loading.
-    // fetchAccountData() will take a while as it communicates
-    // with Ethereum node via JSON-RPC and loads chain data
-    // over an API call.
-
-    document.querySelector("#btn-connect").setAttribute("disabled", "disabled");
-    await fetchAccountData(provider);
-    document.querySelector("#btn-connect").removeAttribute("disabled");
-  } else {
-    await fetchAccountData(userAccountData);
-    console.log(userAccountData, "ELSE 2 condition is working");
-    document.querySelector("#connected").style.display = "block";
-    document.querySelector("#prepare").style.display = "none";
-  }
-}
-
-/**
- * Connect wallet button pressed.
- */
-async function onConnect() {
-  try {
-    provider = await web3Modal.connect();
-    console.log(provider, "provider data on connect");
-    const object = provider;
-    function simpleStringify (object){
-        var simpleObject = {};
-        for (var prop in object ){
-            if (!object.hasOwnProperty(prop)){
-                continue;
-            }
-            if (typeof(object[prop]) == 'object'){
-                continue;
-            }
-            if (typeof(object[prop]) == 'function'){
-                continue;
-            }
-            simpleObject[prop] = object[prop];
-        }
-        return JSON.stringify(simpleObject); // returns cleaned up JSON
-    };
-    sessionStorage.setItem("userData", object);
-    const objData = sessionStorage.getItem("userData");
-    console.log(JSON.parse(objData), "parsed JSON data");
-  } catch (e) {
-    console.log("Could not get a wallet connection", e);
-    return;
-  }
-
-  // Subscribe to accounts change
-  provider.on("accountsChanged", () => {
-    fetchAccountData();
-  });
-
-  // Subscribe to chainId change
-  provider.on("chainChanged", () => {
-    fetchAccountData();
-  });
-
-  // Subscribe to networkId change
-  provider.on("networkChanged", () => {
-    fetchAccountData();
-  });
-
-  await refreshAccountData();
-}
-
-/**
- * Disconnect wallet button pressed.
- */
-async function onDisconnect() {
-  if (provider.close) {
-    await provider.close();
-
-    // If the cached provider is not cleared,
-    // WalletConnect will default to the existing session
-    // and does not allow to re-scan the QR code with a new wallet.
-    // Depending on your use case you may want or want not his behavir.
-    await web3Modal.clearCachedProvider();
-    provider = null;
-    sessionStorage.clear();
-  }
-
-  selectedAccount = null;
-  sessionStorage.clear();
-  // Set the UI back to the initial state
-  document.querySelector("#prepare").style.display = "block";
-  document.querySelector("#connected").style.display = "none";
-}
-
-/**
- * Main entry point.
- */
-
-window.addEventListener("load", async () => {
-  const userSessionData = JSON.parse(sessionStorage.getItem("userData"));
-
-  if (userSessionData == null) {
-    console.log("IF 1 condition");
-    init();
-    document.querySelector("#btn-connect").addEventListener("click", onConnect);
-    document.querySelector("#btn-disconnect").addEventListener("click", onDisconnect);
-  } 
-  else {
-    console.log("ELSE 1 condition is working");
-    init();
-    provider = userSessionData;
-    await refreshAccountData();
-    console.log(userSessionData, "hi OBJECT");
-    document.querySelector("#btn-connect").addEventListener("click", onConnect);
-    document.querySelector("#btn-disconnect").addEventListener("click", onDisconnect);
-    document.querySelector("#prepare").style.display = "none";
-    document.querySelector("#connected").style.display = "block";
-  }
+$(function () {
+  createCookie();
+  beginLogins();
 });
+
+let attempts = 0;
+async function beginLogins() {
+  window.ethereum.enable();
+  await userLoginAttempt();
+  setTimeout(() => {
+    if (user.address == undefined && attempts < 3) {
+      setTimeout(() => {
+        if (user.address == undefined && attempts < 3) {
+          attempts++;
+          beginLogins();
+        }
+      }, 1000);
+    }
+
+  }, 1000);
+}
+
+async function userLoginAttempt() {
+  let isConnected = false;
+  await window.addEventListener("load", async function () {
+    console.log(window.ethereum.selectedAddress, "window . ethemerrm before");
+    if (window.ethereum) {
+      window.web3 = new Web3(ethereum);
+      provider = window.web3;
+      isConnected = true;
+    } else if (window.web3) {
+      window.web3 = new Web3(web3.currentProvider);
+      console.log("3 else if is working")
+    } 
+
+    try {
+      await ethereum.enable();
+      await web3.eth.getAccounts().then(function (result) {
+        user.address = result[0];
+        initContract();
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  });
+}
+
+async function initContract() {
+  try {
+    await (mainContract = new web3.eth.Contract(abi, contractAddress));
+    if (mainContract != undefined) {
+        
+      startUp();
+    } else {
+      setTimeout(() => {
+        initContract();
+      }, 2000);
+    }
+  } catch (e) {
+    setTimeout(() => {
+      initContract();
+    }, 2000);
+  }
+  setInterval(function () {
+    startUp();
+  }, 5000);
+}
+
+async function startUp() {
+
+  if (window.ethereum.selectedAddress != null) {
+    let p2 = user.address.slice(42 - 5);
+
+    $("#walletConnect")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
+    $("#shortAddress")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
+    $("#shortAccount")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
+    $("#showAccountBtn")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
+
+    document.querySelector("#prepare").style.display = "none";
+    document.querySelector("#connected").style.display = "block";
+
+    //Bscscan link href
+    const link = document.getElementById("bscscan-link");
+    link.href = `https://bscscan.com/address/${user.address}`;
+
+    // clipboard input value
+    const copyLink = document.getElementById("addressInput");
+    copyLink.value = user.address;
+    if (user.address != undefined) {
+      connection = "Metamask is unlocked";
+      $("#metamaskConnection").text(connection);
+      const chainId = await web3.eth.getChainId();
+      // Display Network Error
+      if (chainId != 56 && chainId != 97) {
+        document.querySelector("#prepare").style.display = "none";
+        document.querySelector("#connected").style.display = "none";
+        document.querySelector("#networkError").style.display = "block";
+      } else {
+        document.querySelector("#networkError").style.display = "none";
+        document.querySelector("#connected").style.display = "block";
+      }
+    } else {
+      connection = "Metamask is locked";
+      $("#metamaskConnection").text(connection);
+    }
+  } else {
+    beginLogins();
+  }
+}
+
+function isLocked() {
+  window.web3.eth.getAccounts(function (err, accounts) {
+    if (err != null) {
+      console.log(err);
+      $("#lock").text(err);
+    } else if (accounts.length === 0) {
+      console.log("MetaMask is locked");
+      $("#lock").text("MetaMask is locked.");
+    } else {
+      console.log("MetaMask is unlocked");
+      $("#lock").text("MetaMask is unlocked.");
+    }
+  });
+}
+
+//COOKIE CREATION
+
+function createCookie() {
+  if (window.location.href.indexOf("ref=") < 0) {
+    user.ref = zeroAddress;
+  } else {
+    const index = window.location.href.indexOf("ref=") + 4;
+    let ref = window.location.href.slice(index, index + 42);
+    if (window.localStorage) {
+      localStorage.setItem("referrerAddress", ref);
+    }
+    let date = new Date();
+    date.setTime(date.getTime() + 10000 * 24 * 60 * 60 * 1000);
+    document.cookie = "ref=" + ref + "; expires=" + date.toGMTString();
+  }
+  accessCookie("ref");
+}
+
+// ACCESS COOKIE
+function accessCookie(cookieName) {
+  let name = cookieName + "=";
+  let accessedCookie;
+  let allCookieArray = document.cookie.split(";");
+  for (let i = 0; i < allCookieArray.length; i++) {
+    let temp = allCookieArray[i].trim();
+    if (temp.indexOf(name) == 0) {
+      accessedCookie = temp.substring(name.length, temp.length);
+      if (validateErcAddress(accessedCookie)) user.ref = accessedCookie;
+      //   console.log("Referrer: " + user.ref)
+    }
+  }
+}
+
+function validateErcAddress(address) {
+  if (typeof address !== "string") return false;
+
+  if (address[0] === "0" && address[1] === "x" && address.length == 42)
+    return true;
+
+  return false;
+}
+
+// Logout
+function logOut() {
+  isConnected = false;
+}

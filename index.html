@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-  <!-- css style sheet -->
-
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,7 +9,7 @@
     <meta property="og:title" content="Pazzive - Earn BUSD by holding PAZ!" />
     <meta
       property="og:description"
-      content="Pazzive - Accumulating Wealth Was Never This Simple!"
+      content="Pazzive: Innovation Engineered to Ensure Domination."
     />
     <meta property="og:type" content="website" />
     <meta
@@ -31,8 +29,12 @@
     />
     <!-- AOS css -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- web3.js script -->
+    <script
+      src="./assets/cdnjs.cloudflare.com/ajax/libs/web3/1.3.4/web3.min.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
-
   <body>
     <div id="prepare">
       <!-- Navbar starts here -->
@@ -193,10 +195,19 @@
                 </div>
                 <div class="btn-main connectBtn mt-2">
                   <span class="mas">Connect Wallet</span>
-                  <button type="button" name="Hover" id="btn-connect">
-                    Connect Wallet
+                  <button
+                    type="button"
+                    id="walletConnect"
+                    onclick=" window.open('https://metamask.io/index.html','_blank')"
+                  >
+                    <span
+                      id="metamaskConnection"
+                      class="icon54-v1-wallet-3 mbr-iconfont mbr-iconfont-btn"
+                    ></span
+                    >Connect Wallet
                   </button>
                 </div>
+
                 <a
                   class="text-center primary-txt pt-2"
                   href="https://docs.ricefarm.fi/guides/use-trustwallet-on-desktop"
@@ -257,7 +268,12 @@
           <div class="d-flex justify-content-center mt-3">
             <div class="btn-main mx-auto" style="width: 40%">
               <span class="mas">LOGOUT</span>
-              <button id="btn-disconnect" type="button" name="Hover">
+              <button
+                onclick="logOut()"
+                id="btn-disconnect"
+                type="button"
+                name="Hover"
+              >
                 LOGOUT
               </button>
             </div>
@@ -457,7 +473,7 @@
       <span class="calculator-label"> Reward Calculator </span>
 
       <!-- <footer>
-        </footer> -->
+          </footer> -->
 
       <div style="display: none">
         <div id="network">
@@ -507,7 +523,7 @@
         </div>
       </div>
     </div>
-    <!-- Network error display starts here -->
+    <!-- Network error display ends here -->
 
     <!-- All js files -->
     <script
