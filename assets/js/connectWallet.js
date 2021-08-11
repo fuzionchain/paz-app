@@ -1,9 +1,11 @@
-let network;
-let connection;
-let accounts;
-let provider;
-let thisURL = window.location.origin.toString();
+const Web3Modal = window.Web3Modal.default;
+const WalletConnectProvider = window.WalletConnectProvider.default;
+const Fortmatic = window.Fortmatic;
+const evmChains = window.evmChains;
 
+let web3Modal;
+let connection;
+let thisURL = window.location.origin.toString();
 let Accounttype = "0";
 let contractAddress = "0x68590a47578E5060a29fd99654f4556dBfa05D10";
 let abi = [
@@ -545,23 +547,48 @@ let abi = [
   { stateMutability: "payable", type: "receive" },
 ];
 let mainContract = undefined;
-
 let zeroAddress = "0xA5a90C315d490C5b952EF9D613d9d9fd8802284d"; //we need to change this with real zeroAddress
 let bscScan = "https://bscscan.com/address/" + contractAddress;
-
 let user = {
   ref: undefined,
   address: "",
 };
 
 $(function () {
+  init();
   createCookie();
   beginLogins();
+  document.querySelector("#btn-disconnect").addEventListener("click", logOut);
 });
+
+function init() {
+    if (location.protocol !== "https:") {
+        document.querySelector("#btn-connect").setAttribute("disabled", "disabled");
+        return;
+    }
+    const providerOptions = {
+        walletconnect: {
+            package: WalletConnectProvider,
+            options: {
+                infuraId: "8043bb2cf99347b1bfadfb233c5325c0",
+            },
+        },
+        fortmatic: {
+            package: Fortmatic,
+            options: {
+                key: "pk_test_391E26A3B43A3350",
+            },
+        },
+    };
+    web3Modal = new Web3Modal({
+        cacheProvider: false, // optional
+        providerOptions, // required
+        disableInjectedProvider: false, // optional. For MetaMask / Brave / Opera.
+    });
+}
 
 let attempts = 0;
 async function beginLogins() {
-  window.ethereum.enable();
   await userLoginAttempt();
   setTimeout(() => {
     if (user.address == undefined && attempts < 3) {
@@ -572,25 +599,21 @@ async function beginLogins() {
         }
       }, 1000);
     }
-
   }, 1000);
 }
 
 async function userLoginAttempt() {
   let isConnected = false;
   await window.addEventListener("load", async function () {
-    console.log(window.ethereum.selectedAddress, "window . ethemerrm before");
-    if (window.ethereum) {
-      window.web3 = new Web3(ethereum);
-      provider = window.web3;
-      isConnected = true;
-    } else if (window.web3) {
-      window.web3 = new Web3(web3.currentProvider);
-      console.log("3 else if is working")
-    } 
-
+    const status = localStorage.getItem('connectStatus');
     try {
-      await ethereum.enable();
+    if(status != "connected"){
+        await web3Modal.connect();
+        localStorage.setItem('connectStatus','connected');
+    }
+    else{
+        startUp();
+    }
       await web3.eth.getAccounts().then(function (result) {
         user.address = result[0];
         initContract();
@@ -598,14 +621,14 @@ async function userLoginAttempt() {
     } catch (error) {
       console.error(error);
     }
-  });
+  }); 
 }
+
 
 async function initContract() {
   try {
     await (mainContract = new web3.eth.Contract(abi, contractAddress));
     if (mainContract != undefined) {
-        
       startUp();
     } else {
       setTimeout(() => {
@@ -624,9 +647,10 @@ async function initContract() {
 
 async function startUp() {
 
-  if (window.ethereum.selectedAddress != null) {
-    let p2 = user.address.slice(42 - 5);
+    const selectedAccount = await web3.eth.getAccounts();
+  if (user.address != undefined) {
 
+    let p2 = user.address.slice(42 - 5);
     $("#walletConnect")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
     $("#shortAddress")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
     $("#shortAccount")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
@@ -642,6 +666,7 @@ async function startUp() {
     // clipboard input value
     const copyLink = document.getElementById("addressInput");
     copyLink.value = user.address;
+
     if (user.address != undefined) {
       connection = "Metamask is unlocked";
       $("#metamaskConnection").text(connection);
@@ -664,23 +689,8 @@ async function startUp() {
   }
 }
 
-function isLocked() {
-  window.web3.eth.getAccounts(function (err, accounts) {
-    if (err != null) {
-      console.log(err);
-      $("#lock").text(err);
-    } else if (accounts.length === 0) {
-      console.log("MetaMask is locked");
-      $("#lock").text("MetaMask is locked.");
-    } else {
-      console.log("MetaMask is unlocked");
-      $("#lock").text("MetaMask is unlocked.");
-    }
-  });
-}
 
 //COOKIE CREATION
-
 function createCookie() {
   if (window.location.href.indexOf("ref=") < 0) {
     user.ref = zeroAddress;
@@ -707,7 +717,6 @@ function accessCookie(cookieName) {
     if (temp.indexOf(name) == 0) {
       accessedCookie = temp.substring(name.length, temp.length);
       if (validateErcAddress(accessedCookie)) user.ref = accessedCookie;
-      //   console.log("Referrer: " + user.ref)
     }
   }
 }
@@ -721,7 +730,12 @@ function validateErcAddress(address) {
   return false;
 }
 
+
 // Logout
-function logOut() {
-  isConnected = false;
+async function logOut() {
+    await web3Modal.clearCachedProvider();
+    sessionStorage.clear();
+    document.cookie = "ref=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    isConnected = false;
+    user.address = undefined;
 }
