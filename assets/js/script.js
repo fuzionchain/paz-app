@@ -10,12 +10,6 @@ $(window).scroll(function () {
   }
 });
 
-// Disclaimer modal
-
-// window.onload = function(){
-//   $('#disclaimerModal').modal('show');
-// }
-
 // show account modal
 
 var modal = document.getElementById("showAccountModal");

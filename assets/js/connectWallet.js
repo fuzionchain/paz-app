@@ -3,10 +3,9 @@ const WalletConnectProvider = window.WalletConnectProvider.default;
 const Fortmatic = window.Fortmatic;
 const evmChains = window.evmChains;
 
+let status;
 let web3Modal;
 let connection;
-let thisURL = window.location.origin.toString();
-let Accounttype = "0";
 let contractAddress = "0x68590a47578E5060a29fd99654f4556dBfa05D10";
 let abi = [
   {
@@ -547,21 +546,18 @@ let abi = [
   { stateMutability: "payable", type: "receive" },
 ];
 let mainContract = undefined;
-let zeroAddress = "0xA5a90C315d490C5b952EF9D613d9d9fd8802284d"; //we need to change this with real zeroAddress
 let bscScan = "https://bscscan.com/address/" + contractAddress;
 let user = {
-  ref: undefined,
   address: "",
 };
 
 $(function () {
   init();
-  createCookie();
   beginLogins();
   document.querySelector("#btn-disconnect").addEventListener("click", logOut);
 });
 
-function init() {
+function init() {  
     if (location.protocol !== "https:") {
         document.querySelector("#btn-connect").setAttribute("disabled", "disabled");
         return;
@@ -587,27 +583,27 @@ function init() {
     });
 }
 
-let attempts = 0;
 async function beginLogins() {
+  console.log("begin login function is working")
   await userLoginAttempt();
-  setTimeout(() => {
-    if (user.address == undefined && attempts < 3) {
-      setTimeout(() => {
-        if (user.address == undefined && attempts < 3) {
-          attempts++;
-          beginLogins();
+    setTimeout(() => {
+        if (user.address == undefined) {
+          setTimeout(() => {
+            if (user.address == undefined) {
+              beginLogins();
+            }
+          }, 3000);
         }
-      }, 1000);
-    }
-  }, 1000);
+      }, 3000);
 }
-
+  
 async function userLoginAttempt() {
   let isConnected = false;
   await window.addEventListener("load", async function () {
-    const status = localStorage.getItem('connectStatus');
+    status = localStorage.getItem('connectStatus');
     try {
     if(status != "connected"){
+        $('#disclaimerModal').modal('show');
         await web3Modal.connect();
         localStorage.setItem('connectStatus','connected');
     }
@@ -623,7 +619,6 @@ async function userLoginAttempt() {
     }
   }); 
 }
-
 
 async function initContract() {
   try {
@@ -646,18 +641,24 @@ async function initContract() {
 }
 
 async function startUp() {
-
-    const selectedAccount = await web3.eth.getAccounts();
   if (user.address != undefined) {
-
     let p2 = user.address.slice(42 - 5);
     $("#walletConnect")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
     $("#shortAddress")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
     $("#shortAccount")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
     $("#showAccountBtn")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
 
-    document.querySelector("#prepare").style.display = "none";
-    document.querySelector("#connected").style.display = "block";
+     // Display Network Error
+     const chainId = await web3.eth.getChainId();
+     if (chainId != 56 && chainId != 97) {
+        document.querySelector("#prepare").style.display = "none";
+        document.querySelector("#connected").style.display = "none";
+        document.querySelector("#networkError").style.display = "block";
+      } else {
+        document.querySelector("#networkError").style.display = "none";
+        document.querySelector("#prepare").style.display = "none";
+        document.querySelector("#connected").style.display = "block";
+      }
 
     //Bscscan link href
     const link = document.getElementById("bscscan-link");
@@ -670,16 +671,6 @@ async function startUp() {
     if (user.address != undefined) {
       connection = "Metamask is unlocked";
       $("#metamaskConnection").text(connection);
-      const chainId = await web3.eth.getChainId();
-      // Display Network Error
-      if (chainId != 56 && chainId != 97) {
-        document.querySelector("#prepare").style.display = "none";
-        document.querySelector("#connected").style.display = "none";
-        document.querySelector("#networkError").style.display = "block";
-      } else {
-        document.querySelector("#networkError").style.display = "none";
-        document.querySelector("#connected").style.display = "block";
-      }
     } else {
       connection = "Metamask is locked";
       $("#metamaskConnection").text(connection);
@@ -689,53 +680,10 @@ async function startUp() {
   }
 }
 
-
-//COOKIE CREATION
-function createCookie() {
-  if (window.location.href.indexOf("ref=") < 0) {
-    user.ref = zeroAddress;
-  } else {
-    const index = window.location.href.indexOf("ref=") + 4;
-    let ref = window.location.href.slice(index, index + 42);
-    if (window.localStorage) {
-      localStorage.setItem("referrerAddress", ref);
-    }
-    let date = new Date();
-    date.setTime(date.getTime() + 10000 * 24 * 60 * 60 * 1000);
-    document.cookie = "ref=" + ref + "; expires=" + date.toGMTString();
-  }
-  accessCookie("ref");
-}
-
-// ACCESS COOKIE
-function accessCookie(cookieName) {
-  let name = cookieName + "=";
-  let accessedCookie;
-  let allCookieArray = document.cookie.split(";");
-  for (let i = 0; i < allCookieArray.length; i++) {
-    let temp = allCookieArray[i].trim();
-    if (temp.indexOf(name) == 0) {
-      accessedCookie = temp.substring(name.length, temp.length);
-      if (validateErcAddress(accessedCookie)) user.ref = accessedCookie;
-    }
-  }
-}
-
-function validateErcAddress(address) {
-  if (typeof address !== "string") return false;
-
-  if (address[0] === "0" && address[1] === "x" && address.length == 42)
-    return true;
-
-  return false;
-}
-
-
-// Logout
 async function logOut() {
     await web3Modal.clearCachedProvider();
-    sessionStorage.clear();
-    document.cookie = "ref=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    localStorage.clear();
     isConnected = false;
     user.address = undefined;
+    location.reload();
 }
