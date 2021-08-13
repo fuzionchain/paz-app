@@ -6,6 +6,7 @@ const evmChains = window.evmChains;
 let status;
 let web3Modal;
 let connection;
+let provider;
 let contractAddress = "0x68590a47578E5060a29fd99654f4556dBfa05D10";
 let abi = [
   {
@@ -553,7 +554,14 @@ let user = {
 
 $(function () {
   init();
-  beginLogins();
+  const connectionStatus = localStorage.getItem("connectStatus");
+  if(connectionStatus == "connected"){
+    userLoginAttempt();
+    $("#disclaimerModal").modal('toggle');
+  }
+  else{
+    $('#disclaimerModal').modal('show'); 
+  }
   document.querySelector("#btn-disconnect").addEventListener("click", logOut);
 });
 
@@ -583,28 +591,22 @@ function init() {
     });
 }
 
-async function beginLogins() {
-  console.log("begin login function is working")
-  await userLoginAttempt();
-    setTimeout(() => {
-        if (user.address == undefined) {
-          setTimeout(() => {
-            if (user.address == undefined) {
-              beginLogins();
-            }
-          }, 3000);
-        }
-      }, 3000);
+async function connectAccount(){
+  provider = await web3Modal.connect();
+  localStorage.setItem('connectStatus','connected');
+  await web3.eth.getAccounts().then(function (result) {
+    user.address = result[0];
+    initContract();
+  });
 }
-  
+
 async function userLoginAttempt() {
   let isConnected = false;
   await window.addEventListener("load", async function () {
     status = localStorage.getItem('connectStatus');
     try {
     if(status != "connected"){
-        $('#disclaimerModal').modal('show');
-        await web3Modal.connect();
+        provider = await web3Modal;
         localStorage.setItem('connectStatus','connected');
     }
     else{
@@ -643,10 +645,9 @@ async function initContract() {
 async function startUp() {
   if (user.address != undefined) {
     let p2 = user.address.slice(42 - 5);
-    $("#walletConnect")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
-    $("#shortAddress")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
-    $("#shortAccount")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
-    $("#showAccountBtn")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
+    $("#shortAddress")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`
+    $("#shortAccount")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`
+    $("#showAccountBtn")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`
 
      // Display Network Error
      const chainId = await web3.eth.getChainId();
@@ -667,23 +668,18 @@ async function startUp() {
     // clipboard input value
     const copyLink = document.getElementById("addressInput");
     copyLink.value = user.address;
-
-    if (user.address != undefined) {
-      connection = "Metamask is unlocked";
-      $("#metamaskConnection").text(connection);
-    } else {
-      connection = "Metamask is locked";
-      $("#metamaskConnection").text(connection);
-    }
   } else {
     beginLogins();
   }
 }
 
 async function logOut() {
-    await web3Modal.clearCachedProvider();
-    localStorage.clear();
-    isConnected = false;
-    user.address = undefined;
-    location.reload();
+      await web3Modal.clearCachedProvider();
+      selectedAccount = null;
+      localStorage.clear();
+      isConnected = false;
+      user.address = undefined;
+      // Set the UI back to the initial state
+      document.querySelector("#prepare").style.display = "block";
+      document.querySelector("#connected").style.display = "none";
 }

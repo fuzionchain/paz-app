@@ -113,7 +113,7 @@ button:focus {
   background: linear-gradient(to right, #12d3ff 0%, #921cff 103%);
 }
 
-.btn-main button {
+.btn-main input{
   width: calc(100% - 4px);
   height: calc(100% - 4px);
   border-radius: 50px;
@@ -138,11 +138,35 @@ button:focus {
   animation: ani2 0.7s steps(29) forwards;
 }
 
+.btn-main button {
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  background: radial-gradient( circle, rgb(27 0 255 / 74%) 13%, rgb(0 30 247 / 86%) 21%, rgb(107 90 234) 91% );
+  margin: 2px;
+  -webkit-mask: url(https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png);
+  mask: url(https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png);
+  -webkit-mask-size: 3000% 100%;
+  mask-size: 3000% 100%;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  -webkit-animation: ani2 0.7s steps(29) forwards;
+  animation: ani2 0.7s steps(29) forwards;
+}
+
 .btn-main button:hover {
   -webkit-animation: ani 0.7s steps(29) forwards;
   animation: ani 0.7s steps(29) forwards;
 }
 
+.btn-main input:hover{
+  -webkit-animation: ani 0.7s steps(29) forwards;
+  animation: ani 0.7s steps(29) forwards;
+}
 .mas {
   color: #fff;
   text-align: center;
@@ -335,90 +359,65 @@ button:focus {
 
 /* pop up modal starts here */
 
-.modal {
-  display: none;
-  position: absolute !important;
-  z-index: 1;
-  padding-top: 50px;
-  left: 0;
-  top: 5% !important;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
+.modal.show  {
+  display:flex!important;
+  flex-direction:column;
+  justify-content:center;
+  align-content:center;
+  align-items: flex-start;
 }
 
 .modal-content {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 45% !important;
-  outline: 0;
   border-radius: 10px !important;
   margin: 0 auto !important;
   padding: 20px;
   font-size: 15px;
-  background-color: #160f46 !important;
   color: white;
-  animation: fadein 2s;
-  -moz-animation: fadein 2s;
-  -webkit-animation: fadein 2s;
-  -o-animation: fadein 2s;
+  background-color: #161c3b!important;
+  width: 100%;
 }
 
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.modal-dialog{
+  width: 54% !important;
 }
 
-@-moz-keyframes fadein {
-  /* Firefox */
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.confirmBtn{
+  position: relative;
+  height: 43px;
+  overflow: hidden;
+  transition: 0.5s;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #12d3ff 0%, #921cff 103%) !important;
+  border: none;
+  width: 250px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  cursor: pointer !important;
 }
-
-@-webkit-keyframes fadein {
-  /* Safari and Chrome */
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+#confirmBtn{
+  position: relative;
+  height: 43px;
+  overflow: hidden;
+  transition: 0.5s;
+  font-size: 15px;
+  border-radius: 10px;
+  border: none;
+  width: 250px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  cursor: not-allowed;
+  color:white;
+  background-image: linear-gradient(90deg,#6e6e6e,#dbdbdb);
 }
-
-@-o-keyframes fadein {
-  /* Opera */
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.is-disabled{
+  cursor: not-allowed !important;
 }
-
-.close {
-  color: white !important;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  opacity: 1 !important;
-}
-
-button:active {
-  border: none !important;
-}
-
-.hide {
-  display: none;
+.close{
+  opacity: none !important;
 }
 
 /* pop up modal ends here */
@@ -551,17 +550,6 @@ footer {
 
 /* Media queries */
 
-/* laptop screen */
-
-@media only screen and (max-width: 1400px) {
-  .modal {
-    top: 1% !important;
-  }
-  .modal-content {
-    width: 60% !important;
-  }
-}
-
 /* For tablet */
 
 @media only screen and (max-width: 1150px) {
@@ -576,11 +564,19 @@ footer {
     width: 100% !important;
   }
   .modal-content {
-    width: 80% !important;
+    width: 100% !important;
+  }
+  .modal-dialog{
+    width: 100% !important;
   }
 }
 
 /* for mobile */
+@media (min-width: 576px){
+  .modal-dialog{
+    max-width: 96% !important;
+  }
+}
 
 @media only screen and (max-width: 600px) {
   .modal-content {
@@ -613,5 +609,8 @@ footer {
   }
   .warning-heading {
     font-size: 17px;
+  }
+  .modal-dialog {
+    width: 100% !important;
   }
 }
