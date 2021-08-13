@@ -1,320 +1,582 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- css style sheet -->
+  <!-- css style sheet -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./assets/img/pazzive-coin-light.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/img/pazzive-coin-light.png" />
     <meta property="og:site_name" content="Pazzive" />
     <meta property="og:title" content="Pazzive - Earn BUSD by holding PAZ!" />
-    <meta property="og:description" content="Pazzive - Accumulating Wealth Was Never This Simple!" />
+    <meta
+      property="og:description"
+      content="Pazzive - Innovation Engineered to Ensure Domination."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://develop.dx27hd910sf2y.amplifyapp.com/assets/img/pazzive-coin-dark.png" />
+    <meta
+      property="og:image"
+      content="https://develop.dx27hd910sf2y.amplifyapp.com/assets/img/pazzive-coin-dark.png"
+    />
     <meta property="og:url" content="https://paz.fuzion.team" />
     <title>Pazz</title>
     <!-- Custom Css link -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- Bootstrap 4 css link -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
     <!-- AOS css -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-</head>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
 
-<body>
+  <body>
     <div id="prepare">
-        <!-- Navbar starts here -->
-        <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="https://paz.fuzion.team/">
-                    <img src="./assets/img/paz-dark.svg" alt="" width="150px">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-        </nav>
-
-        <!-- Navbar ends here -->
-
-        <!-- Disclaimer Modal starts here -->
-        <div id="disclaimerModal" class="modal">
-            <div class="modal-content" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-once="true">
-                <h4>Disclaimer</h4>
-                <p class="pt-2">Trading cryptocurrencies carries a <span class="primary-txt"><b>high level of
-                            risk,</b></span> and may not be suitable for all investors. <b class="primary-txt">Before
-                        deciding to trade cryptocurrency</b> you should carefully consider your investment objectives, level of experience, and risk appetite. The possibility exists that you could sustain a loss of some or all of your initial investment
-                    and therefore you should not invest money that you cannot afford to lose. ICO's, IEO's, STO's and any other form of offering will not guarantee a return on your investment.</p>
-                <p class="py-1"><b class="primary-txt">You should be aware of all the risks associated with
-                        cryptocurrency
-                        trading, and seek advice from an independent financial advisor</b></p>
-                <p>Any opinions, news, research, analyses, prices, or other information contained on this website is provided as general market commentary, and does not constitute investment advice. PAZ and its affiliates will not accept liability for any
-                    loss or damage, including without limitation to, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. All opinions expressed on this site are owned by the respective writer and should
-                    never be considered as advice in any form.</p>
-                <p class="mb-2">PAZ and its affiliates makes no representation or warranties as to the accuracy and or timelines of the information contained herein. A qualified professional should be consulted before making any financial decisions.
-                </p>
-                <div class="form-inline mb-3 primary-txt">
-                    <ul>
-                        <li><input type="checkbox" required>&nbsp;&nbsp;I understand and accept that I will trade/invest PAZZIVE at my own risks</li>
-                        <li><input type="checkbox" required>&nbsp;&nbsp;I understand and accept that this app works smothly with Metamask/TrustWallet</li>
-                    </ul>
-                </div>
-                <div class="btn-main">
-                    <span class="mas">Confirm</span>
-                    <button id="confirmBtn" data-dismiss="modal" type="button" name="Hover">Confirm</button>
-                </div>
-            </div>
+      <!-- Navbar starts here -->
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="https://paz.fuzion.team/">
+            <img src="./assets/img/paz-dark.svg" alt="" width="150px" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
         </div>
-        <!-- Disclaimer Modal ends here -->
+      </nav>
 
-        <!-- Reward share section starts here -->
-        <section class="reward-share-section mt-3">
-            <div class="container">
-                <div class="row mt-5">
-                    <div class="offset-md-3"></div>
-                    <div class="col-md-6">
-                        <div class="card" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true" style="width: 83%;">
-                            <img src="./assets/img/pazzive-coin-dark.svg" alt="" class="card-icon">
-                            <p class="text-center pt-3">Welcome to Pazzive Dapp</p>
-                            <div class="card-body">
-                                <h5 class="pt-3 card-heading">You are not connected to Pazzive Dapp yet</h5>
-                                <p class="card-content">To use the Dapp, make sure: You are using the Binance Smart Chain network and you need to connect wallet to use</p>
-                                <p>We suggest to use:</p>
-                                <ul>
-                                    <li><a href="https://docs.binance.org/smart-chain/wallet/metamask.html" target="_blank" class="primary-txt">Metamask</a></li>
-                                    <li><a href="https://docs.binance.org/smart-chain/wallet/trustwallet.html" class="primary-txt" target="_blank">TrustWallet</a></li>
-                                    <li><a href="https://docs.binance.org/smart-chain/wallet/binance.html" class="primary-txt" target="_blank">Binance Chain Extension Wallet</a></li>
-                                    <li><a href="https://guide.moonrat.finance/how-to-connect-moonrats-dapp-to-wallet" class="primary-txt" target="_blank">SafePal</a></li>
-                                </ul>
-                            </div>
-                            <div class="btn-main connectBtn mt-2">
-                                <span class="mas">Connect Wallet</span>
-                                <button type="button" name="Hover" id="btn-connect">Connect Wallet</button>
-                            </div>
-                            <a class="text-center primary-txt pt-2" href="https://docs.ricefarm.fi/guides/use-trustwallet-on-desktop" target="_blank">How to
-                                connect Pazzive's Dapp to wallet</a>
-                        </div>
-                    </div>
-                    <div class="offset-md-3"></div>
-                </div>
+      <!-- Navbar ends here -->
+
+      <!-- Disclaimer Modal starts here -->
+      <div
+        class="modal"
+        id="disclaimerModal"
+        tabindex="-1"
+        role="dialog"
+        aria-hidden="true"
+        style="padding-right: 0px"
+      >
+        <div class="modal-dialog" role="document">
+          <div
+            class="modal-content"
+            data-aos="zoom-in-up"
+            data-aos-duration="1500"
+            data-aos-once="true"
+          >
+            <h4>Disclaimer</h4>
+            <p class="pt-2">
+              Trading cryptocurrencies carries a
+              <span class="primary-txt"><b>high level of risk,</b></span> and
+              may not be suitable for all investors.
+              <b class="primary-txt">Before deciding to trade cryptocurrency</b>
+              you should carefully consider your investment objectives, level of
+              experience, and risk appetite. The possibility exists that you
+              could sustain a loss of some or all of your initial investment and
+              therefore you should not invest money that you cannot afford to
+              lose. ICO's, IEO's, STO's and any other form of offering will not
+              guarantee a return on your investment.
+            </p>
+            <p class="py-1">
+              <b class="primary-txt"
+                >You should be aware of all the risks associated with
+                cryptocurrency trading, and seek advice from an independent
+                financial advisor</b
+              >
+            </p>
+            <p>
+              Any opinions, news, research, analyses, prices, or other
+              information contained on this website is provided as general
+              market commentary, and does not constitute investment advice. PAZ
+              and its affiliates will not accept liability for any loss or
+              damage, including without limitation to, any loss of profit, which
+              may arise directly or indirectly from use of or reliance on such
+              information. All opinions expressed on this site are owned by the
+              respective writer and should never be considered as advice in any
+              form.
+            </p>
+            <p class="mb-2">
+              PAZ and its affiliates makes no representation or warranties as to
+              the accuracy and or timelines of the information contained herein.
+              A qualified professional should be consulted before making any
+              financial decisions.
+            </p>
+            <div class="mb-3 primary-txt">
+              <input
+                type="checkbox"
+                class="number"
+                value="One"
+              />&nbsp;&nbsp;&nbsp;I understand and accept that I will
+              trade/invest PAZZIVE at my own risks<br />
+              <input
+                type="checkbox"
+                class="number"
+                value="Two"
+              />&nbsp;&nbsp;&nbsp;I understand and accept that this app works
+              smothly with Metamask/TrustWallet<br />
+              <div class="d-flex justify-content-center">
+                <input
+                  type="submit"
+                  id="confirmBtn"
+                  value="Confirm"
+                  class="mt-3 closeModal"
+                  disabled
+                />
+              </div>
             </div>
-        </section>
-        <!-- Reward share section ends here -->
+          </div>
+        </div>
+      </div>
+      <!-- Disclaimer Modal ends here -->
+
+      <!-- Reward share section starts here -->
+      <section class="reward-share-section mt-3">
+        <div class="container">
+          <div class="row mt-5">
+            <div class="offset-md-3"></div>
+            <div class="col-md-6">
+              <div
+                class="card"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                data-aos-once="true"
+                style="width: 83%"
+              >
+                <img
+                  src="./assets/img/pazzive-coin-dark.svg"
+                  alt=""
+                  class="card-icon"
+                />
+                <p class="text-center pt-3">Welcome to Pazzive Dapp</p>
+                <div class="card-body">
+                  <h5 class="pt-3 card-heading">
+                    You are not connected to Pazzive Dapp yet
+                  </h5>
+                  <p class="card-content">
+                    To use the Dapp, make sure: You are using the Binance Smart
+                    Chain network and you need to connect wallet to use
+                  </p>
+                  <p>We suggest to use:</p>
+                  <ul>
+                    <li>
+                      <a
+                        href="https://docs.binance.org/smart-chain/wallet/metamask.html"
+                        target="_blank"
+                        class="primary-txt"
+                        >Metamask</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://docs.binance.org/smart-chain/wallet/trustwallet.html"
+                        class="primary-txt"
+                        target="_blank"
+                        >TrustWallet</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://docs.binance.org/smart-chain/wallet/binance.html"
+                        class="primary-txt"
+                        target="_blank"
+                        >Binance Chain Extension Wallet</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://guide.moonrat.finance/how-to-connect-moonrats-dapp-to-wallet"
+                        class="primary-txt"
+                        target="_blank"
+                        >SafePal</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="btn-main connectBtn mt-2">
+                  <span class="mas">Connect Wallet</span>
+                  <button
+                    type="button"
+                    id="walletConnect"
+                    onclick="connectAccount()"
+                  >
+                    <span
+                      id="metamaskConnection"
+                      class="icon54-v1-wallet-3 mbr-iconfont mbr-iconfont-btn"
+                    ></span
+                    >Connect Wallet
+                  </button>
+                </div>
+                <!-- <div class="btn-main connectBtn mt-2">
+                    <span class="mas">Connect Wallet</span>
+                    <button type="button" name="Hover" id="btn-connect">Connect Wallet</button>
+                </div> -->
+                <a
+                  class="text-center primary-txt pt-2"
+                  href="https://docs.ricefarm.fi/guides/use-trustwallet-on-desktop"
+                  target="_blank"
+                  >How to connect Pazzive's Dapp to wallet</a
+                >
+              </div>
+            </div>
+            <div class="offset-md-3"></div>
+          </div>
+        </div>
+      </section>
+      <!-- Reward share section ends here -->
     </div>
 
-
     <div id="connected" class="position-relative" style="display: none">
-        <!-- Navbar starts here -->
-        <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="https://paz.fuzion.team/">
-                    <img src="./assets/img/paz-dark.svg" alt="pazzive-logo" class="brand-logo">
-                </a>
+      <!-- Navbar starts here -->
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="https://paz.fuzion.team/">
+            <img
+              src="./assets/img/paz-dark.svg"
+              alt="pazzive-logo"
+              class="brand-logo"
+            />
+          </a>
 
-                <div class="ml-auto">
-                    <div class="btn-main connectBtn mt-2 accountBtn">
-                        <span class="mas" id="shortAddress"></span>
-                        <button type="button" name="Hover" id="showAccountBtn"><span id="shortAddress-2"></span></button>
-                    </div>
-
-                </div>
+          <div class="ml-auto">
+            <div class="btn-main connectBtn mt-2 accountBtn">
+              <span class="mas" id="shortAddress"></span>
+              <button type="button" name="Hover" id="showAccountBtn">
+                <span id="shortAddress-2"></span>
+              </button>
             </div>
-        </nav>
-
-        <!-- Navbar ends here -->
-
-        <!-- Show Account Modal starts here -->
-        <div id="showAccountModal" class="account-modal">
-            <div class="account-modal-content">
-                <h5>Your wallet</h5>
-                <span class="close account-modal-close float-right">&times;</span>
-                <hr>
-                <h5 id="shortAccount"></h5>
-                <div class="row">
-                    <div class="col-12 d-flex justify-content-center">
-                        <a id="bscscan-link" target="_blank" class="bscscan-link">View on BscScan</a>
-                        <input type="text" id="addressInput" class="copiedTxt">
-                        <button id="copyBtn" class="copyBtn">Copy</button>
-                    </div>
-                </div>
-
-                <div class="d-flex justify-content-center mt-3">
-                    <div class="btn-main mx-auto" style="width: 40%;">
-                        <span class="mas">LOGOUT</span>
-                        <button id="btn-disconnect" type="button" name="Hover">LOGOUT</button>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-        <!-- Show Account Modal ends here -->
+      </nav>
 
-        <!--- Reward share section starts here --->
-        <section class="reward-share-section mt-5">
-            <div class="container">
-                <div class="row mt-5">
-                    <div class="offset-lg-4 offset-md-3"></div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card py-4" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
-                            <img src="./assets/img/pazzive-coin-dark.svg" alt="" class="card-icon">
-                            <div class="card-body py-4 mt-3">
-                                <h5 class="pt-3 card-heading">PAZZIVE</h5>
-                                <h5>Your Reward Share</h5>
-                                <h5>0.000 %</h5>
-                                <p class="card-content">Buy More To Increase Your BUSD Reward Share! Accumulating Wealth Was Never This Simple!</p>
-                                <div class="btn-main">
-                                    <span class="mas">Buy $PAZ</span>
-                                    <button id="confirmBtn" data-dismiss="modal" type="button" name="Hover">Buy $PAZ</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="offset-lg-4 offset-md-3"></div>
-                </div>
+      <!-- Navbar ends here -->
 
-                <div class="row mt-5">
-                    <div class="col-md-12">
-                        <div class="card py-4" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
-                            <h5 class="color-white">My collectable BUSD: 0.00000 BUSD</h5>
-                            <p class="primary-txt"><b>*Forecasted Annual BUSD Rewards: 0.000 BUSD</b></p>
-                            <p>*Pool and Rewards are always changing based on buys, sells, collects by others and your percentage holdings.
-                            </p>
-                            <h6 class="card-content">Next Collect Date: You need to Buy and Hold Tokens to Earn BUSD
-                            </h6>
-                            <div class="btn-main mt-4 mx-auto collect-btn-width">
-                                <span class="mas">Collect my BUSD</span>
-                                <button type="button" name="Hover" class="">Collect my BUSD</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-4 mt-5">
-                        <div class="card py-4" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
-                            <div class="card-body pt-3">
-                                <img src="./assets/img/card-icon-1.png" alt="" class="card-icon">
-                                <h5 class="card-heading mt-3">Max Transaction Amount</h5>
-                                <p>$ <span id="max_transaction"></span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mt-5">
-                        <div class="card py-4" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
-                            <div class="card-body pt-3">
-                                <img src="./assets/img/card-icon-2.png" alt="" class="card-icon">
-                                <h5 class="card-heading mt-3">Total liquidity pool</h5>
-                                <p>$ <span id="total_liquidity_pool"></span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mt-5">
-                        <div class="card py-4" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
-                            <div class="card-body pt-3">
-                                <img src="./assets/img/card-icon-3.png" alt="" class="card-icon">
-                                <h5 class="card-heading mt-3">Current 1 mil $PAZ Price</h5>
-                                <p>$ 0.01707257</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mt-4">
-                        <div class="card py-4" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
-                            <div class="card-body pt-3">
-                                <img src="./assets/img/card-icon-4.png" alt="" class="card-icon">
-                                <h5 class="card-heading mt-3">Total BUSD in liquidity pool</h5>
-                                <p>BUSD 4,157.442</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mt-4">
-                        <div class="card py-4" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
-                            <div class="card-body pt-3">
-                                <img src="./assets/img/card-icon-5.png" alt="" class="card-icon">
-                                <h5 class="card-heading mt-3">Total BUSD in reward pool</h5>
-                                <p>BUSD 150.574</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mt-4">
-                        <div class="card py-4" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
-                            <div class="card-body pt-3">
-                                <img src="./assets/img/card-icon-6.png" alt="" class="card-icon">
-                                <h5 class="card-heading mt-3">Your $PAZ balance</h5>
-                                <p>$PAZ 0</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <!-- Show Account Modal starts here -->
+      <div id="showAccountModal" class="account-modal">
+        <div class="account-modal-content">
+          <h5>Your wallet</h5>
+          <span class="close account-modal-close float-right">&times;</span>
+          <hr />
+          <h5 id="shortAccount"></h5>
+          <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+              <a id="bscscan-link" target="_blank" class="bscscan-link"
+                >View on BscScan</a
+              >
+              <input type="text" id="addressInput" class="copiedTxt" />
+              <button id="copyBtn" class="copyBtn">Copy</button>
             </div>
-        </section>
-        <!--- Reward share section ends here --->
+          </div>
 
-        <span class="calculator-label">
-            Reward Calculator
-        </span>
+          <div class="d-flex justify-content-center mt-3">
+            <div class="btn-main mx-auto" style="width: 40%">
+              <span class="mas">LOGOUT</span>
+              <button id="btn-disconnect" type="button" name="Hover">
+                LOGOUT
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Show Account Modal ends here -->
 
-        <!-- <footer>
+      <!--- Reward share section starts here --->
+      <section class="reward-share-section mt-5">
+        <div class="container">
+          <div class="row mt-5">
+            <div class="offset-lg-4 offset-md-3"></div>
+            <div class="col-lg-4 col-md-6">
+              <div
+                class="card py-4"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                data-aos-once="true"
+              >
+                <img
+                  src="./assets/img/pazzive-coin-dark.svg"
+                  alt=""
+                  class="card-icon"
+                />
+                <div class="card-body py-4 mt-3">
+                  <h5 class="pt-3 card-heading">PAZZIVE</h5>
+                  <h5>Your Reward Share</h5>
+                  <h5>0.000 %</h5>
+                  <p class="card-content">
+                    Buy More To Increase Your BUSD Reward Share! Accumulating
+                    Wealth Was Never This Simple!
+                  </p>
+                  <div class="btn-main">
+                    <span class="mas">Buy $PAZ</span>
+                    <button data-dismiss="modal" type="button" name="Hover">
+                      Buy $PAZ
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="offset-lg-4 offset-md-3"></div>
+          </div>
+
+          <div class="row mt-5">
+            <div class="col-md-12">
+              <div
+                class="card py-4"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                data-aos-once="true"
+              >
+                <h5 class="color-white">My collectable BUSD: 0.00000 BUSD</h5>
+                <p class="primary-txt">
+                  <b>*Forecasted Annual BUSD Rewards: 0.000 BUSD</b>
+                </p>
+                <p>
+                  *Pool and Rewards are always changing based on buys, sells,
+                  collects by others and your percentage holdings.
+                </p>
+                <h6 class="card-content">
+                  Next Collect Date: You need to Buy and Hold Tokens to Earn
+                  BUSD
+                </h6>
+                <div class="btn-main mt-4 mx-auto collect-btn-width">
+                  <span class="mas">Collect my BUSD</span>
+                  <button type="button" name="Hover" class="">
+                    Collect my BUSD
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 mt-5">
+              <div
+                class="card py-4"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                data-aos-once="true"
+              >
+                <div class="card-body pt-3">
+                  <img
+                    src="./assets/img/card-icon-1.png"
+                    alt=""
+                    class="card-icon"
+                  />
+                  <h5 class="card-heading mt-3">Max Transaction Amount</h5>
+                  <p>$ <span id="max_transaction"></span></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mt-5">
+              <div
+                class="card py-4"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                data-aos-once="true"
+              >
+                <div class="card-body pt-3">
+                  <img
+                    src="./assets/img/card-icon-2.png"
+                    alt=""
+                    class="card-icon"
+                  />
+                  <h5 class="card-heading mt-3">Total liquidity pool</h5>
+                  <p>$ <span id="total_liquidity_pool">500000</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mt-5">
+              <div
+                class="card py-4"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                data-aos-once="true"
+              >
+                <div class="card-body pt-3">
+                  <img
+                    src="./assets/img/card-icon-3.png"
+                    alt=""
+                    class="card-icon"
+                  />
+                  <h5 class="card-heading mt-3">Current 1 mil $PAZ Price</h5>
+                  <p>$ 0.01707257</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mt-4">
+              <div
+                class="card py-4"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                data-aos-once="true"
+              >
+                <div class="card-body pt-3">
+                  <img
+                    src="./assets/img/card-icon-4.png"
+                    alt=""
+                    class="card-icon"
+                  />
+                  <h5 class="card-heading mt-3">
+                    Total BUSD in liquidity pool
+                  </h5>
+                  <p>BUSD 4,157.442</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mt-4">
+              <div
+                class="card py-4"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                data-aos-once="true"
+              >
+                <div class="card-body pt-3">
+                  <img
+                    src="./assets/img/card-icon-5.png"
+                    alt=""
+                    class="card-icon"
+                  />
+                  <h5 class="card-heading mt-3">Total BUSD in reward pool</h5>
+                  <p>BUSD 150.574</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mt-4">
+              <div
+                class="card py-4"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                data-aos-once="true"
+              >
+                <div class="card-body pt-3">
+                  <img
+                    src="./assets/img/card-icon-6.png"
+                    alt=""
+                    class="card-icon"
+                  />
+                  <h5 class="card-heading mt-3">Your $PAZ balance</h5>
+                  <p>$PAZ 0</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--- Reward share section ends here --->
+
+      <span class="calculator-label"> Reward Calculator </span>
+
+      <!-- <footer>
         </footer> -->
 
-        <div style="display: none;">
-            <div id="network">
-                <span id="network-name"></span>
-                <span id="selected-account"></span>
-            </div>
-            <p><span id="accounts"></span></p>
+      <div style="display: none">
+        <div id="network">
+          <span id="network-name"></span>
+          <span id="selected-account"></span>
         </div>
+        <p><span id="accounts"></span></p>
+      </div>
 
-        <div id="templates" style="display: none">
-            <template id="template-balance">
-                <tr>
-                    <th class="address"></th>
-                    <td class="balance"></td>
-                </tr>
-            </template>
-        </div>
-
+      <div id="templates" style="display: none">
+        <template id="template-balance">
+          <tr>
+            <th class="address"></th>
+            <td class="balance"></td>
+          </tr>
+        </template>
+      </div>
     </div>
 
     <!-- Network error display starts here -->
     <div id="networkError" style="display: none">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="warning-block my-auto mx-auto">
-                        <a href="index.html">
-                            <img src="./assets/img/paz-dark.svg" alt="" width="290px" class="mx-auto text-center mb-3">
-                        </a>
-                        <h5 class="warning-heading text-center"><span class="mr-2"><img src="./assets/img/warning.svg" alt="warning-icon" class="warning-icon"></span>Pazzive is not yet deployed to this network.</h5>
-                        <p class="warning-subheading text-center">Please switch to Binance Smart Chain.</p>
-                    </div>
-                </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="warning-block my-auto mx-auto">
+              <a href="index.html">
+                <img
+                  src="./assets/img/paz-dark.svg"
+                  alt=""
+                  width="290px"
+                  class="mx-auto text-center mb-3"
+                />
+              </a>
+              <h5 class="warning-heading text-center">
+                <span class="mr-2"
+                  ><img
+                    src="./assets/img/warning.svg"
+                    alt="warning-icon"
+                    class="warning-icon" /></span
+                >Pazzive is not yet deployed to this network.
+              </h5>
+              <p class="warning-subheading text-center">
+                Please switch to Binance Smart Chain.
+              </p>
             </div>
+          </div>
         </div>
+      </div>
     </div>
     <!-- Network error display starts here -->
 
     <!-- All js files -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
     <!-- Navbar color change -->
     <script src="./assets/js/script.js"></script>
     <!-- AOS animation js  -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init();
+      AOS.init();
     </script>
     <!-- web3 script -->
-    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://unpkg.com/web3@1.2.11/dist/web3.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider@1.2.1/dist/umd/index.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js"
+      integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/web3@1.2.11/dist/web3.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/web3modal@1.9.0/dist/index.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/@walletconnect/web3-provider@1.2.1/dist/umd/index.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"
+    ></script>
     <script src="./assets/js/connectWallet.js"></script>
     <!-- read contract Script -->
     <script src="./assets/js/readContract.js"></script>
-
-</body>
-
+  </body>
 </html>
