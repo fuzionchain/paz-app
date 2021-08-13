@@ -680,6 +680,7 @@ async function logOut() {
       isConnected = false;
       user.address = undefined;
       // Set the UI back to the initial state
+      modal.style.display = "none";
       document.querySelector("#prepare").style.display = "block";
       document.querySelector("#connected").style.display = "none";
 }

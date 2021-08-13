@@ -551,9 +551,9 @@ footer {
 /* Media queries */
 
 /* For larger screens */
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1500px) {
   .modal-dialog{
-    width: 35% !important;
+    width: 700px !important;
   }
 }
 
