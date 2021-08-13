@@ -555,45 +555,44 @@ let user = {
 $(function () {
   init();
   const connectionStatus = localStorage.getItem("connectStatus");
-  if(connectionStatus == "connected"){
+  if (connectionStatus == "connected") {
     userLoginAttempt();
-    $("#disclaimerModal").modal('toggle');
-  }
-  else{
-    $('#disclaimerModal').modal('show'); 
+    $("#disclaimerModal").modal("toggle");
+  } else {
+    $("#disclaimerModal").modal("show");
   }
   document.querySelector("#btn-disconnect").addEventListener("click", logOut);
 });
 
-function init() {  
-    if (location.protocol !== "https:") {
-        document.querySelector("#btn-connect").setAttribute("disabled", "disabled");
-        return;
-    }
-    const providerOptions = {
-        walletconnect: {
-            package: WalletConnectProvider,
-            options: {
-                infuraId: "8043bb2cf99347b1bfadfb233c5325c0",
-            },
-        },
-        fortmatic: {
-            package: Fortmatic,
-            options: {
-                key: "pk_test_391E26A3B43A3350",
-            },
-        },
-    };
-    web3Modal = new Web3Modal({
-        cacheProvider: false, // optional
-        providerOptions, // required
-        disableInjectedProvider: false, // optional. For MetaMask / Brave / Opera.
-    });
+function init() {
+  if (location.protocol !== "https:") {
+    document.querySelector("#btn-connect").setAttribute("disabled", "disabled");
+    return;
+  }
+  const providerOptions = {
+    walletconnect: {
+      package: WalletConnectProvider,
+      options: {
+        infuraId: "8043bb2cf99347b1bfadfb233c5325c0",
+      },
+    },
+    fortmatic: {
+      package: Fortmatic,
+      options: {
+        key: "pk_test_391E26A3B43A3350",
+      },
+    },
+  };
+  web3Modal = new Web3Modal({
+    cacheProvider: false, // optional
+    providerOptions, // required
+    disableInjectedProvider: false, // optional. For MetaMask / Brave / Opera.
+  });
 }
 
-async function connectAccount(){
+async function connectAccount() {
   provider = await web3Modal.connect();
-  localStorage.setItem('connectStatus','connected');
+  localStorage.setItem("connectStatus", "connected");
   await web3.eth.getAccounts().then(function (result) {
     user.address = result[0];
     initContract();
@@ -603,15 +602,14 @@ async function connectAccount(){
 async function userLoginAttempt() {
   let isConnected = false;
   await window.addEventListener("load", async function () {
-    status = localStorage.getItem('connectStatus');
+    status = localStorage.getItem("connectStatus");
     try {
-    if(status != "connected"){
+      if (status != "connected") {
         provider = await web3Modal;
-        localStorage.setItem('connectStatus','connected');
-    }
-    else{
+        localStorage.setItem("connectStatus", "connected");
+      } else {
         startUp();
-    }
+      }
       await web3.eth.getAccounts().then(function (result) {
         user.address = result[0];
         initContract();
@@ -619,7 +617,7 @@ async function userLoginAttempt() {
     } catch (error) {
       console.error(error);
     }
-  }); 
+  });
 }
 
 async function initContract() {
@@ -645,21 +643,21 @@ async function initContract() {
 async function startUp() {
   if (user.address != undefined) {
     let p2 = user.address.slice(42 - 5);
-    $("#shortAddress")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`
-    $("#shortAccount")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`
-    $("#showAccountBtn")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`
+    $("#shortAddress")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
+    $("#shortAccount")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
+    $("#showAccountBtn")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
 
-     // Display Network Error
-     const chainId = await web3.eth.getChainId();
-     if (chainId != 56 && chainId != 97) {
-        document.querySelector("#prepare").style.display = "none";
-        document.querySelector("#connected").style.display = "none";
-        document.querySelector("#networkError").style.display = "block";
-      } else {
-        document.querySelector("#networkError").style.display = "none";
-        document.querySelector("#prepare").style.display = "none";
-        document.querySelector("#connected").style.display = "block";
-      }
+    // Display Network Error
+    const chainId = await web3.eth.getChainId();
+    if (chainId != 56 && chainId != 97) {
+      document.querySelector("#prepare").style.display = "none";
+      document.querySelector("#connected").style.display = "none";
+      document.querySelector("#networkError").style.display = "block";
+    } else {
+      document.querySelector("#networkError").style.display = "none";
+      document.querySelector("#prepare").style.display = "none";
+      document.querySelector("#connected").style.display = "block";
+    }
 
     //Bscscan link href
     const link = document.getElementById("bscscan-link");
@@ -674,13 +672,13 @@ async function startUp() {
 }
 
 async function logOut() {
-      await web3Modal.clearCachedProvider();
-      selectedAccount = null;
-      localStorage.clear();
-      isConnected = false;
-      user.address = undefined;
-      // Set the UI back to the initial state
-      modal.style.display = "none";
-      document.querySelector("#prepare").style.display = "block";
-      document.querySelector("#connected").style.display = "none";
+  await web3Modal.clearCachedProvider();
+  selectedAccount = null;
+  localStorage.clear();
+  isConnected = false;
+  user.address = undefined;
+  // Set the UI back to the initial state
+  modal.style.display = "none";
+  document.querySelector("#prepare").style.display = "block";
+  document.querySelector("#connected").style.display = "none";
 }

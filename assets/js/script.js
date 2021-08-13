@@ -10,7 +10,6 @@ $(window).scroll(function () {
   }
 });
 
-
 // show account modal
 
 var modal = document.getElementById("showAccountModal");
@@ -38,22 +37,24 @@ copyBtn.onclick = function () {
   document.execCommand("Copy");
 };
 
-
-// Confirm Modal 
-$('#disclaimerModal').modal({backdrop: 'static', keyboard: false}) 
-$('.closeModal').click(function(){
-$("#disclaimerModal").modal('toggle');
+// Confirm Modal
+$("#disclaimerModal").modal({ backdrop: "static", keyboard: false });
+$(".closeModal").click(function () {
+  $("#disclaimerModal").modal("toggle");
 });
 
 // Confirm Terms and service Btn
 
-$( ".number" ).on( "click", function() {
-  if($( ".number:checked" ).length > 1)
-  {
-    $('#confirmBtn').prop('disabled', false).addClass("confirmBtn").removeClass("is-disabled");
+$(".number").on("click", function () {
+  if ($(".number:checked").length > 1) {
+    $("#confirmBtn")
+      .prop("disabled", false)
+      .addClass("confirmBtn")
+      .removeClass("is-disabled");
+  } else {
+    $("#confirmBtn")
+      .prop("disabled", true)
+      .removeClass("confirmBtn")
+      .addClass("is-disabled");
   }
-  else
-  {
-    $('#confirmBtn').prop('disabled', true).removeClass("confirmBtn").addClass("is-disabled");
-  }  
 });

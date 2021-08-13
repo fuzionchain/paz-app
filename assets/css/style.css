@@ -113,7 +113,7 @@ button:focus {
   background: linear-gradient(to right, #12d3ff 0%, #921cff 103%);
 }
 
-.btn-main input{
+.btn-main input {
   width: calc(100% - 4px);
   height: calc(100% - 4px);
   border-radius: 50px;
@@ -145,7 +145,12 @@ button:focus {
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.7px;
-  background: radial-gradient( circle, rgb(27 0 255 / 74%) 13%, rgb(0 30 247 / 86%) 21%, rgb(107 90 234) 91% );
+  background: radial-gradient(
+    circle,
+    rgb(27 0 255 / 74%) 13%,
+    rgb(0 30 247 / 86%) 21%,
+    rgb(107 90 234) 91%
+  );
   margin: 2px;
   -webkit-mask: url(https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png);
   mask: url(https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png);
@@ -163,7 +168,7 @@ button:focus {
   animation: ani 0.7s steps(29) forwards;
 }
 
-.btn-main input:hover{
+.btn-main input:hover {
   -webkit-animation: ani 0.7s steps(29) forwards;
   animation: ani 0.7s steps(29) forwards;
 }
@@ -359,11 +364,11 @@ button:focus {
 
 /* pop up modal starts here */
 
-.modal.show  {
-  display:flex!important;
-  flex-direction:column;
-  justify-content:center;
-  align-content:center;
+.modal.show {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
   align-items: flex-start;
 }
 
@@ -373,15 +378,15 @@ button:focus {
   padding: 20px;
   font-size: 15px;
   color: white;
-  background-color: #161c3b!important;
+  background-color: #161c3b !important;
   width: 100%;
 }
 
-.modal-dialog{
+.modal-dialog {
   width: 54% !important;
 }
 
-.confirmBtn{
+.confirmBtn {
   position: relative;
   height: 43px;
   overflow: hidden;
@@ -397,7 +402,7 @@ button:focus {
   justify-content: center;
   cursor: pointer !important;
 }
-#confirmBtn{
+#confirmBtn {
   position: relative;
   height: 43px;
   overflow: hidden;
@@ -410,13 +415,13 @@ button:focus {
   display: flex;
   justify-content: center;
   cursor: not-allowed;
-  color:white;
-  background-image: linear-gradient(90deg,#6e6e6e,#dbdbdb);
+  color: white;
+  background-image: linear-gradient(90deg, #6e6e6e, #dbdbdb);
 }
-.is-disabled{
+.is-disabled {
   cursor: not-allowed !important;
 }
-.close{
+.close {
   opacity: none !important;
 }
 
@@ -552,7 +557,7 @@ footer {
 
 /* For larger screens */
 @media screen and (min-width: 1500px) {
-  .modal-dialog{
+  .modal-dialog {
     width: 700px !important;
   }
 }
@@ -573,14 +578,14 @@ footer {
   .modal-content {
     width: 100% !important;
   }
-  .modal-dialog{
+  .modal-dialog {
     width: 68% !important;
   }
 }
 
 /* for mobile */
-@media (min-width: 576px){
-  .modal-dialog{
+@media (min-width: 576px) {
+  .modal-dialog {
     max-width: 96% !important;
   }
 }
