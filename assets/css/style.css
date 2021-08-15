@@ -3,8 +3,8 @@
 /* Global styling starts here */
 
 :root {
-  --primary-color: #1c164e;
-  --secondry-color: #12d3ff;
+  --primary-color: #140D38;
+  --secondry-color: #231D4F;
 }
 
 * {
@@ -20,6 +20,11 @@ html {
 a {
   text-decoration: none;
   cursor: pointer !important;
+  color: white !important;
+}
+a:hover{
+  text-decoration: none !important;
+  color: inherit;
 }
 
 button {
@@ -31,337 +36,247 @@ ul li {
   list-style-type: none;
 }
 
-a:hover {
-  text-decoration: none !important;
-  cursor: pointer !important;
-  color: white !important;
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 section {
-  padding-top: 2%;
-  padding-bottom: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
   background: var(--primary-color) !important;
+  height: auto;
 }
 
-.primary-btn {
-  background: var(--secondry-color);
-  color: white;
-  padding: 8px 25px;
-  border-radius: 50px;
-  font-weight: 700;
+.custom-container{
+  width: 85%;
   margin: 0 auto;
-  border: 3px solid var(--secondry-color);
 }
 
-.primary-btn:hover {
-  background: transparent;
-  color: var(--secondry-color);
-  color: var(--secondry-color) !important;
+.navbar{
+  padding: 20px 0px !important;
 }
-
-.secondry-btn {
-  background: var(--secondry-color);
-  color: white !important;
-  padding: 5px 25px;
-  border-radius: 50px;
-  font-weight: 700 !important;
-  border: none;
-  background: radial-gradient(
-    circle,
-    rgb(27 0 251) 13%,
-    rgb(0 30 247 / 99%) 21%,
-    rgb(107 90 234) 91%
-  );
-}
-
-hr {
-  border-top: 1px solid rgb(255 255 255 / 28%) !important;
-}
-
-.buy-btn {
-  background: linear-gradient(to right, #12d3ff 0%, #0033cc5c 103%);
-  color: white;
-  border-radius: 50px;
-  font-weight: normal !important;
-  padding: 8px 70px;
-  text-align: center;
-  border: none;
-}
-
-.buy-btn:hover {
-  background: linear-gradient(to right, #12d3ff 20%, #0033cc5c 100%);
-}
-
-.primary-txt {
-  color: var(--secondry-color);
-}
-
-button:active,
-button:focus {
-  -moz-outline-style: none !important;
-  outline: none;
-}
-
-.btn-main {
-  position: relative;
-  height: 43px;
-  overflow: hidden;
-  transition: 0.5s;
-  color: #fff;
+.section-heading{
   font-size: 15px;
-  border-radius: 50px;
-  background: linear-gradient(to right, #12d3ff 0%, #921cff 103%);
+  color: #9793BD;
 }
-
-.btn-main input {
-  width: calc(100% - 4px);
-  height: calc(100% - 4px);
-  border-radius: 50px;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.7px;
-  background: radial-gradient(
-    circle,
-    rgb(27 0 255) 13%,
-    rgb(0 30 247 / 86%) 21%,
-    rgb(107 90 234) 91%
-  );
-  margin: 2px;
-  -webkit-mask: url(https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png);
-  mask: url(https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png);
-  -webkit-mask-size: 3000% 100%;
-  mask-size: 3000% 100%;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  -webkit-animation: ani2 0.7s steps(29) forwards;
-  animation: ani2 0.7s steps(29) forwards;
+.color-white{
+  color: #FFFFFF !important;
 }
-
-.btn-main button {
-  width: calc(100% - 4px);
-  height: calc(100% - 4px);
-  border-radius: 50px;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.7px;
-  background: radial-gradient(
-    circle,
-    rgb(27 0 255 / 74%) 13%,
-    rgb(0 30 247 / 86%) 21%,
-    rgb(107 90 234) 91%
-  );
-  margin: 2px;
-  -webkit-mask: url(https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png);
-  mask: url(https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png);
-  -webkit-mask-size: 3000% 100%;
-  mask-size: 3000% 100%;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  -webkit-animation: ani2 0.7s steps(29) forwards;
-  animation: ani2 0.7s steps(29) forwards;
+.is-disabled{
+  cursor: not-allowed !important;
 }
-
-.btn-main button:hover {
-  -webkit-animation: ani 0.7s steps(29) forwards;
-  animation: ani 0.7s steps(29) forwards;
+.hover-magnify:hover{
+  transform: scale(1.5);
 }
-
-.btn-main input:hover {
-  -webkit-animation: ani 0.7s steps(29) forwards;
-  animation: ani 0.7s steps(29) forwards;
-}
-.mas {
-  color: #fff;
-  text-align: center;
-  width: 100%;
-  position: absolute;
-  font-size: 15px;
-  overflow: hidden;
-  top: 50%;
-  transform: translateY(-50%);
-  font-weight: 700;
-  letter-spacing: 0.7px;
-}
-
-.bb-btn {
-  background-image: linear-gradient(90deg, #6f7c8e, #6f7c8e);
-}
-
-.blue-btn button {
-  background: #39475c;
-}
-
-.connectBtn button {
-  -webkit-mask: url(https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png);
-  mask: url(https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png);
-  -webkit-mask-size: 2300% 100%;
-  mask-size: 2300% 100%;
-  -webkit-animation: ani2 0.7s steps(22) forwards;
-  animation: ani2 0.7s steps(22) forwards;
-}
-
-.connectBtn button:hover {
-  -webkit-animation: ani 0.7s steps(22) forwards;
-  animation: ani 0.7s steps(22) forwards;
-}
-
-.collect-btn-width {
-  width: 30%;
-}
-
-@-webkit-keyframes ani {
-  0% {
-    -webkit-mask-position: 0 0;
-    mask-position: 0 0;
-  }
-  to {
-    -webkit-mask-position: 100% 0;
-    mask-position: 100% 0;
-  }
-}
-
-@keyframes ani {
-  0% {
-    -webkit-mask-position: 0 0;
-    mask-position: 0 0;
-  }
-  to {
-    -webkit-mask-position: 100% 0;
-    mask-position: 100% 0;
-  }
-}
-
-@-webkit-keyframes ani2 {
-  0% {
-    -webkit-mask-position: 100% 0;
-    mask-position: 100% 0;
-  }
-  to {
-    -webkit-mask-position: 0 0;
-    mask-position: 0 0;
-  }
-}
-
-@keyframes ani2 {
-  0% {
-    -webkit-mask-position: 100% 0;
-    mask-position: 100% 0;
-  }
-  to {
-    -webkit-mask-position: 0 0;
-    mask-position: 0 0;
-  }
-}
-
-.accountBtn {
-  width: 165px;
-}
-
 /* Global styling ends here */
 
-/* navbar starts here */
-
-.navbar {
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
+/* navbar */
+#prepare{
+  padding-top: 9%;
+}
+.nav-inner{
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+}
+.metamask-btn {
+  background-image: url(../img/metmask-icon.svg);
+  background-color: var(--secondry-color);
+  color: white;
+  border: 2px solid #413C67;
+  padding: 10px 20px 10px 42px;
+  border-radius: 7px;
+  height: 10px;
+  width: 20px;
+  background-repeat: no-repeat;
+  background-position: 8px;
+  font-size: 17px;
+}
+.price-btn {
+  background-image: url(../img/pazz-icon.svg);
+  background-color: #231D4F;
+  color: white;
+  border: 2px solid #413C67;
+  padding: 10px 20px 10px 42px;
+  border-radius: 7px;
+  height: 10px;
+  width: 20px;
+  background-repeat: no-repeat;
+  background-position: 8px;
+  font-size: 17px;
+}
+.connect-btn{
+  background: linear-gradient(90deg, rgba(109,61,249,1) 7%, rgba(69,115,249,1) 41%);
+  color: white !important;
+  border: 2px solid rgba(69,115,249,1);
+  padding: 10px 20px;
+  border-radius: 7px;
+  height: 10px;
+  width: 20px;
+  font-size: 17px;
+}
+.connect-btn img{
+  vertical-align: middle;
 }
 
-.brand-logo {
-  width: 150px;
+/* your-stats-section */
+.your-stat-card-1{
+  background: rgb(60,136,236);
+  background: linear-gradient(90deg, rgba(60,136,236,1) 31%, rgba(101,50,243,1) 69%);
+  border-radius: 10px;
+  padding: 22px;
+  width: 100%;
+  height: 220px;
 }
 
-/* navbar ends here */
-
-/* Reward section starts here */
-
-.card {
-  padding: 20px 10px;
-  background: #06022d91 !important;
+.buy-btn{
+  background: #FFFFFF;
+  border: 1.2px solid #FFFFFF;
+  width: 100%;
+  color: #201760 !important;
   text-align: center;
-  margin: 0 auto;
-  border: none;
-  border-radius: 20px !important;
-  box-shadow: 0px 1px 5px 2px var(--secondry-color);
-  -webkit-box-shadow: 0px 1px 5px 2px var(--secondry-color);
-  -moz-box-shadow: 0px 1px 5px 2px var(--secondry-color);
-  color: white;
-}
-
-.card-body {
-  background: var(--primary-color);
-  color: white;
-  padding: 0px 10px !important;
-}
-
-.card-icon {
-  width: 80px;
-  margin: 0 auto;
-}
-
-.card-content {
   font-size: 15px;
-  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  padding: 9px;
+  border-radius: 5px;
+}
+
+.your-stat-heading{
+  color: #A9ADF8;
+  font-size: 26px;
+  font-weight: inherit;
+}
+
+.your-stat-subheading{
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.your-stat-card-2{
+  background: rgb(59,138,236);
+  background: linear-gradient(90deg, rgba(59,138,236,1) 18%, rgba(102,48,243,1) 55%);
+  border-radius: 10px;
+  padding: 22px;
+  width: 100%;
+  height: 220px;
+}
+
+.your-stat-card-2 .connect-wallet{
+  background: transparent;
+  border: 1.2px solid #FFFFFF;
+  width: 100%;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  padding: 9px;
+  border-radius: 5px;
+}
+
+.stat-card{
+  background: var(--secondry-color);
+  padding: 22px 25px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.stat-card-heading{
+  font-size: 22px;
+  color: #918EA7;
+}
+
+.stat-card-subheading{
+  font-size: 15px;
+  color: #9793BD;
+}
+
+.card-connect-btn{
+  color: white;
+  border: 1px solid white;
+  padding: 7px 14px;
+  position: absolute;
+  right: 34px;
+  top: 50%;
+  transform: translate(0px, -50%);
+  border-radius: 5px;
+  background: transparent;
+}
+
+/* Feeless selling section */
+.card-connect-btn-2{
+  color: white;
+  border: 1px solid white;
+  padding: 7px 14px;
+  border-radius: 5px;
+  background: transparent;
+}
+
+/* footer */
+.footer-section{
+  padding-top: 10%;
+  padding-bottom: 1%;
+  height: auto;
+}
+.footer-logo{
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.footer-txt{
+  color: #7b7b7b;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* connected screen starts here */
+.re-invest-form input[type=number]{
+  padding: 9px !important;
+  border: 1px solid #8687F4 !important;
+  background: #3949B4;
+  width: 371px;
+}
+.re-invest-form input[type=submit]{
+  padding: 9px 18px !important;
+  border: 1px solid #F2F2F2 !important;
+  background: transparent;
+  margin-left: 20px;
   color: white;
 }
-
-.card-heading {
-  color: var(--secondry-color);
+.re-invest-form input:focus{
+  color: white;
 }
-
-#return-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.7);
-  width: 50px;
-  height: 50px;
-  display: block;
-  text-decoration: none;
-  -webkit-border-radius: 35px;
-  -moz-border-radius: 35px;
-  border-radius: 35px;
-  display: none;
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-#return-to-top i {
-  color: #fff;
-  margin: 0;
-  position: relative;
-  left: 16px;
-  top: 13px;
-  font-size: 19px;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-/* Reward section ends here */
-
-.calculator-label {
-  position: fixed;
+.input-txt{
+  position: absolute;
+  right: 10px;
   top: 50%;
-  right: -55px;
-  background: var(--secondry-color);
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-  color: #fff;
-  padding: 10px;
-  border-radius: 0 0 5px 5px;
-  font-size: 16px;
-  letter-spacing: 0;
-  z-index: 1;
+  transform: translate(0px, -50%);
+  color: white;
 }
-
+.approve-form input[type=number]{
+  padding: 9px !important;
+  border: 1px solid #3F3572 !important;
+  background: #0C0726;
+  width: 300px;
+}
+.approve-form input[type=submit]{
+  padding: 9px 18px !important;
+  border: 1px solid #F2F2F2 !important;
+  background: transparent;
+  margin-left: 20px;
+  color: white;
+}
+.approve-form input:focus{
+  color: white;
+}
+#connected{
+  padding-top: 9%;
+}
 /* pop up modal starts here */
 
 .modal.show {
@@ -438,22 +353,18 @@ button:focus {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: #241b61c9;
+  background-color: #241b6185;
   position: fixed;
 }
 
 .account-modal-content {
-  background-color: #160f46;
+  background-color: #231d4f;
   margin: auto;
   padding: 20px;
-  border: 1px solid #888;
   width: 31%;
-  border-radius: 24px;
+  border-radius: 8px;
   margin-top: 8%;
   position: relative;
-  box-shadow: -2px 1px 9px 0px rgb(0 78 255 / 77%);
-  -webkit-box-shadow: -2px 1px 9px 0px rgb(0 78 255 / 77%);
-  -moz-box-shadow: -2px 1px 9px 0px rgb(0 78 255 / 77%);
 }
 
 .account-modal-content h5 {
@@ -499,27 +410,54 @@ button:focus {
 }
 
 .bscscan-link {
-  margin-right: 13px;
-  font-size: 13px;
-  border: 2px solid rgb(255 255 255);
-  padding: 6px 15px;
-  font-weight: 500;
-  border-radius: 10px;
-  color: white;
-  background: transparent;
+  color: #09E2FF !important;
+  font-size: 15px;
 }
 
+.accountModal-inner{
+  background: #140D38;
+  padding: 14px 10px;
+  border-radius: 10px;
+  margin-top: 25px;
+}
+
+.btn-disconnect{
+  position: absolute;
+  background: linear-gradient(to right, #12d3ff 0%, #921cff 103%) !important;
+  color: white;
+  border: none;
+  padding: 10px 29px;
+  border-radius: 5px;
+  top: 50%;
+  right: 19px;
+  transform: translate(0px, -50%);
+}
 /* Account model ends here */
 
-/* footer starts here */
-
-footer {
-  background: linear-gradient(to right, #12d3ff 0%, #0033cc5c 103%);
-  height: 100px;
+/* web3.js modal style */
+.bfIkEQ{
+  background-color: #231D4F !important;
+  max-width: 664px !important;
+  border-radius: 10px !important;
 }
 
-/* footer ends here */
+.xPSun{
+  background-color: #231D4F !important;
+  padding: 12px 6px !important;
+}
 
+.kaSVED{
+  border: none !important;
+}
+
+.hBmmHr {
+  color: rgb(160 160 181) !important;
+  font-size: 17px !important;
+} 
+
+.ceSpQQ {
+  font-size: 15px !important;
+}
 /* Network error */
 
 #networkError {
@@ -565,16 +503,6 @@ footer {
 /* For tablet */
 
 @media only screen and (max-width: 1150px) {
-  .card {
-    width: 100% !important;
-  }
-  .secondry-btn {
-    font-size: 12px;
-    padding: 8px 11px;
-  }
-  .buy-btn {
-    width: 100% !important;
-  }
   .modal-content {
     width: 100% !important;
   }
@@ -584,11 +512,6 @@ footer {
 }
 
 /* for mobile */
-@media (min-width: 576px) {
-  .modal-dialog {
-    max-width: 96% !important;
-  }
-}
 
 @media only screen and (max-width: 600px) {
   .modal-content {
@@ -596,33 +519,27 @@ footer {
     font-size: 10px;
     width: 96% !important;
   }
-  .secondry-btn {
-    padding: 8px 13px;
-    font-size: 9px;
-  }
-  .calculator-label {
-    display: none;
-  }
-  .buy-btn {
-    width: 100% !important;
-  }
   .account-modal-content {
     width: 95%;
   }
   .account-modal-content p {
     font-size: 12px;
   }
-  .collect-btn-width {
-    width: 100%;
-  }
-  .accountBtn {
-    width: 135px;
-    height: 35px;
-  }
   .warning-heading {
     font-size: 17px;
   }
   .modal-dialog {
     width: 100% !important;
+  }
+  .connect-btn{
+    display: flex;
+    width: 100%;
+    height: 48px;
+  }
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 96% !important;
   }
 }

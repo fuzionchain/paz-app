@@ -554,7 +554,7 @@ const Contract = new web3.eth.Contract(
 async function getMaxTransaction() {
   const maxTransaction = await Contract.methods._maxTxAmount().call();
   const maxTransactionAmount = web3.utils.fromWei(maxTransaction, "gwei");
-  document.getElementById("max_transaction").innerText = maxTransactionAmount;
+  // document.getElementById("max_transaction").innerText = maxTransactionAmount;
   return maxTransactionAmount;
 }
 
