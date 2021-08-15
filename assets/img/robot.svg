@@ -1,0 +1,22 @@
+<svg id="robot" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
+  <path id="Path" d="M4.1,6.221H1.025A1.025,1.025,0,0,1,0,5.2V0H4.1L6.152,3.076Z" transform="translate(2.051 28.779)" fill="#0050c7"/>
+  <path id="Path-2" data-name="Path" d="M5.667,0H2.051L0,3.076,2.051,6.221H5.127A1.025,1.025,0,0,0,6.152,5.2V.85A1.008,1.008,0,0,0,5.667,0Z" transform="translate(26.797 28.779)" fill="#004597"/>
+  <path id="Path-3" data-name="Path" d="M4.1,8.2H1.025A1.025,1.025,0,0,1,0,7.178V1.025A1.025,1.025,0,0,1,1.025,0H4.1a4.1,4.1,0,0,1,0,8.2Z" transform="translate(26.797 22.627)" fill="#4c5ce1"/>
+  <path id="Path-4" data-name="Path" d="M7.178,8.2H4.1A4.1,4.1,0,0,1,4.1,0H7.178A1.025,1.025,0,0,1,8.2,1.025V7.178A1.025,1.025,0,0,1,7.178,8.2Z" transform="translate(0 22.627)" fill="#6e77e5"/>
+  <rect id="Rectangle" width="22.695" height="14.424" transform="translate(6.152 20.576)" fill="#c5c9f7"/>
+  <rect id="Rectangle-2" data-name="Rectangle" width="11.348" height="14.424" transform="translate(17.5 20.576)" fill="#a8aff1"/>
+  <path id="Path-5" data-name="Path" d="M2.051,1.025V5.2A1.015,1.015,0,0,1,1.025,6.221,1.015,1.015,0,0,1,0,5.2V1.025A1.015,1.015,0,0,1,1.025,0,1.015,1.015,0,0,1,2.051,1.025Z" transform="translate(16.475 4.102)" fill="#007bff"/>
+  <path id="Path-6" data-name="Path" d="M0,6.221V0A1.015,1.015,0,0,1,1.025,1.025V5.2A1.015,1.015,0,0,1,0,6.221Z" transform="translate(17.5 4.102)" fill="#0050c7"/>
+  <path id="Path-7" data-name="Path" d="M22.7,11.279A1.015,1.015,0,0,1,21.67,12.3H1.025A1.015,1.015,0,0,1,0,11.279a11.348,11.348,0,0,1,22.7,0Z" transform="translate(6.152 8.271)" fill="#7986e8"/>
+  <path id="Path-8" data-name="Path" d="M11.348,11.279A1.015,1.015,0,0,1,10.322,12.3H0V0A11.358,11.358,0,0,1,11.348,11.279Z" transform="translate(17.5 8.271)" fill="#6e77e5"/>
+  <g id="Group" transform="translate(4.102 14.424)">
+    <path id="Path-9" data-name="Path" d="M26.8,2.051A2.057,2.057,0,0,1,24.746,4.1H2.051a2.051,2.051,0,0,1,0-4.1h22.7A2.057,2.057,0,0,1,26.8,2.051Z" transform="translate(0 4.102)" fill="#e1e4fb"/>
+    <circle id="Oval" cx="1.025" cy="1.025" r="1.025" transform="translate(8.203)" fill="#e1e4fb"/>
+  </g>
+  <circle id="Oval-2" data-name="Oval" cx="1.025" cy="1.025" r="1.025" transform="translate(20.576 14.424)" fill="#c5c9f7"/>
+  <path id="Path-10" data-name="Path" d="M13.4,0H1.025A1.015,1.015,0,0,0,0,1.025v5.2H14.424v-5.2A1.015,1.015,0,0,0,13.4,0Z" transform="translate(10.254 28.779)" fill="#7986e8"/>
+  <path id="Path-11" data-name="Path" d="M3.076,0A3.076,3.076,0,1,0,6.152,3.076,3.072,3.072,0,0,0,3.076,0Z" transform="translate(14.424)" fill="#00e3ff"/>
+  <path id="Path-12" data-name="Path" d="M13.4,2.051A2.057,2.057,0,0,1,11.348,4.1H0V0H11.348A2.057,2.057,0,0,1,13.4,2.051Z" transform="translate(17.5 18.525)" fill="#c5c9f7"/>
+  <path id="Path-13" data-name="Path" d="M0,6.152V0A3.076,3.076,0,0,1,0,6.152Z" transform="translate(17.5)" fill="#00d0ff"/>
+  <path id="Path-14" data-name="Path" d="M7.178,1.025v5.2H0V0H6.152A1.015,1.015,0,0,1,7.178,1.025Z" transform="translate(17.5 28.779)" fill="#6e77e5"/>
+</svg>

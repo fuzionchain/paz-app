@@ -1,0 +1,10 @@
+<svg id="Group_5" data-name="Group 5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44" height="52" viewBox="0 0 44 52">
+  <defs>
+    <linearGradient id="linear-gradient" y1="-0.2" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00f5ff"/>
+      <stop offset="1" stop-color="#0057ff"/>
+    </linearGradient>
+  </defs>
+  <path id="Fill_1" data-name="Fill 1" d="M9,29.314V18.021a3.006,3.006,0,0,1,3-3h10.63L21.8,19.348a1.685,1.685,0,0,0,2.872,1.2L33.5,11.712a1.674,1.674,0,0,0,0-2.385L27.686,3.512,24.666.494a1.684,1.684,0,0,0-2.872,1.2l.834,4.331-14.209,0A8.419,8.419,0,0,0,0,14.44V29.5A4.5,4.5,0,0,0,4.636,34,4.623,4.623,0,0,0,9,29.315Z" fill="url(#linear-gradient)"/>
+  <path id="Fill_2" data-name="Fill 2" d="M25,4.686V15.979a3.006,3.006,0,0,1-3,3H11.369l.834-4.331a1.685,1.685,0,0,0-2.872-1.2L.5,22.288a1.674,1.674,0,0,0,0,2.385l8.831,8.832a1.684,1.684,0,0,0,2.872-1.2l-.834-4.331H25.581A8.419,8.419,0,0,0,34,19.558V4.5A4.5,4.5,0,0,0,29.364,0,4.623,4.623,0,0,0,25,4.685Z" transform="translate(10 18)" fill="url(#linear-gradient)"/>
+</svg>

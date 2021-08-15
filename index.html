@@ -34,31 +34,253 @@
   </head>
 
   <body>
+
+    <!------- prepare screen starts here ------->
     <div id="prepare">
-      <!-- Navbar starts here -->
-      <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="https://paz.fuzion.team/">
-            <img src="./assets/img/paz-dark.svg" alt="" width="150px" />
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+    <!-- navbar starts here -->
+    <div class="custom-container">
+        <nav class="navbar navbar-expand-md fixed-top">
+          <div class="nav-inner">
+            <a class="navbar-brand" href="#">
+                <img src="./assets/img/pazzive-logo.svg" alt="">
+            </a>
+            <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav ml-auto mt-2">
+                <li class="nav-item">
+                  <a class="metamask-btn">
+                      <span>Add PAZ to Metamask</span>
+                  </a>
+                </li>
+                <li class="nav-item ml-2">
+                  <a class="price-btn" href="#">$0.258</a>
+                </li>
+                <li class="nav-item ml-2">
+                    <a class="connect-btn" onclick="connectAccount()">
+                        <img src="./assets/img/copy-icon.svg" alt="Copy-icon">
+                        <span class="pl-2">Connect</span>
+                    </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+    </div>
+    <!-- navbar ends here -->
+
+    <!-- Your stats section starts here -->
+    <section class="your-stat-section">
+      <div class="custom-container">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="section-heading">YOUR STATS</p>
+          </div>
         </div>
-      </nav>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="your-stat-card-1">
+              <div class="media">
+                <img class="mr-3" src="./assets/img/mobile-icon.svg" alt="mobile-icon">
+                <div class="media-body pt-3">
+                  <p class="your-stat-subheading">Total PAZ Holdings</p>
+                  <h5 class="your-stat-heading mt-0">Connect wallet to view</h5>
+                </div>
+              </div>
+              <a href="" class="buy-btn mt-3">Buy $PAZ</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="your-stat-card-2">
+              <div class="media">
+                <img class="mr-3" src="./assets/img/reward-icon.svg" alt="mobile-icon">
+                <div class="media-body pt-3">
+                  <p class="your-stat-subheading">Total BUSD Paid</p>
+                  <h5 class="your-stat-heading mt-0">Connect wallet to view</h5>
+                </div>
+              </div>
+              <a onclick="connectAccount()" class="connect-wallet mt-3">Connect Wallet</a>
+            </div>
+          </div>
+        </div>
 
-      <!-- Navbar ends here -->
+        <div class="row">
+          <div class="col-md-6 mt-4">
+            <div class="stat-card">
+              <div class="media">
+                <img class="mr-3 mt-2" src="./assets/img/gift-icon.svg" alt="mobile-icon">
+                <div class="media-body pt-3">
+                  <p class="stat-card-subheading mb-0">Pernding BUSD Rewards</p>
+                  <p class="stat-card-heading">Connect wallet to view</p>
+                </div>
+              </div>
+              <a type="button" class="card-connect-btn" onclick="connectAccount()">Connect Wallet</a>
+            </div>
+          </div>
+          
+          <div class="col-md-6 mt-4">
+            <div class="stat-card">
+              <div class="media">
+                <img class="mr-3 mt-2" src="./assets/img/tax-icon.svg" alt="mobile-icon">
+                <div class="media-body pt-3">
+                  <p class="stat-card-subheading mb-0">Current PAZ sell tax</p>
+                  <p class="stat-card-heading color-white">21.73%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Your stats section ends here -->
 
-      <!-- Disclaimer Modal starts here -->
-      <div
+    <!-- feeless section starts here -->
+    <section class="feeless-section">
+      <div class="custom-container">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="section-heading">FEELESS SELLING</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mt-1">
+          <div class="stat-card">
+            <div class="media">
+              <img class="mr-3 mt-4" src="./assets/img/coupons-icon.svg" alt="mobile-icon">
+              <div class="media-body pt-3">
+                <p class="stat-card-subheading mb-0">Claimed Coupons</p>
+                <p class="stat-card-heading">Connect wallet to view</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mt-1">
+          <div class="stat-card">
+            <div class="media">
+              <img class="mr-3 mt-4" src="./assets/img/swap-icon.svg" alt="mobile-icon">
+              <div class="media-body pt-3">
+                <p class="stat-card-subheading mb-0">Feelessly Swappable BUSD</p>
+                <p class="stat-card-heading">Connect wallet to view</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mt-3">
+          <div class="stat-card">
+            <div class="media">
+              <img class="mr-3 mt-4" src="./assets/img/feeless-swap-icon.svg" alt="mobile-icon">
+              <div class="media-body pt-3">
+                <p class="stat-card-subheading">Feeless Swap With Coupon</p>
+                <a type="button" class="card-connect-btn-2" onclick="connectAccount()">Connect Wallet</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mt-3">
+          <div class="stat-card">
+            <div class="media">
+              <img class="mr-3 mt-4" src="./assets/img/feeless-busd-icon.svg" alt="mobile-icon">
+              <div class="media-body pt-3">
+                <p class="stat-card-subheading">Feeless BUSD Reinvesting</p>
+                <a type="button" class="card-connect-btn-2" onclick="connectAccount()">Connect Wallet</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    <!-- feeless section starts here -->
+
+    <!-- Coin stat section starts here -->
+    <section>
+      <div class="custom-container">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="section-heading">COIN STATS</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="stat-card">
+              <div class="media">
+                <img class="mr-3 mt-3" src="./assets/img/tax-icon.svg" alt="mobile-icon">
+                <div class="media-body pt-3">
+                  <p class="stat-card-subheading mb-0">Total Paid to Holders</p>
+                  <p class="stat-card-heading color-white">$ 1,034,375 BUSD</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="stat-card">
+              <div class="media">
+                <img class="mr-3 mt-4" src="./assets/img/buyback-icon.svg" alt="mobile-icon">
+                <div class="media-body pt-3">
+                  <p class="stat-card-subheading mb-0">Buyback Balance</p>
+                  <p class="stat-card-heading color-white">$784,472 BUSD</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mt-3">
+            <div class="stat-card">
+              <div class="media">
+                <img class="mr-3 mt-3" src="./assets/img/locker-icon.svg" alt="mobile-icon">
+                <div class="media-body pt-3">
+                  <p class="stat-card-subheading mb-0">Fully diluted supply</p>
+                  <p class="stat-card-heading color-white">1,999,999,999,999</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mt-3">
+            <div class="stat-card">
+              <div class="media">
+                <img class="mr-3 mt-2" src="./assets/img/burnt-icon.svg" alt="mobile-icon">
+                <div class="media-body pt-3">
+                  <p class="stat-card-subheading mb-0">Burnt Supply</p>
+                  <p class="stat-card-heading color-white">100,000,000</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mt-3">
+            <div class="stat-card">
+              <div class="media">
+                <img class="mr-3 mt-3" src="./assets/img/supply-icon.svg" alt="mobile-icon">
+                <div class="media-body pt-3">
+                  <p class="stat-card-subheading mb-0">Circulating Supply</p>
+                  <p class="stat-card-heading color-white">20,000,000,000</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mt-3">
+            <div class="stat-card">
+              <div class="media">
+                <img class="mr-3 mt-3" src="./assets/img/diamond-icon.svg" alt="mobile-icon">
+                <div class="media-body pt-3">
+                  <p class="stat-card-subheading mb-0">Market Cap</p>
+                  <p class="stat-card-heading color-white">$1,000,000,000</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Coin stat section ends here -->
+
+    <!-- Disclaimer Modal starts here -->
+    <div
         class="modal"
         id="disclaimerModal"
         tabindex="-1"
@@ -135,396 +357,366 @@
             </div>
           </div>
         </div>
-      </div>
-      <!-- Disclaimer Modal ends here -->
-
-      <!-- Reward share section starts here -->
-      <section class="reward-share-section mt-3">
-        <div class="container">
-          <div class="row mt-5">
-            <div class="offset-md-3"></div>
-            <div class="col-md-6">
-              <div
-                class="card"
-                data-aos="fade-up"
-                data-aos-duration="2000"
-                data-aos-once="true"
-                style="width: 83%"
-              >
-                <img
-                  src="./assets/img/pazzive-coin-dark.svg"
-                  alt=""
-                  class="card-icon"
-                />
-                <p class="text-center pt-3">Welcome to Pazzive Dapp</p>
-                <div class="card-body">
-                  <h5 class="pt-3 card-heading">
-                    You are not connected to Pazzive Dapp yet
-                  </h5>
-                  <p class="card-content">
-                    To use the Dapp, make sure: You are using the Binance Smart
-                    Chain network and you need to connect wallet to use
-                  </p>
-                  <p>We suggest to use:</p>
-                  <ul>
-                    <li>
-                      <a
-                        href="https://docs.binance.org/smart-chain/wallet/metamask.html"
-                        target="_blank"
-                        class="primary-txt"
-                        >Metamask</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="https://docs.binance.org/smart-chain/wallet/trustwallet.html"
-                        class="primary-txt"
-                        target="_blank"
-                        >TrustWallet</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="https://docs.binance.org/smart-chain/wallet/binance.html"
-                        class="primary-txt"
-                        target="_blank"
-                        >Binance Chain Extension Wallet</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="https://guide.moonrat.finance/how-to-connect-moonrats-dapp-to-wallet"
-                        class="primary-txt"
-                        target="_blank"
-                        >SafePal</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-                <div class="btn-main connectBtn mt-2">
-                  <span class="mas">Connect Wallet</span>
-                  <button
-                    type="button"
-                    id="walletConnect"
-                    onclick="connectAccount()"
-                  >
-                    <span
-                      id="metamaskConnection"
-                      class="icon54-v1-wallet-3 mbr-iconfont mbr-iconfont-btn"
-                    ></span
-                    >Connect Wallet
-                  </button>
-                </div>
-                <!-- <div class="btn-main connectBtn mt-2">
-                    <span class="mas">Connect Wallet</span>
-                    <button type="button" name="Hover" id="btn-connect">Connect Wallet</button>
-                </div> -->
-                <a
-                  class="text-center primary-txt pt-2"
-                  href="https://docs.ricefarm.fi/guides/use-trustwallet-on-desktop"
-                  target="_blank"
-                  >How to connect Pazzive's Dapp to wallet</a
-                >
-              </div>
-            </div>
-            <div class="offset-md-3"></div>
-          </div>
-        </div>
-      </section>
-      <!-- Reward share section ends here -->
     </div>
+    <!-- Disclaimer Modal ends here -->
+    </div>
+    <!------- prepare screen ends here ------->
 
-    <div id="connected" class="position-relative" style="display: none">
-      <!-- Navbar starts here -->
-      <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="https://paz.fuzion.team/">
-            <img
-              src="./assets/img/paz-dark.svg"
-              alt="pazzive-logo"
-              class="brand-logo"
-            />
+
+
+  <!------- Connected screen starts here ------->
+  <div id="connected" class="position-relative" style="display: none;">
+      <!-- navbar starts here -->
+    <div class="custom-container">
+      <nav class="navbar navbar-expand-md mt-2 fixed-top">
+        <div class="nav-inner">
+          <a class="navbar-brand" href="#">
+              <img src="./assets/img/pazzive-logo.svg" alt="">
           </a>
-
-          <div class="ml-auto">
-            <div class="btn-main connectBtn mt-2 accountBtn">
-              <span class="mas" id="shortAddress"></span>
-              <button type="button" name="Hover" id="showAccountBtn">
-                <span id="shortAddress-2"></span>
-              </button>
-            </div>
+          <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ml-auto mt-2">
+              <li class="nav-item">
+                <a class="metamask-btn" href="#">
+                    <span>Add PAZ to Metamask</span>
+                </a>
+              </li>
+              <li class="nav-item ml-2">
+                <a class="price-btn" href="#">$0.258</a>
+              </li>
+              <li class="nav-item ml-2">
+                  <a class="connect-btn" href="#">
+                      <span id="showAccountBtn"></span>
+                  </a>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
+  </div>
+  <!-- navbar ends here -->
 
-      <!-- Navbar ends here -->
-
-      <!-- Show Account Modal starts here -->
-      <div id="showAccountModal" class="account-modal">
-        <div class="account-modal-content">
-          <h5>Your wallet</h5>
-          <span class="close account-modal-close float-right">&times;</span>
-          <hr />
-          <h5 id="shortAccount"></h5>
-          <div class="row">
-            <div class="col-12 d-flex justify-content-center">
-              <a id="bscscan-link" target="_blank" class="bscscan-link"
-                >View on BscScan</a
-              >
-              <input type="text" id="addressInput" class="copiedTxt" />
-              <button id="copyBtn" class="copyBtn">Copy</button>
+  <!-- Your stats section starts here -->
+  <section class="your-stat-section">
+    <div class="custom-container">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="section-heading">YOUR STATS</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="your-stat-card-1">
+            <div class="media">
+              <img class="mr-3" src="./assets/img/mobile-icon.svg" alt="mobile-icon">
+              <div class="media-body pt-3">
+                <p class="your-stat-subheading mb-0">Total PAZ Holdings</p>
+                <h5 class="your-stat-heading mt-2 color-white">510,301,281</h5>
+                <p class="color-white">$43,253</p>
+              </div>
             </div>
+            <a href="" class="buy-btn mt-3">Buy $PAZ</a>
           </div>
-
-          <div class="d-flex justify-content-center mt-3">
-            <div class="btn-main mx-auto" style="width: 40%">
-              <span class="mas">LOGOUT</span>
-              <button id="btn-disconnect" type="button" name="Hover">
-                LOGOUT
-              </button>
+        </div>
+        <div class="col-md-6">
+          <div class="your-stat-card-2">
+            <div class="media">
+              <img class="mr-3" src="./assets/img/reward-icon.svg" alt="mobile-icon">
+              <div class="media-body pt-3">
+                <p class="your-stat-subheading mb-0">Total BUSD Paid</p>
+                <h5 class="your-stat-heading mt-2 color-white">53.254</h5>
+                <p class="color-white">$3,253</p>
+              </div>
             </div>
+            <form class="form-inline mt-3 re-invest-form">
+              <div class="form-group">
+                <div class="position-relative">
+                <input type="number" class="form-control" placeholder="0.0">
+                <span class="input-txt">BNB</span>
+                </div>
+                <input type="submit" class="form-control" value="Re-Invest BUSD">
+              </div>
+            </form>
           </div>
         </div>
       </div>
-      <!-- Show Account Modal ends here -->
 
-      <!--- Reward share section starts here --->
-      <section class="reward-share-section mt-5">
-        <div class="container">
-          <div class="row mt-5">
-            <div class="offset-lg-4 offset-md-3"></div>
-            <div class="col-lg-4 col-md-6">
-              <div
-                class="card py-4"
-                data-aos="fade-up"
-                data-aos-duration="2000"
-                data-aos-once="true"
-              >
-                <img
-                  src="./assets/img/pazzive-coin-dark.svg"
-                  alt=""
-                  class="card-icon"
-                />
-                <div class="card-body py-4 mt-3">
-                  <h5 class="pt-3 card-heading">PAZZIVE</h5>
-                  <h5>Your Reward Share</h5>
-                  <h5>0.000 %</h5>
-                  <p class="card-content">
-                    Buy More To Increase Your BUSD Reward Share! Accumulating
-                    Wealth Was Never This Simple!
-                  </p>
-                  <div class="btn-main">
-                    <span class="mas">Buy $PAZ</span>
-                    <button data-dismiss="modal" type="button" name="Hover">
-                      Buy $PAZ
-                    </button>
-                  </div>
-                </div>
+      <div class="row">
+        <div class="col-md-6 mt-4">
+          <div class="stat-card">
+            <div class="media">
+              <img class="mr-3 mt-2" src="./assets/img/gift-icon.svg" alt="mobile-icon">
+              <div class="media-body pt-3">
+                <p class="stat-card-subheading mb-0">Pernding BUSD Rewards</p>
+                <p class="stat-card-heading color-white">3,254</p>
               </div>
             </div>
-            <div class="offset-lg-4 offset-md-3"></div>
+            <a href="" class="card-connect-btn">Claim Reward</a>
           </div>
-
-          <div class="row mt-5">
-            <div class="col-md-12">
-              <div
-                class="card py-4"
-                data-aos="fade-up"
-                data-aos-duration="2000"
-                data-aos-once="true"
-              >
-                <h5 class="color-white">My collectable BUSD: 0.00000 BUSD</h5>
-                <p class="primary-txt">
-                  <b>*Forecasted Annual BUSD Rewards: 0.000 BUSD</b>
-                </p>
-                <p>
-                  *Pool and Rewards are always changing based on buys, sells,
-                  collects by others and your percentage holdings.
-                </p>
-                <h6 class="card-content">
-                  Next Collect Date: You need to Buy and Hold Tokens to Earn
-                  BUSD
-                </h6>
-                <div class="btn-main mt-4 mx-auto collect-btn-width">
-                  <span class="mas">Collect my BUSD</span>
-                  <button type="button" name="Hover" class="">
-                    Collect my BUSD
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-4 mt-5">
-              <div
-                class="card py-4"
-                data-aos="fade-up"
-                data-aos-duration="2000"
-                data-aos-once="true"
-              >
-                <div class="card-body pt-3">
-                  <img
-                    src="./assets/img/card-icon-1.png"
-                    alt=""
-                    class="card-icon"
-                  />
-                  <h5 class="card-heading mt-3">Max Transaction Amount</h5>
-                  <p>$ <span id="max_transaction"></span></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mt-5">
-              <div
-                class="card py-4"
-                data-aos="fade-up"
-                data-aos-duration="2000"
-                data-aos-once="true"
-              >
-                <div class="card-body pt-3">
-                  <img
-                    src="./assets/img/card-icon-2.png"
-                    alt=""
-                    class="card-icon"
-                  />
-                  <h5 class="card-heading mt-3">Total liquidity pool</h5>
-                  <p>$ <span id="total_liquidity_pool">500000</span></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mt-5">
-              <div
-                class="card py-4"
-                data-aos="fade-up"
-                data-aos-duration="2000"
-                data-aos-once="true"
-              >
-                <div class="card-body pt-3">
-                  <img
-                    src="./assets/img/card-icon-3.png"
-                    alt=""
-                    class="card-icon"
-                  />
-                  <h5 class="card-heading mt-3">Current 1 mil $PAZ Price</h5>
-                  <p>$ 0.01707257</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mt-4">
-              <div
-                class="card py-4"
-                data-aos="fade-up"
-                data-aos-duration="2000"
-                data-aos-once="true"
-              >
-                <div class="card-body pt-3">
-                  <img
-                    src="./assets/img/card-icon-4.png"
-                    alt=""
-                    class="card-icon"
-                  />
-                  <h5 class="card-heading mt-3">
-                    Total BUSD in liquidity pool
-                  </h5>
-                  <p>BUSD 4,157.442</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mt-4">
-              <div
-                class="card py-4"
-                data-aos="fade-up"
-                data-aos-duration="2000"
-                data-aos-once="true"
-              >
-                <div class="card-body pt-3">
-                  <img
-                    src="./assets/img/card-icon-5.png"
-                    alt=""
-                    class="card-icon"
-                  />
-                  <h5 class="card-heading mt-3">Total BUSD in reward pool</h5>
-                  <p>BUSD 150.574</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mt-4">
-              <div
-                class="card py-4"
-                data-aos="fade-up"
-                data-aos-duration="2000"
-                data-aos-once="true"
-              >
-                <div class="card-body pt-3">
-                  <img
-                    src="./assets/img/card-icon-6.png"
-                    alt=""
-                    class="card-icon"
-                  />
-                  <h5 class="card-heading mt-3">Your $PAZ balance</h5>
-                  <p>$PAZ 0</p>
-                </div>
+        </div>
+        
+        <div class="col-md-6 mt-4">
+          <div class="stat-card">
+            <div class="media">
+              <img class="mr-3 mt-2" src="./assets/img/tax-icon.svg" alt="mobile-icon">
+              <div class="media-body pt-3">
+                <p class="stat-card-subheading mb-0">Current PAZ sell tax</p>
+                <p class="stat-card-heading color-white">21.73%</p>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <!--- Reward share section ends here --->
-
-      <span class="calculator-label"> Reward Calculator </span>
-
-      <!-- <footer>
-        </footer> -->
-
-      <div style="display: none">
-        <div id="network">
-          <span id="network-name"></span>
-          <span id="selected-account"></span>
-        </div>
-        <p><span id="accounts"></span></p>
-      </div>
-
-      <div id="templates" style="display: none">
-        <template id="template-balance">
-          <tr>
-            <th class="address"></th>
-            <td class="balance"></td>
-          </tr>
-        </template>
       </div>
     </div>
+  </section>
+  <!-- Your stats section ends here -->
 
-    <!-- Network error display starts here -->
-    <div id="networkError" style="display: none">
-      <div class="container-fluid">
+  <!-- feeless section starts here -->
+  <section class="feeless-section">
+    <div class="custom-container">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="section-heading">FEELESS SELLING</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mt-1">
+        <div class="stat-card">
+          <div class="media">
+            <img class="mr-3 mt-4" src="./assets/img/coupons-icon.svg" alt="mobile-icon">
+            <div class="media-body pt-3">
+              <p class="stat-card-subheading mb-0">Claimed Coupons</p>
+              <p class="stat-card-heading color-white">100 Coupons</p>
+            </div>
+          </div>
+          <a href="" class="card-connect-btn">Claim Reward</a>
+        </div>
+      </div>
+      <div class="col-md-6 mt-1">
+        <div class="stat-card">
+          <div class="media">
+            <img class="mr-3 mt-4" src="./assets/img/swap-icon.svg" alt="mobile-icon">
+            <div class="media-body pt-3">
+              <p class="stat-card-subheading mb-0">Feelessly Swappable BUSD</p>
+              <p class="stat-card-heading color-white">$42,989 BUSD</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 mt-3">
+        <div class="stat-card">
+          <div class="media">
+            <img class="mr-3 mt-4" src="./assets/img/feeless-swap-icon.svg" alt="mobile-icon">
+            <div class="media-body pt-3">
+              <p class="stat-card-subheading">Feeless Swap With Coupon</p>
+              <form class="form-inline mt-3 approve-form">
+                <div class="form-group">
+                  <div class="position-relative">
+                  <input type="number" class="form-control" placeholder="0.0">
+                  <span class="input-txt">BNB</span>
+                  </div>
+                  <input type="submit" class="form-control" value="Approve">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mt-3">
+        <div class="stat-card">
+          <div class="media">
+            <img class="mr-3 mt-4" src="./assets/img/feeless-busd-icon.svg" alt="mobile-icon">
+            <div class="media-body pt-3">
+              <p class="stat-card-subheading">Feeless BUSD Reinvesting</p>
+              <form class="form-inline mt-3 approve-form">
+                <div class="form-group">
+                  <div class="position-relative">
+                  <input type="number" class="form-control" placeholder="0.0">
+                  <span class="input-txt">BNB</span>
+                  </div>
+                  <input type="submit" class="form-control" value="Approve">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  <!-- feeless section starts here -->
+
+  <!-- Coin stat section starts here -->
+  <section>
+    <div class="custom-container">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="section-heading">COIN STATS</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="stat-card">
+            <div class="media">
+              <img class="mr-3 mt-3" src="./assets/img/tax-icon.svg" alt="mobile-icon">
+              <div class="media-body pt-3">
+                <p class="stat-card-subheading mb-0">Total Paid to Holders</p>
+                <p class="stat-card-heading color-white">$ 1,034,375 BUSD</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="stat-card">
+            <div class="media">
+              <img class="mr-3 mt-4" src="./assets/img/buyback-icon.svg" alt="mobile-icon">
+              <div class="media-body pt-3">
+                <p class="stat-card-subheading mb-0">Buyback Balance</p>
+                <p class="stat-card-heading color-white">$784,472 BUSD</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mt-3">
+          <div class="stat-card">
+            <div class="media">
+              <img class="mr-3 mt-3" src="./assets/img/locker-icon.svg" alt="mobile-icon">
+              <div class="media-body pt-3">
+                <p class="stat-card-subheading mb-0">Fully diluted supply</p>
+                <p class="stat-card-heading color-white">1,999,999,999,999</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mt-3">
+          <div class="stat-card">
+            <div class="media">
+              <img class="mr-3 mt-2" src="./assets/img/burnt-icon.svg" alt="mobile-icon">
+              <div class="media-body pt-3">
+                <p class="stat-card-subheading mb-0">Burnt Supply</p>
+                <p class="stat-card-heading color-white">100,000,000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mt-3">
+          <div class="stat-card">
+            <div class="media">
+              <img class="mr-3 mt-3" src="./assets/img/supply-icon.svg" alt="mobile-icon">
+              <div class="media-body pt-3">
+                <p class="stat-card-subheading mb-0">Circulating Supply</p>
+                <p class="stat-card-heading color-white">20,000,000,000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mt-3">
+          <div class="stat-card">
+            <div class="media">
+              <img class="mr-3 mt-3" src="./assets/img/diamond-icon.svg" alt="mobile-icon">
+              <div class="media-body pt-3">
+                <p class="stat-card-subheading mb-0">Market Cap</p>
+                <p class="stat-card-heading color-white">$1,000,000,000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Coin stat section ends here -->
+
+  <!-- Show Account Modal starts here -->
+  <div id="showAccountModal" class="account-modal">
+        <div class="account-modal-content">
+          <h5 class="text-center">Account</h5>
+          <span class="close account-modal-close float-right">&times;</span>
+          <div class="accountModal-inner position-relative">
+            <div class="media">
+              <img class="mr-3 mt-3" src="./assets/img/robot.svg" alt="mobile-icon">
+              <div class="media-body pt-3">
+                <p class="stat-card-heading color-white mb-0" id="shortAccount"></p>
+                <a id="bscscan-link" target="_blank" class="bscscan-link">View in explorer 
+                  <span><img src="./assets/img/right-arrow.svg" alt=""></span>
+                </a>
+                <button id="btn-disconnect" type="button" class="btn-disconnect">Disconnect</button>
+              </div>
+            </div>
+          </div>
+          <div class="pt-3">
+            <p class="mb-0">History</p>
+            <a href="#" class="color-white">Claim reward in 1 pool <span><img src="./assets/img/right-arrow-white.svg" alt=""></span></a>
+            <img src="./assets/img/green-dot.svg" alt="green-dot" class="float-right">
+          </div>
+        </div>
+  </div>
+  <!-- Show Account Modal ends here -->
+  </div>
+  <!------- Connected screen ends here ------->
+
+    <!-- footer starts here -->
+    <section class="footer-section">
+      <div class="custom-container">
         <div class="row">
           <div class="col-md-12">
-            <div class="warning-block my-auto mx-auto">
-              <a href="index.html">
-                <img
-                  src="./assets/img/paz-dark.svg"
-                  alt=""
-                  width="290px"
-                  class="mx-auto text-center mb-3"
-                />
-              </a>
-              <h5 class="warning-heading text-center">
-                <span class="mr-2"
-                  ><img
-                    src="./assets/img/warning.svg"
-                    alt="warning-icon"
-                    class="warning-icon" /></span
-                >Pazzive is not yet deployed to this network.
-              </h5>
-              <p class="warning-subheading text-center">
-                Please switch to Binance Smart Chain.
-              </p>
-            </div>
+            <img src="./assets/img/pazz-icon.svg" alt="pazz logo" class="footer-logo">
+            <p class="footer-txt pt-3">Copyright © 2021 <a class="color-white" href="https://www.fuzion.team/" target="_blank">FuzionChain.</a> All Rights Reserved.</p>
+            <ul class="d-flex justify-content-center">
+              <li>
+                <a target="_blank" href="https://t.me/fuzionchain"><img src="./assets/img/telegram.svg" alt="facebook" width="30px"></a>
+              </li>
+              <li class="mx-3">
+                <a target="_blank" href="https://twitter.com/fuzionchain"><img src="./assets/img/twitter.svg" alt="twitter" width="30px"></a>
+              </li>
+              <li>
+                <a target="_blank" href="https://discord.gg/24uAPzKYFu"><img src="./assets/img/discord.svg" alt="telegram" width="30px"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- footer starts here -->
+
+    <!-- Network error display starts here -->
+  <div id="networkError" style="display: none">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="warning-block my-auto mx-auto">
+            <a href="index.html">
+              <img
+                src="./assets/img/pazzive-logo.svg"
+                alt=""
+                width="290px"
+                class="mx-auto text-center mb-3"
+              />
+            </a>
+            <h5 class="warning-heading text-center">
+              <span class="mr-2"
+                ><img
+                  src="./assets/img/warning.svg"
+                  alt="warning-icon"
+                  class="warning-icon" /></span
+              >Pazzive is not yet deployed to this network.
+            </h5>
+            <p class="warning-subheading text-center">
+              Please switch to Binance Smart Chain.
+            </p>
           </div>
         </div>
       </div>
     </div>
-    <!-- Network error display starts here -->
+  </div>
+  <!-- Network error display starts here -->
 
     <!-- All js files -->
     <script
@@ -542,7 +734,6 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-    <!-- Navbar color change -->
     <script src="./assets/js/script.js"></script>
     <!-- AOS animation js  -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

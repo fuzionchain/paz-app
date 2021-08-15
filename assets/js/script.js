@@ -1,8 +1,8 @@
 // on scroll change color of navbar
 $(window).scroll(function () {
   var scroll = $(window).scrollTop();
-  if (scroll < 200) {
-    $(".fixed-top").css("background", "##1c164e");
+  if (scroll < 140) {
+    $(".fixed-top").css("background", "#140d38");
     $(".fixed-top").css("box-shadow", "rgb(0 0 0 / 0%) 0px 0px 0px 0px");
   } else {
     $(".fixed-top").css("box-shadow", "rgb(0 0 0 / 13%) 0px 1px 4px 2px");
@@ -30,12 +30,12 @@ window.onclick = function (event) {
 
 // copy to clip board
 
-const copyBtn = document.getElementById("copyBtn");
-const inputField = document.getElementById("addressInput");
-copyBtn.onclick = function () {
-  inputField.select();
-  document.execCommand("Copy");
-};
+// const copyBtn = document.getElementById("copyBtn");
+// const inputField = document.getElementById("addressInput");
+// copyBtn.onclick = function () {
+//   inputField.select();
+//   document.execCommand("Copy");
+// };
 
 // Confirm Modal
 $("#disclaimerModal").modal({ backdrop: "static", keyboard: false });
@@ -58,3 +58,4 @@ $(".number").on("click", function () {
       .addClass("is-disabled");
   }
 });
+
