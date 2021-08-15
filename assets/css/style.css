@@ -64,6 +64,12 @@ section {
 .color-white{
   color: #FFFFFF !important;
 }
+.is-disabled{
+  cursor: not-allowed !important;
+}
+.hover-magnify:hover{
+  transform: scale(1.5);
+}
 /* Global styling ends here */
 
 /* navbar */
