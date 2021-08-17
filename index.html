@@ -34,253 +34,376 @@
   </head>
 
   <body>
-
     <!------- prepare screen starts here ------->
     <div id="prepare">
-    <!-- navbar starts here -->
-    <div class="custom-container">
+      <!-- navbar starts here -->
+      <div class="custom-container">
         <nav class="navbar navbar-expand-md fixed-top">
           <div class="nav-inner">
             <a class="navbar-brand" href="#">
-                <img src="./assets/img/pazzive-logo.svg" alt="Pazzive Logo">
+              <img src="./assets/img/pazzive-logo.svg" alt="Pazzive Logo" />
             </a>
-            <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <button
+              class="navbar-toggler bg-light"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapsibleNavbar"
+            >
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
               <ul class="navbar-nav ml-auto mt-2">
                 <li class="nav-item">
                   <a class="metamask-btn is-disabled">
-                      <span>Add PAZ to Metamask</span>
+                    <span>Add PAZ to Metamask</span>
                   </a>
                 </li>
                 <li class="nav-item ml-2">
                   <a class="price-btn" href="#">$0.258</a>
                 </li>
                 <li class="nav-item ml-2">
-                    <a class="connect-btn" onclick="connectAccount()">
+                  <!-- <a class="connect-btn" onclick="connectAccount()">
                         <img src="./assets/img/copy-icon.svg" alt="Copy-icon">
                         <span class="pl-2">Connect</span>
-                    </a>
+                    </a> -->
+                  <div class="btn-main connectBtn" style="margin-top: -10px">
+                    <span class="mas">Connect Wallet</span>
+                    <button
+                      onclick="connectAccount()"
+                      type="button"
+                      name="Hover"
+                    >
+                      Connect Wallet
+                    </button>
+                  </div>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
-    </div>
-    <!-- navbar ends here -->
-
-    <!-- Your stats section starts here -->
-    <section class="your-stat-section">
-      <div class="custom-container">
-        <div class="row">
-          <div class="col-md-12">
-            <p class="section-heading">YOUR STATS</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="your-stat-card-1">
-              <div class="media">
-                <img class="mr-3" src="./assets/img/mobile-icon.svg" alt="mobile-icon">
-                <div class="media-body pt-3">
-                  <p class="your-stat-subheading">Total PAZ Holdings</p>
-                  <h5 class="your-stat-heading mt-0">Connect wallet to view</h5>
-                </div>
-              </div>
-              <a href="" class="buy-btn mt-3 is-disabled">Buy $PAZ</a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="your-stat-card-2">
-              <div class="media">
-                <img class="mr-3" src="./assets/img/reward-icon.svg" alt="reward-icon">
-                <div class="media-body pt-3">
-                  <p class="your-stat-subheading">Total BUSD Paid</p>
-                  <h5 class="your-stat-heading mt-0">Connect wallet to view</h5>
-                </div>
-              </div>
-              <a onclick="connectAccount()" class="connect-wallet mt-3">Connect Wallet</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 mt-4">
-            <div class="stat-card">
-              <div class="media">
-                <img class="mr-3 mt-2" src="./assets/img/gift-icon.svg" alt="gift-icon">
-                <div class="media-body pt-3">
-                  <p class="stat-card-subheading mb-0">Pernding BUSD Rewards</p>
-                  <p class="stat-card-heading">Connect wallet to view</p>
-                </div>
-              </div>
-              <a type="button" class="card-connect-btn" onclick="connectAccount()">Connect Wallet</a>
-            </div>
-          </div>
-          
-          <div class="col-md-6 mt-4">
-            <div class="stat-card">
-              <div class="media">
-                <img class="mr-3 mt-2" src="./assets/img/tax-icon.svg" alt="tax-icon">
-                <div class="media-body pt-3">
-                  <p class="stat-card-subheading mb-0">Current PAZ sell tax</p>
-                  <p class="stat-card-heading color-white">21.73%</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-    </section>
-    <!-- Your stats section ends here -->
+      <!-- navbar ends here -->
 
-    <!-- feeless section starts here -->
-    <section class="feeless-section">
-      <div class="custom-container">
-      <div class="row">
-        <div class="col-md-12">
-          <p class="section-heading">FEELESS SELLING</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 mt-1">
-          <div class="stat-card">
-            <div class="media">
-              <img class="mr-3 mt-4" src="./assets/img/coupons-icon.svg" alt="coupons-icon">
-              <div class="media-body pt-3">
-                <p class="stat-card-subheading mb-0">Claimed Coupons</p>
-                <p class="stat-card-heading">Connect wallet to view</p>
+      <!-- Your stats section starts here -->
+      <section class="your-stat-section">
+        <div class="custom-container">
+          <div class="row">
+            <div class="col-md-12">
+              <p class="section-heading">YOUR STATS</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="your-stat-card-1">
+                <div class="media">
+                  <img
+                    class="mr-3"
+                    src="./assets/img/mobile-icon.svg"
+                    alt="mobile-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="your-stat-subheading">Total PAZ Holdings</p>
+                    <h5 class="your-stat-heading mt-0">
+                      Connect wallet to view
+                    </h5>
+                  </div>
+                </div>
+                <a href="" class="buy-btn mt-3 is-disabled">Buy $PAZ</a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="your-stat-card-2">
+                <div class="media">
+                  <img
+                    class="mr-3"
+                    src="./assets/img/reward-icon.svg"
+                    alt="reward-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="your-stat-subheading">Total BUSD Paid</p>
+                    <h5 class="your-stat-heading mt-0">
+                      Connect wallet to view
+                    </h5>
+                  </div>
+                </div>
+                <div class="btn-main mt-3" style="width: 100%; height: 46px">
+                  <span class="mas">Connect Wallet</span>
+                  <button
+                    onclick="connectAccount()"
+                    type="button"
+                    name="Hover"
+                    style="background: #4a4a4a8c"
+                  >
+                    Connect Wallet
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-6 mt-1">
-          <div class="stat-card">
-            <div class="media">
-              <img class="mr-3 mt-4" src="./assets/img/swap-icon.svg" alt="swap-icon">
-              <div class="media-body pt-3">
-                <p class="stat-card-subheading mb-0">Feelessly Swappable BUSD</p>
-                <p class="stat-card-heading">Connect wallet to view</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 mt-3">
-          <div class="stat-card">
-            <div class="media">
-              <img class="mr-3 mt-4" src="./assets/img/feeless-swap-icon.svg" alt="feeless-swap-icon">
-              <div class="media-body pt-3">
-                <p class="stat-card-subheading">Feeless Swap With Coupon</p>
-                <a type="button" class="card-connect-btn-2" onclick="connectAccount()">Connect Wallet</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 mt-3">
-          <div class="stat-card">
-            <div class="media">
-              <img class="mr-3 mt-4" src="./assets/img/feeless-busd-icon.svg" alt="feeless-busd-icon">
-              <div class="media-body pt-3">
-                <p class="stat-card-subheading">Feeless BUSD Reinvesting</p>
-                <a type="button" class="card-connect-btn-2" onclick="connectAccount()">Connect Wallet</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </section>
-    <!-- feeless section starts here -->
 
-    <!-- Coin stat section starts here -->
-    <section>
-      <div class="custom-container">
-        <div class="row">
-          <div class="col-md-12">
-            <p class="section-heading">COIN STATS</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="stat-card">
-              <div class="media">
-                <img class="mr-3 mt-3" src="./assets/img/tax-icon.svg" alt="tax-icon">
-                <div class="media-body pt-3">
-                  <p class="stat-card-subheading mb-0">Total Paid to Holders</p>
-                  <p class="stat-card-heading color-white">$ 1,034,375 BUSD</p>
+          <div class="row">
+            <div class="col-md-6 mt-4">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-2"
+                    src="./assets/img/gift-icon.svg"
+                    alt="gift-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading mb-0">
+                      Pending BUSD Rewards
+                    </p>
+                    <p class="stat-card-heading">Connect wallet to view</p>
+                  </div>
+                </div>
+                <div class="btn-main card-connect-btn">
+                  <span class="mas">Connect Wallet</span>
+                  <button onclick="connectAccount()" type="button" name="Hover">
+                    Connect Wallet
+                  </button>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="stat-card">
-              <div class="media">
-                <img class="mr-3 mt-4" src="./assets/img/buyback-icon.svg" alt="buyback-icon">
-                <div class="media-body pt-3">
-                  <p class="stat-card-subheading mb-0">Buyback Balance</p>
-                  <p class="stat-card-heading color-white">$784,472 BUSD</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 mt-3">
-            <div class="stat-card">
-              <div class="media">
-                <img class="mr-3 mt-3" src="./assets/img/locker-icon.svg" alt="locker-icon">
-                <div class="media-body pt-3">
-                  <p class="stat-card-subheading mb-0">Fully diluted supply</p>
-                  <p class="stat-card-heading color-white">1,999,999,999,999</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 mt-3">
-            <div class="stat-card">
-              <div class="media">
-                <img class="mr-3 mt-2" src="./assets/img/burnt-icon.svg" alt="burnt-icon">
-                <div class="media-body pt-3">
-                  <p class="stat-card-subheading mb-0">Burnt Supply</p>
-                  <p class="stat-card-heading color-white">100,000,000</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 mt-3">
-            <div class="stat-card">
-              <div class="media">
-                <img class="mr-3 mt-3" src="./assets/img/supply-icon.svg" alt="supply-icon">
-                <div class="media-body pt-3">
-                  <p class="stat-card-subheading mb-0">Circulating Supply</p>
-                  <p class="stat-card-heading color-white">20,000,000,000</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 mt-3">
-            <div class="stat-card">
-              <div class="media">
-                <img class="mr-3 mt-3" src="./assets/img/diamond-icon.svg" alt="diamond-icon">
-                <div class="media-body pt-3">
-                  <p class="stat-card-subheading mb-0">Market Cap</p>
-                  <p class="stat-card-heading color-white">$1,000,000,000</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Coin stat section ends here -->
 
-    <!-- Disclaimer Modal starts here -->
-    <div
+            <div class="col-md-6 mt-4">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-2"
+                    src="./assets/img/tax-icon.svg"
+                    alt="tax-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading mb-0">
+                      Current PAZ sell tax
+                    </p>
+                    <p class="stat-card-heading color-white">21.73%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Your stats section ends here -->
+
+      <!-- feeless section starts here -->
+      <section class="feeless-section">
+        <div class="custom-container">
+          <div class="row">
+            <div class="col-md-12">
+              <p class="section-heading">Tax Free SELLING</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mt-1">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-4"
+                    src="./assets/img/coupons-icon.svg"
+                    alt="coupons-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading mb-0">Claimed Coupons</p>
+                    <p class="stat-card-heading">Connect wallet to view</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mt-1">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-4"
+                    src="./assets/img/swap-icon.svg"
+                    alt="swap-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading mb-0">
+                      Tax Free BUSD Amount
+                    </p>
+                    <p class="stat-card-heading">Connect wallet to view</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mt-3">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-4"
+                    src="./assets/img/feeless-swap-icon.svg"
+                    alt="feeless-swap-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading">
+                      Tax Free Swap With Coupon
+                    </p>
+                    <div class="btn-main">
+                      <span class="mas">Connect Wallet</span>
+                      <button
+                        onclick="connectAccount()"
+                        type="button"
+                        name="Hover"
+                      >
+                        Connect Wallet
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mt-3">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-4"
+                    src="./assets/img/feeless-busd-icon.svg"
+                    alt="feeless-busd-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading">
+                      Tax Free BUSD Reinvesting
+                    </p>
+                    <div class="btn-main">
+                      <span class="mas">Connect Wallet</span>
+                      <button
+                        onclick="connectAccount()"
+                        type="button"
+                        name="Hover"
+                      >
+                        Connect Wallet
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- feeless section starts here -->
+
+      <!-- Coin stat section starts here -->
+      <section>
+        <div class="custom-container">
+          <div class="row">
+            <div class="col-md-12">
+              <p class="section-heading">COIN STATS</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-3"
+                    src="./assets/img/tax-icon.svg"
+                    alt="tax-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading mb-0">
+                      Total Paid to Holders
+                    </p>
+                    <p class="stat-card-heading color-white">
+                      $ 1,034,375 BUSD
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-4"
+                    src="./assets/img/buyback-icon.svg"
+                    alt="buyback-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading mb-0">Buyback Balance</p>
+                    <p class="stat-card-heading color-white">$784,472 BUSD</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mt-3">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-3"
+                    src="./assets/img/locker-icon.svg"
+                    alt="locker-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading mb-0">Total Supply</p>
+                    <p class="stat-card-heading color-white">
+                      1,999,999,999,999
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mt-3">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-2"
+                    src="./assets/img/burnt-icon.svg"
+                    alt="burnt-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading mb-0">Burnt Supply</p>
+                    <p class="stat-card-heading color-white">100,000,000</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mt-3">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-3"
+                    src="./assets/img/supply-icon.svg"
+                    alt="supply-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading mb-0">Circulating Supply</p>
+                    <p class="stat-card-heading color-white">20,000,000,000</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mt-3">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-3"
+                    src="./assets/img/diamond-icon.svg"
+                    alt="diamond-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading mb-0">Market Cap</p>
+                    <p class="stat-card-heading color-white">$1,000,000,000</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Coin stat section ends here -->
+
+      <!-- Disclaimer Modal starts here -->
+      <div
         class="modal"
         id="disclaimerModal"
         tabindex="-1"
@@ -298,9 +421,11 @@
             <h4>Disclaimer</h4>
             <p class="pt-2">
               Trading cryptocurrencies carries a
-              <span class="primary-txt"><b>high level of risk,</b></span> and
+              <span class="highlight-txt"><b>high level of risk,</b></span> and
               may not be suitable for all investors.
-              <b class="primary-txt">Before deciding to trade cryptocurrency</b>
+              <b class="highlight-txt"
+                >Before deciding to trade cryptocurrency</b
+              >
               you should carefully consider your investment objectives, level of
               experience, and risk appetite. The possibility exists that you
               could sustain a loss of some or all of your initial investment and
@@ -309,7 +434,7 @@
               guarantee a return on your investment.
             </p>
             <p class="py-1">
-              <b class="primary-txt"
+              <b class="highlight-txt"
                 >You should be aware of all the risks associated with
                 cryptocurrency trading, and seek advice from an independent
                 financial advisor</b
@@ -332,7 +457,7 @@
               A qualified professional should be consulted before making any
               financial decisions.
             </p>
-            <div class="mb-3 primary-txt">
+            <div class="mb-3 highlight-txt">
               <input
                 type="checkbox"
                 class="number"
@@ -357,327 +482,550 @@
             </div>
           </div>
         </div>
-    </div>
-    <!-- Disclaimer Modal ends here -->
+      </div>
+      <!-- Disclaimer Modal ends here -->
     </div>
     <!------- prepare screen ends here ------->
 
-
-
-  <!------- Connected screen starts here ------->
-  <div id="connected" class="position-relative" style="display: none;">
+    <!------- Connected screen starts here ------->
+    <div id="connected" class="position-relative" style="display: none">
       <!-- navbar starts here -->
-    <div class="custom-container">
-      <nav class="navbar navbar-expand-md mt-2 fixed-top">
-        <div class="nav-inner">
-          <a class="navbar-brand" href="#">
-              <img src="./assets/img/pazzive-logo.svg" alt="pazzive logo">
-          </a>
-          <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav ml-auto mt-2">
-              <li class="nav-item">
-                <a class="metamask-btn is-disabled" href="#">
+      <div class="custom-container">
+        <nav class="navbar navbar-expand-md mt-2 fixed-top">
+          <div class="nav-inner">
+            <a class="navbar-brand" href="#">
+              <img src="./assets/img/pazzive-logo.svg" alt="pazzive logo" />
+            </a>
+            <button
+              class="navbar-toggler bg-light"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapsibleNavbar"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav ml-auto mt-2">
+                <li class="nav-item">
+                  <a class="metamask-btn is-disabled" href="#">
                     <span>Add PAZ to Metamask</span>
-                </a>
-              </li>
-              <li class="nav-item ml-2">
-                <a class="price-btn" href="#">$0.258</a>
-              </li>
-              <li class="nav-item ml-2">
-                  <a class="connect-btn" href="#">
-                      <span id="showAccountBtn"></span>
                   </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-  </div>
-  <!-- navbar ends here -->
-
-  <!-- Your stats section starts here -->
-  <section class="your-stat-section">
-    <div class="custom-container">
-      <div class="row">
-        <div class="col-md-12">
-          <p class="section-heading">YOUR STATS</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="your-stat-card-1">
-            <div class="media">
-              <img class="mr-3" src="./assets/img/mobile-icon.svg" alt="mobile-icon">
-              <div class="media-body pt-3">
-                <p class="your-stat-subheading mb-0">Total PAZ Holdings</p>
-                <h5 class="your-stat-heading mt-2 color-white">510,301,281</h5>
-                <p class="color-white">$43,253</p>
-              </div>
-            </div>
-            <a href="" class="buy-btn mt-3 is-disabled">Buy $PAZ</a>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="your-stat-card-2">
-            <div class="media">
-              <img class="mr-3" src="./assets/img/reward-icon.svg" alt="reward-icon">
-              <div class="media-body pt-3">
-                <p class="your-stat-subheading mb-0">Total BUSD Paid</p>
-                <h5 class="your-stat-heading mt-2 color-white">53.254</h5>
-                <p class="color-white">$3,253</p>
-              </div>
-            </div>
-            <form class="form-inline mt-3 re-invest-form">
-              <div class="form-group">
-                <div class="position-relative">
-                <input type="number" class="form-control" placeholder="0.0">
-                <span class="input-txt">BNB</span>
-                </div>
-                <input type="submit" class="form-control is-disabled" value="Re-Invest BUSD">
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6 mt-4">
-          <div class="stat-card">
-            <div class="media">
-              <img class="mr-3 mt-2" src="./assets/img/gift-icon.svg" alt="gift-icon">
-              <div class="media-body pt-3">
-                <p class="stat-card-subheading mb-0">Pernding BUSD Rewards</p>
-                <p class="stat-card-heading color-white">3,254</p>
-              </div>
-            </div>
-            <a href="" class="card-connect-btn is-disabled">Claim Reward</a>
-          </div>
-        </div>
-        
-        <div class="col-md-6 mt-4">
-          <div class="stat-card">
-            <div class="media">
-              <img class="mr-3 mt-2" src="./assets/img/tax-icon.svg" alt="tax-icon">
-              <div class="media-body pt-3">
-                <p class="stat-card-subheading mb-0">Current PAZ sell tax</p>
-                <p class="stat-card-heading color-white">21.73%</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Your stats section ends here -->
-
-  <!-- feeless section starts here -->
-  <section class="feeless-section">
-    <div class="custom-container">
-    <div class="row">
-      <div class="col-md-12">
-        <p class="section-heading">FEELESS SELLING</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 mt-1">
-        <div class="stat-card">
-          <div class="media">
-            <img class="mr-3 mt-4" src="./assets/img/coupons-icon.svg" alt="coupons-icon">
-            <div class="media-body pt-3">
-              <p class="stat-card-subheading mb-0">Claimed Coupons</p>
-              <p class="stat-card-heading color-white">100 Coupons</p>
-            </div>
-          </div>
-          <a href="" class="card-connect-btn is-disabled">Claim Reward</a>
-        </div>
-      </div>
-      <div class="col-md-6 mt-1">
-        <div class="stat-card">
-          <div class="media">
-            <img class="mr-3 mt-4" src="./assets/img/swap-icon.svg" alt="swap-icon">
-            <div class="media-body pt-3">
-              <p class="stat-card-subheading mb-0">Feelessly Swappable BUSD</p>
-              <p class="stat-card-heading color-white">$42,989 BUSD</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 mt-3">
-        <div class="stat-card">
-          <div class="media">
-            <img class="mr-3 mt-4" src="./assets/img/feeless-swap-icon.svg" alt="feeless-swap-icon">
-            <div class="media-body pt-3">
-              <p class="stat-card-subheading">Feeless Swap With Coupon</p>
-              <form class="form-inline mt-3 approve-form">
-                <div class="form-group">
-                  <div class="position-relative">
-                  <input type="number" class="form-control" placeholder="0.0">
-                  <span class="input-txt">BNB</span>
+                </li>
+                <li class="nav-item ml-2">
+                  <a class="price-btn" href="#">$0.258</a>
+                </li>
+                <li class="nav-item ml-2">
+                  <div class="btn-main connectBtn" style="margin-top: -10px">
+                    <span class="mas" id="shortAddress"></span>
+                    <button type="button" name="Hover">
+                      <span id="showAccountBtn"></span>
+                    </button>
                   </div>
-                  <input type="submit" class="form-control is-disabled" value="Approve">
-                </div>
-              </form>
+                </li>
+              </ul>
             </div>
           </div>
-        </div>
+        </nav>
       </div>
-      <div class="col-md-6 mt-3">
-        <div class="stat-card">
-          <div class="media">
-            <img class="mr-3 mt-4" src="./assets/img/feeless-busd-icon.svg" alt="feeless-busd-icon">
-            <div class="media-body pt-3">
-              <p class="stat-card-subheading">Feeless BUSD Reinvesting</p>
-              <form class="form-inline mt-3 approve-form">
-                <div class="form-group">
-                  <div class="position-relative">
-                  <input type="number" class="form-control" placeholder="0.0">
-                  <span class="input-txt">BNB</span>
+      <!-- navbar ends here -->
+
+      <!-- Your stats section starts here -->
+      <section class="your-stat-section">
+        <div class="custom-container">
+          <div class="row">
+            <div class="col-md-12">
+              <p class="section-heading">YOUR STATS</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="your-stat-card-1">
+                <div class="media">
+                  <img
+                    class="mr-3"
+                    src="./assets/img/mobile-icon.svg"
+                    alt="mobile-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="your-stat-subheading mb-0">Total PAZ Holdings</p>
+                    <h5 class="your-stat-heading mt-2 color-white">
+                      510,301,281
+                    </h5>
+                    <p class="color-white">$43,253</p>
                   </div>
-                  <input type="submit" class="form-control is-disabled" value="Approve">
                 </div>
-              </form>
+                <a href="" class="buy-btn mt-3 is-disabled">Buy $PAZ</a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="your-stat-card-2">
+                <div class="media">
+                  <img
+                    class="mr-3"
+                    src="./assets/img/reward-icon.svg"
+                    alt="reward-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="your-stat-subheading mb-0">Total BUSD Paid</p>
+                    <h5 class="your-stat-heading mt-2 color-white">53.254</h5>
+                    <p class="color-white">$3,253</p>
+                  </div>
+                </div>
+                <form class="form-inline mt-3 re-invest-form">
+                  <div class="form-group">
+                    <div class="position-relative">
+                      <input
+                        type="number"
+                        class="form-control"
+                        placeholder="0.0"
+                      />
+                      <span class="input-txt">BNB</span>
+                    </div>
+                    <input
+                      type="submit"
+                      class="form-control is-disabled"
+                      value="Re-Invest BUSD"
+                    />
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </section>
-  <!-- feeless section starts here -->
 
-  <!-- Coin stat section starts here -->
-  <section>
-    <div class="custom-container">
-      <div class="row">
-        <div class="col-md-12">
-          <p class="section-heading">COIN STATS</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="stat-card">
-            <div class="media">
-              <img class="mr-3 mt-3" src="./assets/img/tax-icon.svg" alt="tax-icon">
-              <div class="media-body pt-3">
-                <p class="stat-card-subheading mb-0">Total Paid to Holders</p>
-                <p class="stat-card-heading color-white">$ 1,034,375 BUSD</p>
+          <div class="row">
+            <div class="col-md-6 mt-4">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-2"
+                    src="./assets/img/gift-icon.svg"
+                    alt="gift-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading mb-0">
+                      Pending BUSD Rewards
+                    </p>
+                    <p class="stat-card-heading color-white">3,254</p>
+                  </div>
+                </div>
+                <!-- <a href="" class="card-connect-btn is-disabled">Claim Reward</a> -->
+                <div class="btn-main card-connect-btn">
+                  <span class="mas">Claim Reward</span>
+                  <button type="button" name="Hover" class="is-disabled">
+                    Claim Reward
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="stat-card">
-            <div class="media">
-              <img class="mr-3 mt-4" src="./assets/img/buyback-icon.svg" alt="buyback-icon">
-              <div class="media-body pt-3">
-                <p class="stat-card-subheading mb-0">Buyback Balance</p>
-                <p class="stat-card-heading color-white">$784,472 BUSD</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 mt-3">
-          <div class="stat-card">
-            <div class="media">
-              <img class="mr-3 mt-3" src="./assets/img/locker-icon.svg" alt="locker-icon">
-              <div class="media-body pt-3">
-                <p class="stat-card-subheading mb-0">Fully diluted supply</p>
-                <p class="stat-card-heading color-white">1,999,999,999,999</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 mt-3">
-          <div class="stat-card">
-            <div class="media">
-              <img class="mr-3 mt-2" src="./assets/img/burnt-icon.svg" alt="burnt-icon">
-              <div class="media-body pt-3">
-                <p class="stat-card-subheading mb-0">Burnt Supply</p>
-                <p class="stat-card-heading color-white">100,000,000</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 mt-3">
-          <div class="stat-card">
-            <div class="media">
-              <img class="mr-3 mt-3" src="./assets/img/supply-icon.svg" alt="supply-icon">
-              <div class="media-body pt-3">
-                <p class="stat-card-subheading mb-0">Circulating Supply</p>
-                <p class="stat-card-heading color-white">20,000,000,000</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 mt-3">
-          <div class="stat-card">
-            <div class="media">
-              <img class="mr-3 mt-3" src="./assets/img/diamond-icon.svg" alt="diamond-icon">
-              <div class="media-body pt-3">
-                <p class="stat-card-subheading mb-0">Market Cap</p>
-                <p class="stat-card-heading color-white">$1,000,000,000</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Coin stat section ends here -->
 
-  <!-- Show Account Modal starts here -->
-  <div id="showAccountModal" class="account-modal">
+            <div class="col-md-6 mt-4">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-2"
+                    src="./assets/img/tax-icon.svg"
+                    alt="tax-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading mb-0">
+                      Current PAZ sell tax
+                    </p>
+                    <p class="stat-card-heading color-white">21.73%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Your stats section ends here -->
+
+      <!-- feeless section starts here -->
+      <section class="feeless-section">
+        <div class="custom-container">
+          <div class="row">
+            <div class="col-md-12">
+              <p class="section-heading">Tax Free SELLING</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mt-1">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-4"
+                    src="./assets/img/coupons-icon.svg"
+                    alt="coupons-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading mb-0">Claimed Coupons</p>
+                    <p class="stat-card-heading color-white">100 Coupons</p>
+                  </div>
+                </div>
+                <div class="btn-main card-connect-btn">
+                  <span class="mas">Claim Reward</span>
+                  <button type="button" name="Hover" class="is-disabled">
+                    Claim Reward
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mt-1">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-4"
+                    src="./assets/img/swap-icon.svg"
+                    alt="swap-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading mb-0">
+                      Tax Free BUSD Amount
+                    </p>
+                    <p class="stat-card-heading color-white">$42,989 BUSD</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mt-3">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-4"
+                    src="./assets/img/feeless-swap-icon.svg"
+                    alt="feeless-swap-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading">
+                      Tax Free Swap With Coupon
+                    </p>
+                    <form class="form-inline mt-3 approve-form">
+                      <div class="form-group">
+                        <div class="position-relative">
+                          <input
+                            type="number"
+                            class="form-control"
+                            placeholder="0.0"
+                          />
+                          <span class="input-txt">BNB</span>
+                        </div>
+                        <input
+                          type="submit"
+                          class="form-control is-disabled"
+                          value="Approve"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mt-3">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-4"
+                    src="./assets/img/feeless-busd-icon.svg"
+                    alt="feeless-busd-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading">
+                      Tax Free BUSD Reinvesting
+                    </p>
+                    <form class="form-inline mt-3 approve-form">
+                      <div class="form-group">
+                        <div class="position-relative">
+                          <input
+                            type="number"
+                            class="form-control"
+                            placeholder="0.0"
+                          />
+                          <span class="input-txt">BNB</span>
+                        </div>
+                        <input
+                          type="submit"
+                          class="form-control is-disabled"
+                          value="Approve"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- feeless section starts here -->
+
+      <!-- Coin stat section starts here -->
+      <section>
+        <div class="custom-container">
+          <div class="row">
+            <div class="col-md-12">
+              <p class="section-heading">COIN STATS</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-3"
+                    src="./assets/img/tax-icon.svg"
+                    alt="tax-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading mb-0">
+                      Total Paid to Holders
+                    </p>
+                    <p class="stat-card-heading color-white">
+                      $ 1,034,375 BUSD
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-4"
+                    src="./assets/img/buyback-icon.svg"
+                    alt="buyback-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading mb-0">Buyback Balance</p>
+                    <p class="stat-card-heading color-white">$784,472 BUSD</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mt-3">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-3"
+                    src="./assets/img/locker-icon.svg"
+                    alt="locker-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading mb-0">Total Supply</p>
+                    <p class="stat-card-heading color-white">
+                      1,999,999,999,999
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mt-3">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-2"
+                    src="./assets/img/burnt-icon.svg"
+                    alt="burnt-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading mb-0">Burnt Supply</p>
+                    <p class="stat-card-heading color-white">100,000,000</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mt-3">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-3"
+                    src="./assets/img/supply-icon.svg"
+                    alt="supply-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading mb-0">Circulating Supply</p>
+                    <p class="stat-card-heading color-white">20,000,000,000</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mt-3">
+              <div class="stat-card">
+                <div class="media">
+                  <img
+                    class="mr-3 mt-3"
+                    src="./assets/img/diamond-icon.svg"
+                    alt="diamond-icon"
+                  />
+                  <div class="media-body pt-3">
+                    <p class="stat-card-subheading mb-0">Market Cap</p>
+                    <p class="stat-card-heading color-white">$1,000,000,000</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Coin stat section ends here -->
+
+      <!-- Show Account Modal starts here -->
+      <div id="showAccountModal" class="account-modal">
         <div class="account-modal-content">
           <h5 class="text-center">Account</h5>
           <span class="close account-modal-close float-right">&times;</span>
           <div class="accountModal-inner position-relative">
             <div class="media">
-              <img class="mr-3 mt-3" src="./assets/img/robot.svg" alt="robot-icon">
+              <img
+                class="mr-3 mt-3"
+                src="./assets/img/robot.svg"
+                alt="robot-icon"
+              />
               <div class="media-body pt-3">
-                <p class="stat-card-heading color-white mb-0" id="shortAccount"></p>
-                <a id="bscscan-link" target="_blank" class="bscscan-link">View in explorer 
-                  <span><img src="./assets/img/right-arrow.svg" alt="right-arrow"></span>
+                <input type="text" id="addressInput" class="copiedTxt" />
+                <a
+                  id="copyBtn"
+                  data-toggle="tooltip"
+                  data-original-title="Copy to clipboard"
+                >
+                  <span
+                    class="stat-card-heading color-white mb-0"
+                    id="shortAccount"
+                  ></span> </a
+                ><br />
+                <a id="bscscan-link" target="_blank" class="bscscan-link"
+                  >View in explorer
+                  <span
+                    ><img src="./assets/img/right-arrow.svg" alt="right-arrow"
+                  /></span>
                 </a>
-                <button id="btn-disconnect" type="button" class="btn-disconnect">Disconnect</button>
+                <div class="btn-main btn-disconnect">
+                  <span class="mas">Disconnect</span>
+                  <button id="btn-disconnect" type="button" name="Hover">
+                    Disconnect
+                  </button>
+                </div>
               </div>
             </div>
           </div>
           <div class="pt-3">
             <p class="mb-0">History</p>
-            <a href="#" class="color-white is-disabled">Claim reward in 1 pool <span><img src="./assets/img/right-arrow-white.svg" alt="right-arrow"></span></a>
-            <img src="./assets/img/green-dot.svg" alt="green-dot" class="float-right">
+            <a href="#" class="color-white is-disabled"
+              >Claim reward in 1 pool
+              <span
+                ><img
+                  src="./assets/img/right-arrow-white.svg"
+                  alt="right-arrow" /></span
+            ></a>
+            <img
+              src="./assets/img/green-dot.svg"
+              alt="green-dot"
+              class="float-right"
+            />
           </div>
         </div>
-  </div>
-  <!-- Show Account Modal ends here -->
-  </div>
-  <!------- Connected screen ends here ------->
+      </div>
+      <!-- Show Account Modal ends here -->
+    </div>
+    <!------- Connected screen ends here ------->
 
     <!-- footer starts here -->
     <section class="footer-section">
       <div class="custom-container">
         <div class="row">
           <div class="col-md-12">
-            <img src="./assets/img/pazz-icon.svg" alt="pazz logo" class="footer-logo">
-            <p class="footer-txt pt-3">Copyright © 2021 <a class="color-white" href="https://www.fuzion.team/" target="_blank">FuzionChain.</a> All Rights Reserved.</p>
+            <img
+              src="./assets/img/pazz-icon.svg"
+              alt="pazz logo"
+              class="footer-logo hover-magnify"
+            />
+            <p class="footer-txt pt-3">
+              Copyright © 2021
+              <a
+                class="color-white"
+                href="https://www.fuzion.team/"
+                target="_blank"
+                >FuzionChain.</a
+              >
+              All Rights Reserved.
+            </p>
             <ul class="d-flex justify-content-center">
-              <li>
-                <a target="_blank" href="https://t.me/fuzionchain"><img src="./assets/img/telegram.svg" alt="facebook" class="hover-magnify" width="30px"></a>
+              <li class="mx-2">
+                <a target="_blank" href="mailto:team@teslasafe.finance"
+                  ><img
+                    src="./assets/img/gmail.svg"
+                    alt="gmail"
+                    class="hover-magnify footer-icon"
+                /></a>
               </li>
-              <li class="mx-3">
-                <a target="_blank" href="https://twitter.com/fuzionchain"><img src="./assets/img/twitter.svg" alt="twitter" class="hover-magnify" width="30px"></a>
+              <li class="mx-2">
+                <a target="_blank" href="https://twitter.com/fuzionchain"
+                  ><img
+                    src="./assets/img/twitter.svg"
+                    alt="twitter"
+                    class="hover-magnify footer-icon"
+                /></a>
               </li>
-              <li>
-                <a target="_blank" href="https://discord.gg/24uAPzKYFu"><img src="./assets/img/discord.svg" alt="telegram" class="hover-magnify" width="30px"></a>
+              <li class="mx-2">
+                <a target="_blank" href="https://www.facebook.com/FuzionChain/"
+                  ><img
+                    src="./assets/img/facebook.svg"
+                    alt="facebook"
+                    class="hover-magnify footer-icon"
+                /></a>
+              </li>
+              <li class="mx-2">
+                <a target="_blank" href="https://www.tiktok.com/@fuzionchain"
+                  ><img
+                    src="./assets/img/tiktok.svg"
+                    alt="ticktok"
+                    class="hover-magnify footer-icon"
+                /></a>
+              </li>
+              <li class="mx-2">
+                <a target="_blank" href="https://ricefarm.fi/"
+                  ><img
+                    src="./assets/img/farm.svg"
+                    alt="Farm"
+                    class="hover-magnify footer-icon"
+                /></a>
+              </li>
+              <li class="mx-2">
+                <a target="_blank" href="https://www.instagram.com/fuzionchain/"
+                  ><img
+                    src="./assets/img/instagram.svg"
+                    alt="instagram"
+                    class="hover-magnify footer-icon"
+                /></a>
+              </li>
+              <li class="mx-2">
+                <a target="_blank" href="https://www.reddit.com/r/TeslaSafe"
+                  ><img
+                    src="./assets/img/reddit.svg"
+                    alt="reddit"
+                    class="hover-magnify footer-icon"
+                /></a>
+              </li>
+              <li class="mx-2">
+                <a target="_blank" href="https://t.me/fuzionchain"
+                  ><img
+                    src="./assets/img/telegram.svg"
+                    alt="telegram"
+                    class="hover-magnify footer-icon"
+                /></a>
+              </li>
+              <li class="mx-2">
+                <a target="_blank" href="https://discord.gg/24uAPzKYFu"
+                  ><img
+                    src="./assets/img/discord.svg"
+                    alt="discord"
+                    class="hover-magnify footer-icon"
+                /></a>
               </li>
             </ul>
           </div>
@@ -687,36 +1035,36 @@
     <!-- footer starts here -->
 
     <!-- Network error display starts here -->
-  <div id="networkError" style="display: none">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="warning-block my-auto mx-auto">
-            <a href="index.html">
-              <img
-                src="./assets/img/pazzive-logo.svg"
-                alt="Pazzive logo"
-                width="290px"
-                class="mx-auto text-center mb-3"
-              />
-            </a>
-            <h5 class="warning-heading text-center">
-              <span class="mr-2"
-                ><img
-                  src="./assets/img/warning.svg"
-                  alt="warning-icon"
-                  class="warning-icon" /></span
-              >Pazzive is not yet deployed to this network.
-            </h5>
-            <p class="warning-subheading text-center">
-              Please switch to Binance Smart Chain.
-            </p>
+    <div id="networkError" style="display: none">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="warning-block my-auto mx-auto">
+              <a href="index.html">
+                <img
+                  src="./assets/img/pazzive-logo.svg"
+                  alt="Pazzive logo"
+                  width="290px"
+                  class="mx-auto text-center mb-3"
+                />
+              </a>
+              <h5 class="warning-heading text-center">
+                <span class="mr-2"
+                  ><img
+                    src="./assets/img/warning.svg"
+                    alt="warning-icon"
+                    class="warning-icon" /></span
+                >Pazzive is not yet deployed to this network.
+              </h5>
+              <p class="warning-subheading text-center">
+                Please switch to Binance Smart Chain.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Network error display starts here -->
+    <!-- Network error display starts here -->
 
     <!-- All js files -->
     <script

@@ -11,7 +11,6 @@ $(window).scroll(function () {
 });
 
 // show account modal
-
 var modal = document.getElementById("showAccountModal");
 var btn = document.getElementById("showAccountBtn");
 var span = document.getElementsByClassName("close")[0];
@@ -29,13 +28,12 @@ window.onclick = function (event) {
 };
 
 // copy to clip board
-
-// const copyBtn = document.getElementById("copyBtn");
-// const inputField = document.getElementById("addressInput");
-// copyBtn.onclick = function () {
-//   inputField.select();
-//   document.execCommand("Copy");
-// };
+const copyBtn = document.getElementById("copyBtn");
+const inputField = document.getElementById("addressInput");
+copyBtn.onclick = function () {
+  inputField.select();
+  document.execCommand("Copy");
+};
 
 // Confirm Modal
 $("#disclaimerModal").modal({ backdrop: "static", keyboard: false });
@@ -44,7 +42,6 @@ $(".closeModal").click(function () {
 });
 
 // Confirm Terms and service Btn
-
 $(".number").on("click", function () {
   if ($(".number:checked").length > 1) {
     $("#confirmBtn")
@@ -59,3 +56,11 @@ $(".number").on("click", function () {
   }
 });
 
+// Tooltip display
+$(document).ready(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+  placement: "top";
+});
+$('[data-toggle="tooltip"]').click(function () {
+  $(this).tooltip("hide").attr("data-original-title", "Copied").tooltip("show");
+});

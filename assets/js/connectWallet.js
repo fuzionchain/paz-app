@@ -644,11 +644,11 @@ async function startUp() {
   if (user.address != undefined) {
     let p2 = user.address.slice(42 - 5);
     $("#shortAccount")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
+    $("#shortAddress")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
     $("#showAccountBtn")[0].innerHTML = `${user.address.slice(0, 4)}...${p2}`;
 
     // Display Network Error
     const chainId = await web3.eth.getChainId();
-    console.log(chainId, "this is the chain id")
     if (chainId != 56 && chainId != 97) {
       document.querySelector("#prepare").style.display = "none";
       document.querySelector("#connected").style.display = "none";
@@ -664,13 +664,16 @@ async function startUp() {
     //Bscscan link href
     const link = document.getElementById("bscscan-link");
     link.href = `https://bscscan.com/address/${user.address}`;
+
+    // clipboard input value
+    const copyLink = document.getElementById("addressInput");
+    copyLink.value = user.address;
   } else {
     beginLogins();
   }
 }
 
 async function logOut() {
-  console.log("logout is pressed")
   await web3Modal.clearCachedProvider();
   selectedAccount = null;
   localStorage.clear();
@@ -681,4 +684,3 @@ async function logOut() {
   document.querySelector("#prepare").style.display = "block";
   document.querySelector("#connected").style.display = "none";
 }
-

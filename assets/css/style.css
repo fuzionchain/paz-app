@@ -3,8 +3,8 @@
 /* Global styling starts here */
 
 :root {
-  --primary-color: #140D38;
-  --secondry-color: #231D4F;
+  --primary-color: #140d38;
+  --secondry-color: #231d4f;
 }
 
 * {
@@ -22,7 +22,7 @@ a {
   cursor: pointer !important;
   color: white !important;
 }
-a:hover{
+a:hover {
   text-decoration: none !important;
   color: inherit;
 }
@@ -49,34 +49,154 @@ section {
   height: auto;
 }
 
-.custom-container{
+.custom-container {
   width: 85%;
   margin: 0 auto;
 }
 
-.navbar{
+.navbar {
   padding: 20px 0px !important;
 }
-.section-heading{
+.section-heading {
   font-size: 15px;
-  color: #9793BD;
+  color: #9793bd;
 }
-.color-white{
-  color: #FFFFFF !important;
+.color-white {
+  color: #ffffff !important;
 }
-.is-disabled{
+.is-disabled {
   cursor: not-allowed !important;
 }
-.hover-magnify:hover{
+.hover-magnify:hover {
   transform: scale(1.5);
+}
+.highlight-txt {
+  color: #12d3ff;
+}
+
+.btn-main {
+  position: relative;
+  width: 138px;
+  height: 44px;
+  overflow: hidden;
+  transition: 0.5s;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 5px;
+  /* background: linear-gradient(to right, #12d3ff 0%, #0033cc5c 103%); */
+  background: linear-gradient(
+    90deg,
+    rgba(60, 136, 236, 1) 31%,
+    rgba(101, 50, 243, 1) 69%
+  );
+}
+
+.btn-main button {
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border-radius: 2px;
+  font-size: 14px;
+  background: var(--secondry-color);
+  margin: 2px;
+  -webkit-mask: url(https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png);
+  mask: url(https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png);
+  -webkit-mask-size: 3000% 100%;
+  mask-size: 3000% 100%;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  -webkit-animation: ani2 0.7s steps(29) forwards;
+  animation: ani2 0.7s steps(29) forwards;
+}
+
+.btn-main button:hover {
+  -webkit-animation: ani 0.7s steps(29) forwards;
+  animation: ani 0.7s steps(29) forwards;
+}
+
+.mas {
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  font-size: 14px;
+  overflow: hidden;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bb-btn {
+  background-image: linear-gradient(90deg, #6f7c8e, #6f7c8e);
+}
+
+.blue-btn button {
+  background: #39475c;
+}
+
+.connectBtn button {
+  -webkit-mask: url(https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png);
+  mask: url(https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png);
+  -webkit-mask-size: 2300% 100%;
+  mask-size: 2300% 100%;
+  -webkit-animation: ani2 0.7s steps(22) forwards;
+  animation: ani2 0.7s steps(22) forwards;
+}
+
+.connectBtn button:hover {
+  -webkit-animation: ani 0.7s steps(22) forwards;
+  animation: ani 0.7s steps(22) forwards;
+}
+
+@-webkit-keyframes ani {
+  0% {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@keyframes ani {
+  0% {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@-webkit-keyframes ani2 {
+  0% {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+@keyframes ani2 {
+  0% {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
 }
 /* Global styling ends here */
 
 /* navbar */
-#prepare{
+#prepare {
   padding-top: 9%;
 }
-.nav-inner{
+.nav-inner {
   width: 85%;
   margin: 0 auto;
   display: flex;
@@ -85,7 +205,7 @@ section {
   background-image: url(../img/metmask-icon.svg);
   background-color: var(--secondry-color);
   color: white;
-  border: 2px solid #413C67;
+  border: 2px solid #413c67;
   padding: 10px 20px 10px 42px;
   border-radius: 7px;
   height: 10px;
@@ -96,9 +216,9 @@ section {
 }
 .price-btn {
   background-image: url(../img/pazz-icon.svg);
-  background-color: #231D4F;
+  background-color: #231d4f;
   color: white;
-  border: 2px solid #413C67;
+  border: 2px solid #413c67;
   padding: 10px 20px 10px 42px;
   border-radius: 7px;
   height: 10px;
@@ -107,33 +227,41 @@ section {
   background-position: 8px;
   font-size: 17px;
 }
-.connect-btn{
-  background: linear-gradient(90deg, rgba(109,61,249,1) 7%, rgba(69,115,249,1) 41%);
+.connect-btn {
+  background: linear-gradient(
+    90deg,
+    rgba(109, 61, 249, 1) 7%,
+    rgba(69, 115, 249, 1) 41%
+  );
   color: white !important;
-  border: 2px solid rgba(69,115,249,1);
+  border: 2px solid rgba(69, 115, 249, 1);
   padding: 10px 20px;
   border-radius: 7px;
   height: 10px;
   width: 20px;
   font-size: 17px;
 }
-.connect-btn img{
+.connect-btn img {
   vertical-align: middle;
 }
 
 /* your-stats-section */
-.your-stat-card-1{
-  background: rgb(60,136,236);
-  background: linear-gradient(90deg, rgba(60,136,236,1) 31%, rgba(101,50,243,1) 69%);
+.your-stat-card-1 {
+  background: rgb(60, 136, 236);
+  background: linear-gradient(
+    90deg,
+    rgba(60, 136, 236, 1) 31%,
+    rgba(101, 50, 243, 1) 69%
+  );
   border-radius: 10px;
   padding: 22px;
   width: 100%;
   height: 220px;
 }
 
-.buy-btn{
-  background: #FFFFFF;
-  border: 1.2px solid #FFFFFF;
+.buy-btn {
+  background: #ffffff;
+  border: 1.2px solid #ffffff;
   width: 100%;
   color: #201760 !important;
   text-align: center;
@@ -144,71 +272,70 @@ section {
   border-radius: 5px;
 }
 
-.your-stat-heading{
-  color: #A9ADF8;
+.your-stat-heading {
+  color: #a9adf8;
   font-size: 26px;
   font-weight: inherit;
 }
 
-.your-stat-subheading{
-  color: #FFFFFF;
+.your-stat-subheading {
+  color: #ffffff;
   font-size: 15px;
   font-weight: 500;
 }
 
-.your-stat-card-2{
-  background: rgb(59,138,236);
-  background: linear-gradient(90deg, rgba(59,138,236,1) 18%, rgba(102,48,243,1) 55%);
+.your-stat-card-2 {
+  background: rgb(59, 138, 236);
+  background: linear-gradient(
+    90deg,
+    rgba(59, 138, 236, 1) 18%,
+    rgba(102, 48, 243, 1) 55%
+  );
   border-radius: 10px;
   padding: 22px;
   width: 100%;
   height: 220px;
 }
 
-.your-stat-card-2 .connect-wallet{
-  background: transparent;
+.your-stat-card-2 .connect-wallet {
+  /* background: transparent;
   border: 1.2px solid #FFFFFF;
   width: 100%;
   color: #FFFFFF;
   text-align: center;
-  font-size: 15px;
+  font-size: 15px; */
   display: flex;
   justify-content: center;
-  padding: 9px;
-  border-radius: 5px;
+  /* padding: 9px;
+  border-radius: 5px; */
 }
 
-.stat-card{
+.stat-card {
   background: var(--secondry-color);
   padding: 22px 25px;
   width: 100%;
   border-radius: 10px;
 }
 
-.stat-card-heading{
+.stat-card-heading {
   font-size: 22px;
-  color: #918EA7;
+  color: #918ea7;
 }
 
-.stat-card-subheading{
+.stat-card-subheading {
   font-size: 15px;
-  color: #9793BD;
+  color: #9793bd;
 }
 
-.card-connect-btn{
-  color: white;
-  border: 1px solid white;
-  padding: 7px 14px;
-  position: absolute;
-  right: 34px;
-  top: 50%;
-  transform: translate(0px, -50%);
-  border-radius: 5px;
-  background: transparent;
+.card-connect-btn {
+  position: absolute !important;
+  right: 34px !important;
+  top: 50% !important;
+  transform: translate(0px, -50%) !important;
 }
 
 /* Feeless selling section */
-.card-connect-btn-2{
+.card-connect-btn-2 {
   color: white;
   border: 1px solid white;
   padding: 7px 14px;
@@ -217,64 +344,69 @@ section {
 }
 
 /* footer */
-.footer-section{
+.footer-section {
   padding-top: 10%;
   padding-bottom: 1%;
   height: auto;
 }
-.footer-logo{
+.footer-logo {
   width: 45px;
   display: flex;
   justify-content: center;
   margin: 0 auto;
 }
-.footer-txt{
+.footer-txt {
   color: #7b7b7b;
   font-size: 12px;
   text-align: center;
 }
+.footer-icon {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
+    brightness(102%) contrast(102%);
+  width: 24px;
+}
 
 /* connected screen starts here */
-.re-invest-form input[type=number]{
+.re-invest-form input[type="number"] {
   padding: 9px !important;
-  border: 1px solid #8687F4 !important;
-  background: #3949B4;
+  border: 1px solid #8687f4 !important;
+  background: #3949b4;
   width: 371px;
 }
-.re-invest-form input[type=submit]{
+.re-invest-form input[type="submit"] {
   padding: 9px 18px !important;
-  border: 1px solid #F2F2F2 !important;
+  border: 1px solid #f2f2f2 !important;
   background: transparent;
   margin-left: 20px;
   color: white;
 }
-.re-invest-form input:focus{
+.re-invest-form input:focus {
   color: white;
 }
-.input-txt{
+.input-txt {
   position: absolute;
   right: 10px;
   top: 50%;
   transform: translate(0px, -50%);
   color: white;
 }
-.approve-form input[type=number]{
+.approve-form input[type="number"] {
   padding: 9px !important;
-  border: 1px solid #3F3572 !important;
-  background: #0C0726;
+  border: 1px solid #3f3572 !important;
+  background: #0c0726;
   width: 300px;
 }
-.approve-form input[type=submit]{
+.approve-form input[type="submit"] {
   padding: 9px 18px !important;
-  border: 1px solid #F2F2F2 !important;
+  border: 1px solid #f2f2f2 !important;
   background: transparent;
   margin-left: 20px;
   color: white;
 }
-.approve-form input:focus{
+.approve-form input:focus {
   color: white;
 }
-#connected{
+#connected {
   padding-top: 9%;
 }
 /* pop up modal starts here */
@@ -410,50 +542,46 @@ section {
 }
 
 .bscscan-link {
-  color: #09E2FF !important;
+  color: #09e2ff !important;
   font-size: 15px;
 }
 
-.accountModal-inner{
-  background: #140D38;
+.accountModal-inner {
+  background: #140d38;
   padding: 14px 10px;
   border-radius: 10px;
   margin-top: 25px;
 }
 
-.btn-disconnect{
+.btn-disconnect {
   position: absolute;
-  background: linear-gradient(to right, #12d3ff 0%, #921cff 103%) !important;
-  color: white;
-  border: none;
-  padding: 10px 29px;
-  border-radius: 5px;
   top: 50%;
   right: 19px;
   transform: translate(0px, -50%);
 }
+
 /* Account model ends here */
 
 /* web3.js modal style */
-.bfIkEQ{
-  background-color: #231D4F !important;
+.bfIkEQ {
+  background-color: #231d4f !important;
   max-width: 664px !important;
   border-radius: 10px !important;
 }
 
-.xPSun{
-  background-color: #231D4F !important;
+.xPSun {
+  background-color: #231d4f !important;
   padding: 12px 6px !important;
 }
 
-.kaSVED{
+.kaSVED {
   border: none !important;
 }
 
 .hBmmHr {
   color: rgb(160 160 181) !important;
   font-size: 17px !important;
-} 
+}
 
 .ceSpQQ {
   font-size: 15px !important;
@@ -531,7 +659,7 @@ section {
   .modal-dialog {
     width: 100% !important;
   }
-  .connect-btn{
+  .connect-btn {
     display: flex;
     width: 100%;
     height: 48px;
