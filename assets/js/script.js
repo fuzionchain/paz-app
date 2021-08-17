@@ -59,4 +59,9 @@ $(".number").on("click", function () {
 // Tooltip display
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();   
+placement : 'top'
 });
+ $('[data-toggle="tooltip"]').click(function(){
+    $(this).tooltip('hide').attr('data-original-title', 'Copied').tooltip('show');
+});
+

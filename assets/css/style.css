@@ -540,15 +540,11 @@ section {
 
 .btn-disconnect{
   position: absolute;
-  /* background: linear-gradient(to right, #12d3ff 0%, #921cff 103%) !important;
-  color: white;
-  border: none;
-  padding: 10px 29px;
-  border-radius: 5px; */
   top: 50%;
   right: 19px;
   transform: translate(0px, -50%);
 }
+
 /* Account model ends here */
 
 /* web3.js modal style */
