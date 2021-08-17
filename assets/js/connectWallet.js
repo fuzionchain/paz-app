@@ -668,7 +668,6 @@ async function startUp() {
     // clipboard input value
     const copyLink = document.getElementById("addressInput");
     copyLink.value = user.address;
-
   } else {
     beginLogins();
   }
@@ -685,4 +684,3 @@ async function logOut() {
   document.querySelector("#prepare").style.display = "block";
   document.querySelector("#connected").style.display = "none";
 }
-
