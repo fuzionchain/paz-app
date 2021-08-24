@@ -64,3 +64,12 @@ $(document).ready(function () {
 $('[data-toggle="tooltip"]').click(function () {
   $(this).tooltip("hide").attr("data-original-title", "Copied").tooltip("show");
 });
+
+// Collapse navbar
+$('.navbar-nav>li>a').on('click', function(){
+  $('.navbar-collapse').collapse('hide');
+});
+
+$('.navbar-nav>li>.btn-main>button').on('click', function(){
+  $('.navbar-collapse').collapse('hide');
+});
