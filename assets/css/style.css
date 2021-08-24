@@ -68,7 +68,7 @@ section {
   cursor: not-allowed !important;
 }
 .hover-magnify:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 .highlight-txt {
   color: #12d3ff;
@@ -345,25 +345,26 @@ section {
 
 /* footer */
 .footer-section {
-  padding-top: 10%;
-  padding-bottom: 1%;
+  padding-bottom: 2%;
   height: auto;
+  padding-top: 12%;
+  position: relative;
 }
 .footer-logo {
   width: 45px;
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
 }
 .footer-txt {
   color: #7b7b7b;
   font-size: 12px;
-  text-align: center;
 }
 .footer-icon {
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
     brightness(102%) contrast(102%);
   width: 24px;
+}
+.fuzion-seal-logo{
+  width: 129px;
+  float: right;
 }
 
 /* connected screen starts here */
@@ -408,6 +409,22 @@ section {
 }
 #connected {
   padding-top: 9%;
+}
+.buy-btn-2{
+  background: #ffffff;
+  border: 1.2px solid #ffffff;
+  width: 160px;
+  color: #201760 !important;
+  text-align: center;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  padding: 9px;
+  border-radius: 5px;
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translate(0%, -50%);
 }
 /* pop up modal starts here */
 
