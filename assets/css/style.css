@@ -57,6 +57,13 @@ section {
 .navbar {
   padding: 20px 0px !important;
 }
+.navbar .nav-item{
+  margin-top: 12px;
+}
+.fixed-top{
+  right: 7.5% !important;
+  left: 7.5% !important;
+}
 .section-heading {
   font-size: 15px;
   color: #9793bd;
@@ -68,7 +75,7 @@ section {
   cursor: not-allowed !important;
 }
 .hover-magnify:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 .highlight-txt {
   color: #12d3ff;
@@ -195,11 +202,6 @@ section {
 /* navbar */
 #prepare {
   padding-top: 9%;
-}
-.nav-inner {
-  width: 85%;
-  margin: 0 auto;
-  display: flex;
 }
 .metamask-btn {
   background-image: url(../img/metmask-icon.svg);
@@ -345,25 +347,26 @@ section {
 
 /* footer */
 .footer-section {
-  padding-top: 10%;
-  padding-bottom: 1%;
+  padding-bottom: 2%;
   height: auto;
+  padding-top: 12%;
+  position: relative;
 }
 .footer-logo {
   width: 45px;
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
 }
 .footer-txt {
   color: #7b7b7b;
   font-size: 12px;
-  text-align: center;
 }
 .footer-icon {
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
     brightness(102%) contrast(102%);
   width: 24px;
+}
+.fuzion-seal-logo{
+  width: 129px;
+  float: right;
 }
 
 /* connected screen starts here */
@@ -408,6 +411,22 @@ section {
 }
 #connected {
   padding-top: 9%;
+}
+.buy-btn-2{
+  background: #ffffff;
+  border: 1.2px solid #ffffff;
+  width: 160px;
+  color: #201760 !important;
+  text-align: center;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  padding: 9px;
+  border-radius: 5px;
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  transform: translate(0%, -50%);
 }
 /* pop up modal starts here */
 
@@ -630,6 +649,12 @@ section {
 
 /* For tablet */
 
+@media only screen and (max-width: 1300px){
+  .custom-container{
+    width: 95%;
+  }
+}
+
 @media only screen and (max-width: 1150px) {
   .modal-content {
     width: 100% !important;
@@ -637,11 +662,55 @@ section {
   .modal-dialog {
     width: 68% !important;
   }
+  .custom-container{
+    width: 94%;
+  }
+  .fixed-top{
+    right: 3% !important;
+    left: 3% !important;
+  }
+  .stat-card-heading{
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .account-modal-content{
+    width: 62%;
+  }
+  .approve-form input[type="number"]{
+    width: 169px;
+  }
+  .approve-form input[type="submit"]{
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 930px){
+  .modal-dialog {
+    width: 95% !important;
+  }
 }
 
 /* for mobile */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 770px) {
+  .navbar .navbar-nav .ml-2{
+    margin-left: 0px !important;
+  }
+  .price-btn{
+    display: flex;
+    width: 100%;
+    height: 49px;
+  }
+  .connectBtn{
+    margin-top: 0px !important;
+    width: 100%;
+    height: 49px;
+  }
+  .metamask-btn{
+    display: flex;
+    width: 100%;
+    height: 49px;
+  }
   .modal-content {
     padding: 7px;
     font-size: 10px;
@@ -663,6 +732,74 @@ section {
     display: flex;
     width: 100%;
     height: 48px;
+  }
+  .your-stat-section{
+    padding-top: 17%;
+  }
+  .stat-card-heading{
+    font-size: 19px;
+  }
+  .your-stat-heading{
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .card-connect-btn{
+    display: none;
+  }
+  .section-heading{
+    padding-top: 10px;
+  }
+  .fuzion-seal-logo{
+    width: 120px;
+    float: none;
+    display: flex;
+    margin: 0 auto;
+  }
+  .footer-section{
+    padding-bottom: 10%;
+  }
+  .footer-txt{
+    text-align: center;
+  }
+  .footer-section ul{
+    display: flex;
+    justify-content: center;
+  }
+  .footer-logo{
+    display: flex;
+    margin: 0 auto;
+  }
+  .btn-main{
+    font-size: 10px;
+    height: 39px;
+  }
+  .fixed-top{
+    right: 1% !important;
+    left: 1% !important;
+  }
+  .buy-btn-2{
+    margin-top: 8px;
+    display: flex;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+  }
+  .approve-form input[type="submit"]{
+    width: 220px;
+    margin-top: 10px;
+    margin-left: 0px;
+    height: 42px;
+}
+  .approve-form input[type="number"]{
+    width: 221px;
+    height: 47px;
+    margin-top: 10px;
+  }
+  .bscscan-link{
+    font-size: 12px;
+  }
+  .input-txt{
+    top: 58%;
   }
 }
 
