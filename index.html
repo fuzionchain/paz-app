@@ -22,6 +22,7 @@
     <title>Pazz</title>
     <!-- Custom Css link -->
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/dropdown.css" />
     <!-- Bootstrap 4 css link -->
     <link
       rel="stylesheet"
@@ -631,9 +632,9 @@
             </div>
           </div>
 
-          <div class="row">
-            <div class="col-lg-6 col-md-12 mt-3">
-              <div class="stat-card">
+          <div class="pending-BUSD-part mt-3">
+           <div class="row">
+            <div class="col-lg-6 col-md-6 mt-3">
                 <div class="media">
                   <img
                     class="mr-3 mt-2"
@@ -647,157 +648,126 @@
                     <p class="stat-card-heading color-white">3,254</p>
                   </div>
                 </div>
-                <!-- <a href="" class="card-connect-btn is-disabled">Claim Reward</a> -->
                 <div class="btn-main card-connect-btn">
                   <span class="mas">Claim Reward</span>
                   <button type="button" name="Hover" class="is-disabled">
                     Claim Reward
                   </button>
                 </div>
-              </div>
             </div>
-
-            <div class="col-lg-6 col-md-12 mt-3">
-              <div class="stat-card">
-                <div class="media">
-                  <img
-                    class="mr-3 mt-2"
-                    src="./assets/img/tax-icon.svg"
-                    alt="tax-icon"
-                  />
-                  <div class="media-body pt-3">
-                    <p class="stat-card-subheading mb-0">
-                      Current PAZ sell tax
-                    </p>
-                    <p class="stat-card-heading color-white">21.73%</p>
+            <div class="col-lg-6 col-md-6 mt-3 reinvest-part">
+                <label class="approve-form-label">Automatically reinvest reward in</label>
+                <form class="form-inline approve-form">
+                  <div class="form-group">
+                    <div class="form-group">
+                      <select class="form-control" is="ms-dropdown">
+                        <option value="TeslaSafe" data-image="./assets/img/TS-icon.svg">TeslaSafe</option>
+                        <option value="Rice" data-image="./assets/img/Rice-icon.svg">Rice</option>
+                        <option value="Pazz" data-image="./assets/img/BNB-icon.svg">BNB</option>
+                      </select>
+                    </div>
+                    <input
+                      type="submit"
+                      class="form-control is-disabled"
+                      value="Save Changed"
+                    />
                   </div>
-                </div>
+                </form>
+            </div>
+           </div>
+          </div>
+          <div class="reinvest-reward mt-3">
+            <div class="row">
+              <div class="offset-lg-2"></div>
+              <div class="col-lg-8 col-md-12">
+                <label class="reinvest-label mt-3">Reinvest reward (Avalaible BUSD 40,000)</label>
+                <form class="form-inline approve-form d-flex justify-content-center">
+                  <div class="form-group">
+                    <div class="form-group">
+                      <select class="form-control" is="ms-dropdown">
+                        <option value="TeslaSafe" data-image="./assets/img/TS-icon.svg">TeslaSafe</option>
+                        <option value="Rice" data-image="./assets/img/Rice-icon.svg">Rice</option>
+                        <option value="Pazz" data-image="./assets/img/BNB-icon.svg">BNB</option>
+                      </select>
+                    </div>
+                    <input type="number" class="reinvest-amount ml-3" placeholder="Enter amount to reinvest tax-free">
+                    <input
+                      type="submit"
+                      class="form-control is-disabled"
+                      value="Re-Invest"
+                    />
+                  </div>
+                </form>
+              </div>
+              <div class="offset-lg-2"></div>
+            </div>
+          </div>
+
+          <div class="sell-tax mt-3">
+            <div class="row">
+              <div class="col-md-12">
+                <p class="sell-tax-percentage mb-0">Sell Tax: 45%</p>
               </div>
             </div>
           </div>
+
         </div>
       </section>
       <!-- Your stats section ends here -->
 
-      <!-- feeless section starts here -->
-      <section class="feeless-section">
+      <section class="lock-pazz-section">
         <div class="custom-container">
           <div class="row">
             <div class="col-md-12">
-              <p class="section-heading">TAX FREE SELLING</p>
+              <p class="section-heading">LOCK YOUR PAZ</p>
             </div>
           </div>
           <div class="row">
-            <div class="col-lg-6 col-md-12 mt-3">
-              <div class="stat-card">
-                <div class="media">
-                  <img
-                    class="mr-3 mt-4"
-                    src="./assets/img/coupons-icon.svg"
-                    alt="coupons-icon"
-                  />
-                  <div class="media-body pt-3">
-                    <p class="stat-card-subheading mb-0">Claimed Coupons</p>
-                    <p class="stat-card-heading color-white">100 Coupons</p>
-                  </div>
-                </div>
-                <div class="btn-main card-connect-btn">
-                  <span class="mas">Claim Reward</span>
-                  <button type="button" name="Hover" class="is-disabled">
-                    Claim Reward
-                  </button>
-                </div>
+            <div class="col-md-4">
+              <div class="lock-stat-card">
+                <p class="mb-0">Current Status</p>
+                <h3>Staked</h3>
               </div>
             </div>
-            <div class="col-lg-6 col-md-12 mt-3">
-              <div class="stat-card">
-                <div class="media">
-                  <img
-                    class="mr-3 mt-4"
-                    src="./assets/img/swap-icon.svg"
-                    alt="swap-icon"
-                  />
-                  <div class="media-body pt-3">
-                    <p class="stat-card-subheading mb-0">
-                      Tax Free BUSD Amount
-                    </p>
-                    <p class="stat-card-heading color-white">$42,989 BUSD</p>
-                  </div>
-                </div>
+            <div class="col-md-4">
+              <div class="lock-stat-card">
+                <p class="mb-0">Expires in</p>
+                <h3>~ 1 month</h3>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="lock-stat-card">
+                <p class="mb-0">Dividend Bonus</p>
+                <h3>100% Staked</h3>
               </div>
             </div>
           </div>
+
+          <div class="reinvest-duration mt-3">
           <div class="row">
-            <div class="col-lg-6 col-md-12 mt-3">
-              <div class="stat-card">
-                <div class="media">
-                  <img
-                    class="mr-3 mt-4"
-                    src="./assets/img/feeless-swap-icon.svg"
-                    alt="feeless-swap-icon"
-                  />
-                  <div class="media-body pt-3">
-                    <p class="stat-card-subheading">
-                      Tax Free Swap With Coupon
-                    </p>
-                    <form class="form-inline mt-3 approve-form">
-                      <div class="form-group">
-                        <div class="position-relative">
-                          <input
-                            type="number"
-                            class="form-control"
-                            placeholder="0.0"
-                          />
-                          <span class="input-txt">BUSD</span>
-                        </div>
-                        <input
-                          type="submit"
-                          class="form-control is-disabled"
-                          value="Approve"
-                        />
-                      </div>
-                    </form>
+            <div class="col-md-12 d-flex justify-content-center">
+              <form class="form-inline approve-form d-flex justify-content-center mt-4">
+                <label class="approve-form-label mr-3">Choose your staking duration</label>
+                <div class="form-group">
+                  <div class="form-group">
+                    <select class="form-control" is="ms-dropdown">
+                      <option value="TeslaSafe">30 days - 100% Dividends</option>
+                      <option value="Rice">15 days - 100% Dividends</option>
+                      <option value="Pazz">10 days - 100% Dividends</option>
+                    </select>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-12 mt-3">
-              <div class="stat-card">
-                <div class="media">
-                  <img
-                    class="mr-3 mt-4"
-                    src="./assets/img/feeless-busd-icon.svg"
-                    alt="feeless-busd-icon"
+                  <input
+                    type="submit"
+                    class="form-control is-disabled"
+                    value="Lock My Tokens"
                   />
-                  <div class="media-body pt-3">
-                    <p class="stat-card-subheading">
-                      Reinvest in PAZ Tax Free
-                    </p>
-                    <form class="form-inline mt-3 approve-form">
-                      <div class="form-group">
-                        <div class="position-relative">
-                          <input
-                            type="number"
-                            class="form-control"
-                            placeholder="0.0"
-                          />
-                          <span class="input-txt">BUSD</span>
-                        </div>
-                        <input
-                          type="submit"
-                          class="form-control is-disabled"
-                          value="Approve"
-                        />
-                      </div>
-                    </form>
-                  </div>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
+        </div>
       </section>
-      <!-- feeless section starts here -->
 
       <!-- Coin stat section starts here -->
       <section>
@@ -1109,6 +1079,7 @@
     <!-- Network error display starts here -->
 
     <!-- All js files -->
+    <script src="./assets/js/dropdown.min.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -1156,8 +1127,8 @@
       type="text/javascript"
       src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"
     ></script>
-    <script src="./assets/js/connectWallet.js"></script>
+    <script src="./assets/js/blockchain/connectWallet.js"></script>
     <!-- read contract Script -->
-    <script src="./assets/js/readContract.js"></script>
+    <script src="./assets/js/blockchain/readContract.js"></script>
   </body>
 </html>
