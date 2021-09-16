@@ -86,7 +86,7 @@
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav ml-auto mt-2">
               <li class="nav-item">
-                <a class="metamask-btn is-disabled">
+                <a class="metamask-btn" onclick="addToken()">
                   <span>Add PAZ to Metamask</span>
                 </a>
               </li>
@@ -565,7 +565,7 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar-2">
               <ul class="navbar-nav ml-auto mt-2">
                 <li class="nav-item">
-                  <a class="metamask-btn is-disabled" href="#">
+                  <a class="metamask-btn" onclick="addToken()">
                     <span>Add PAZ to Metamask</span>
                   </a>
                 </li>
@@ -634,7 +634,7 @@
 
           <div class="pending-BUSD-part mt-3">
            <div class="row">
-            <div class="col-lg-6 col-md-6 mt-3">
+            <div class="col-lg-6 col-md-12 mt-3">
                 <div class="media">
                   <img
                     class="mr-3 mt-2"
@@ -648,58 +648,51 @@
                     <p class="stat-card-heading color-white">3,254</p>
                   </div>
                 </div>
-                <div class="btn-main card-connect-btn">
+                <!-- <div class="btn-main card-connect-btn">
                   <span class="mas">Claim Reward</span>
                   <button type="button" name="Hover" class="is-disabled">
                     Claim Reward
                   </button>
-                </div>
+                </div> -->
+                <button type="button" class="claim-btn">Claim Reward</button>
             </div>
-            <div class="col-lg-6 col-md-6 mt-3 reinvest-part">
-                <label class="approve-form-label">Automatically reinvest reward in</label>
+            <div class="col-lg-6 col-md-12 mt-3 reinvest-part">
+                <label class="pending-BUSD-label">Automatically reinvest reward in</label>
                 <form class="form-inline approve-form">
-                  <div class="form-group">
-                    <div class="form-group">
                       <select class="form-control" is="ms-dropdown">
                         <option value="TeslaSafe" data-image="./assets/img/TS-icon.svg">TeslaSafe</option>
-                        <option value="Rice" data-image="./assets/img/Rice-icon.svg">Rice</option>
-                        <option value="Pazz" data-image="./assets/img/BNB-icon.svg">BNB</option>
+                        <option value="RICE" data-image="./assets/img/Rice-icon.svg">RICE</option>
+                        <option value="PAZ" data-image="./assets/img/pazz-icon.svg">PAZ</option>
+                        <option value="BNB" data-image="./assets/img/BNB-icon.svg">BNB</option>
                       </select>
-                    </div>
                     <input
                       type="submit"
                       class="form-control is-disabled"
                       value="Save Changed"
                     />
-                  </div>
                 </form>
             </div>
            </div>
           </div>
           <div class="reinvest-reward mt-3">
             <div class="row">
-              <div class="offset-lg-2"></div>
-              <div class="col-lg-8 col-md-12">
-                <label class="reinvest-label mt-3">Reinvest reward (Avalaible BUSD 40,000)</label>
+              <div class="col-md-12">
+                <label class="reinvest-label mt-3 text-center">Reinvest reward (Avalaible BUSD 40,000)</label>
                 <form class="form-inline approve-form d-flex justify-content-center">
-                  <div class="form-group">
-                    <div class="form-group">
                       <select class="form-control" is="ms-dropdown">
                         <option value="TeslaSafe" data-image="./assets/img/TS-icon.svg">TeslaSafe</option>
-                        <option value="Rice" data-image="./assets/img/Rice-icon.svg">Rice</option>
-                        <option value="Pazz" data-image="./assets/img/BNB-icon.svg">BNB</option>
+                        <option value="RICE" data-image="./assets/img/Rice-icon.svg">RICE</option>
+                        <option value="PAZ" data-image="./assets/img/pazz-icon.svg">PAZ</option>
+                        <option value="BNB" data-image="./assets/img/BNB-icon.svg">BNB</option>
                       </select>
-                    </div>
                     <input type="number" class="reinvest-amount ml-3" placeholder="Enter amount to reinvest tax-free">
                     <input
                       type="submit"
                       class="form-control is-disabled"
                       value="Re-Invest"
                     />
-                  </div>
                 </form>
               </div>
-              <div class="offset-lg-2"></div>
             </div>
           </div>
 
@@ -723,19 +716,19 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 mt-3">
               <div class="lock-stat-card">
                 <p class="mb-0">Current Status</p>
                 <h3>Staked</h3>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mt-3">
               <div class="lock-stat-card">
                 <p class="mb-0">Expires in</p>
                 <h3>~ 1 month</h3>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mt-3">
               <div class="lock-stat-card">
                 <p class="mb-0">Dividend Bonus</p>
                 <h3>100% Staked</h3>
@@ -748,20 +741,16 @@
             <div class="col-md-12 d-flex justify-content-center">
               <form class="form-inline approve-form d-flex justify-content-center mt-4">
                 <label class="approve-form-label mr-3">Choose your staking duration</label>
-                <div class="form-group">
-                  <div class="form-group">
                     <select class="form-control" is="ms-dropdown">
-                      <option value="TeslaSafe">30 days - 100% Dividends</option>
-                      <option value="Rice">15 days - 100% Dividends</option>
-                      <option value="Pazz">10 days - 100% Dividends</option>
+                      <option value="">30 days - 100% Dividends</option>
+                      <option value="">15 days - 100% Dividends</option>
+                      <option value="">10 days - 100% Dividends</option>
                     </select>
-                  </div>
                   <input
                     type="submit"
                     class="form-control is-disabled"
                     value="Lock My Tokens"
                   />
-                </div>
               </form>
             </div>
           </div>
@@ -1130,5 +1119,7 @@
     <script src="./assets/js/blockchain/connectWallet.js"></script>
     <!-- read contract Script -->
     <script src="./assets/js/blockchain/readContract.js"></script>
+    <!-- Add to metamask script -->
+    <script src="./assets/js/blockchain/addToken.js"></script>
   </body>
 </html>

@@ -339,6 +339,8 @@ section {
 .reinvest-label{
   color: #9793BD;
   font-size: 15px;
+  display: flex;
+  justify-content: center;
 }
 .sell-tax{
   background: var(--secondry-color);
@@ -376,7 +378,17 @@ section {
   width: 340px !important;
   color: white !important;
 }
-
+.claim-btn{
+  border: 1px solid white;
+  padding: 10px 20px;
+  color: white;
+  background: transparent;
+  position: absolute;
+  top: 26px;
+  right: 23px;
+  border-radius: 6px;
+  height: 45px;
+}
 /* Dropdown select starts here */
 .ms-dd .ms-dd-header{
   border: 1px solid #3f3572 !important;
@@ -430,7 +442,10 @@ section {
   font-size: 15px;
   color: #9793bd;
 }
-
+.pending-BUSD-label{
+  color: #9793BD;
+  font-size: 15px;
+}
 .card-connect-btn {
   position: absolute !important;
   right: 34px !important;
@@ -501,6 +516,7 @@ section {
   background: #0c0726;
   width: 300px;
   height: 47px;
+  color: #adadad;
 }
 .approve-form input[type="submit"] {
   padding: 9px 18px !important;
@@ -686,27 +702,53 @@ section {
 
 /* web3.js modal style */
 .bfIkEQ {
-  background-color: #231d4f !important;
+  background-color: #161a59 !important;
   max-width: 664px !important;
   border-radius: 10px !important;
+  width: 30% !important;
+  min-width: inherit !important;
+  padding: 15px 0px 0px 0px !important;
+  padding: 15px 0px 15px 0px !important;
 }
-
 .xPSun {
-  background-color: #231d4f !important;
+  background-color: #142e6d !important;
   padding: 12px 6px !important;
+  width: 80% !important;
 }
-
-.kaSVED {
-  border: none !important;
-}
-
 .hBmmHr {
   color: rgb(160 160 181) !important;
   font-size: 17px !important;
 }
-
 .ceSpQQ {
   font-size: 15px !important;
+}
+.kaSVED {
+  border: none !important;
+}
+.withdraw-block {
+  position: absolute;
+  top: 5px;
+  right: 4px;
+  color: white;
+  text-align: center;
+}
+.withdraw-btn {
+  background-color: #ffffff;
+  border: 1px solid white;
+  padding: 8px 25px;
+  color: black;
+  font-size: 18px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.withdraw-btn[disabled] {
+  cursor: not-allowed;
+}
+.withdraw-btn:hover {
+  color: black !important;
+}
+.web3modal-provider-wrapper:nth-child(3) {
+  display: none !important;
 }
 /* Network error */
 
@@ -780,7 +822,7 @@ section {
     width: 62%;
   }
   .approve-form input[type="number"]{
-    width: 169px;
+    width: 260px;
   }
   .approve-form input[type="submit"]{
     margin-left: 10px;
@@ -792,10 +834,36 @@ section {
     width: 65%;
   }
   .ms-dd{
-    width: 220px !important;
+    width: 243px !important;
   }
   .reinvest-label{
     text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .bfIkEQ {
+    width: 50% !important;
+  }
+  .pending-BUSD-part{
+    height: auto;
+  }
+  .pending-BUSD-label{
+    padding-top: 10px;
+    padding-right: 13px;
+  }
+  .reinvest-part{
+    border: none;
+    display: flex;
+    justify-content: center;
+  }
+  .your-stat-section{
+    padding-top: 7%;
+  }
+  .pending-BUSD-part .col-md-12{
+    -webkit-box-flex: 0 !important;
+    -ms-flex: 0 0 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
   }
 }
 
@@ -859,7 +927,10 @@ section {
     font-weight: 500;
   }
   .card-connect-btn{
-    display: none;
+    position: absolute !important;
+    right: 25px !important;
+    top: 50% !important;
+    transform: translate(0px, -50%) !important;
   }
   .section-heading{
     padding-top: 10px;
@@ -900,21 +971,76 @@ section {
     transform: translate(-50%, -50%);
   }
   .approve-form input[type="submit"]{
-    width: 220px;
+    width: 100%;
     margin-top: 10px;
     margin-left: 0px;
-    height: 42px;
+    height: 44px;
+    font-size: 13px;
 }
   .approve-form input[type="number"]{
-    width: 221px;
+    width: 100%;
+    margin-left: 0px !important;
     height: 47px;
     margin-top: 10px;
+    color: #adadad;
   }
   .bscscan-link{
     font-size: 12px;
   }
   .input-txt{
     top: 58%;
+  }
+  .bfIkEQ {
+    width: 85% !important;
+  }
+  .reinvest-reward{
+    height: auto;
+  }
+  .pending-BUSD-label{
+    padding-top: 0px;
+    padding-right: 0px;
+    font-size: 14px;
+    position: absolute;
+    top: -21px;
+  }
+  .ms-dd{
+    margin-top: 12px;
+    width: 100% !important;
+    font-size: 12px;
+  }
+  .lock-stat-card{
+    margin-top: 13px;
+  }
+  .ms-dd .ms-dd-header{
+    font-size: 12px;
+  }
+  .ms-dd .ms-middle{
+    font-size: 12px;
+  }
+  .reinvest-duration{
+    height: auto;
+  }
+  .claim-btn{
+    height: 33px;
+    border: 1px solid white;
+    padding: 3px 6px;
+    color: white;
+    background: transparent;
+    position: absolute;
+    top: 42px;
+    right: 0;
+    font-size: 12px;
+    border-radius: 6px;
+  }
+}
+
+@media only screen and (max-width: 667px){
+  .approve-form input[type="submit"]{
+    margin-left: 0px;
+    width: 100%;
+  }
+  .card-connect-btn{
+    display: none;
   }
 }
 
