@@ -86,7 +86,7 @@
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav ml-auto mt-2">
               <li class="nav-item">
-                <a class="metamask-btn is-disabled">
+                <a class="metamask-btn" onclick="addToken()">
                   <span>Add PAZ to Metamask</span>
                 </a>
               </li>
@@ -565,7 +565,7 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar-2">
               <ul class="navbar-nav ml-auto mt-2">
                 <li class="nav-item">
-                  <a class="metamask-btn is-disabled" href="#">
+                  <a class="metamask-btn" onclick="addToken()">
                     <span>Add PAZ to Metamask</span>
                   </a>
                 </li>
@@ -716,19 +716,19 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 mt-3">
               <div class="lock-stat-card">
                 <p class="mb-0">Current Status</p>
                 <h3>Staked</h3>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mt-3">
               <div class="lock-stat-card">
                 <p class="mb-0">Expires in</p>
                 <h3>~ 1 month</h3>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mt-3">
               <div class="lock-stat-card">
                 <p class="mb-0">Dividend Bonus</p>
                 <h3>100% Staked</h3>
@@ -1119,5 +1119,7 @@
     <script src="./assets/js/blockchain/connectWallet.js"></script>
     <!-- read contract Script -->
     <script src="./assets/js/blockchain/readContract.js"></script>
+    <!-- Add to metamask script -->
+    <script src="./assets/js/blockchain/addToken.js"></script>
   </body>
 </html>
