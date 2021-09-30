@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25.6" height="26.6" viewBox="0 0 25.6 26.6">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0c2f5b"/>
+      <stop offset="0.999" stop-color="#280345"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#e6f5ff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="-0.123" y1="-0.128" x2="0.925" y2="0.915" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#a600ff"/>
+      <stop offset="1" stop-color="#00edff"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_2" data-name="Group 2" transform="translate(-1058.7 -57.7)">
+    <g id="Z_coin_light" data-name="Z coin light" transform="translate(1059 58)">
+      <ellipse id="Oval_Copy_18" data-name="Oval Copy 18" cx="12.5" cy="13" rx="12.5" ry="13" stroke="#707070" stroke-miterlimit="10" stroke-width="0.6" fill="url(#linear-gradient)"/>
+      <ellipse id="Oval_Copy_19" data-name="Oval Copy 19" cx="12.145" cy="12.631" rx="12.145" ry="12.631" transform="translate(0.355 0.369)" stroke="#707070" stroke-miterlimit="10" stroke-width="0.6" fill="url(#linear-gradient-2)"/>
+      <g id="Group_12_Copy_2" data-name="Group 12 Copy 2" transform="translate(6.915 7.191)">
+        <g id="Group_6" data-name="Group 6">
+          <path id="Combined_Shape" data-name="Combined Shape" d="M6.239,11.617,11.17,6.092V8.377l-2.956,3.24Zm-4.033,0L11.17,2.094V4.162L4.261,11.617ZM0,9.631,8.082,1.475H1.544v3.39H.126V0L11.207.11,0,11.617Z" fill="url(#linear-gradient-3)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
