@@ -66,7 +66,10 @@ const ConnectedYourStatsSection = () => {
                   <p class="stat-card-heading color-white">3,254</p>
                 </div>
               </div>
-              <button type="button" class="claim-btn connect-claim-reward-button">
+              <button
+                type="button"
+                class="claim-btn connect-claim-reward-button"
+              >
                 Claim Reward
               </button>
             </div>
