@@ -1,17 +1,17 @@
 import React from "react";
 
-const NavBar = () => {
+const index = () => {
   return (
     <div class="custom-container">
-      <nav class="navbar navbar-expand-md fixed-top">
+      <nav class="navbar navbar-expand-md mt-2 fixed-top">
         <a class="navbar-brand" href="#">
-          <img src="./assets/img/pazzive-logo.svg" alt="Pazzive Logo" />
+          <img src="./assets/img/pazzive-logo.svg" alt="pazzive logo" />
         </a>
         <button
           class="navbar-toggler"
           type="button"
           data-toggle="collapse"
-          data-target="#collapsibleNavbar"
+          data-target="#collapsibleNavbar-2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +20,7 @@ const NavBar = () => {
             width="24"
             height="24"
             viewBox="0 0 172 172"
-            style={{fill: "#000000"}}
+            style="fill: #000000"
           >
             <g
               fill="none"
@@ -36,7 +36,7 @@ const NavBar = () => {
               font-weight="none"
               font-size="none"
               text-anchor="none"
-              style={{ mixBlendMode: 'normal' }}
+              style="mix-blend-mode: normal"
             >
               <path d="M0,172v-172h172v172z" fill="none"></path>
               <g fill="#ffffff">
@@ -45,7 +45,7 @@ const NavBar = () => {
             </g>
           </svg>
         </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <div class="collapse navbar-collapse" id="collapsibleNavbar-2">
           <ul class="navbar-nav ml-auto mt-2">
             <li class="nav-item">
               <a class="metamask-btn" onclick="addToken()">
@@ -58,10 +58,10 @@ const NavBar = () => {
               </a>
             </li>
             <li class="nav-item ml-2">
-              <div class="btn-main connectBtn" style={{ marginTop: "-10px" }}>
-                <span class="mas">Connect Wallet</span>
-                <button onclick="connectAccount()" type="button" name="Hover">
-                  Connect Wallet
+              <div class="btn-main connectBtn" style="margin-top: -10px">
+                <span class="mas" id="shortAddress"></span>
+                <button type="button" name="Hover">
+                  <span id="showAccountBtn"></span>
                 </button>
               </div>
             </li>
@@ -72,4 +72,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default index;
