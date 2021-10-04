@@ -300,7 +300,12 @@ section {
 }
 
 .reinvest-reward-form {
-  width: 210% !important;
+}
+
+.stats-pending-busd-rewards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .your-stat-card-2 .connect-wallet {
@@ -386,9 +391,6 @@ section {
   padding: 10px 20px;
   color: white;
   background: transparent;
-  position: absolute;
-  top: 26px;
-  left: 358px;
   width: fit-content;
   border-radius: 6px;
   height: 45px;
@@ -517,7 +519,6 @@ section {
 }
 
 .approve-form {
-  width: 196%;
   justify-content: space-between;
 }
 .approve-form input[type="number"] {
