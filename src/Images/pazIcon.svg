@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40.837" height="42.78" viewBox="0 0 40.837 42.78">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#e6f5ff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-0.123" y1="-0.128" x2="0.925" y2="0.915" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#a600ff"/>
+      <stop offset="1" stop-color="#00edff"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_29" data-name="Group 29" transform="translate(-0.082 -0.11)">
+    <ellipse id="Oval_Copy_19" data-name="Oval Copy 19" cx="19.918" cy="20.89" rx="19.918" ry="20.89" transform="translate(0.582 0.61)" stroke="#707070" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)"/>
+    <g id="Group_12_Copy_2" data-name="Group 12 Copy 2" transform="translate(11.34 11.894)">
+      <g id="Group_6" data-name="Group 6">
+        <path id="Combined_Shape" data-name="Combined Shape" d="M10.232,19.213l8.087-9.138v3.778l-4.847,5.359Zm-6.614,0,14.7-15.749V6.882L6.988,19.213ZM0,15.927,13.254,2.44H2.533V8.047H.207V0L18.38.182,0,19.213Z" fill="url(#linear-gradient-2)"/>
+      </g>
+    </g>
+  </g>
+</svg>

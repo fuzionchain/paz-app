@@ -1,5 +1,6 @@
 import React from "react";
 import { Nav, NavDropdown } from "react-bootstrap";
+import PazzDropdown from "../../../Common/PazDropDown";
 import AddLiquidityTaxFree from "./AddLiquidityTaxFree/index";
 
 const ConnectedYourStatsSection = () => {
@@ -82,28 +83,10 @@ const ConnectedYourStatsSection = () => {
                 <label className="pending-BUSD-label">
                   Automatically reinvest reward in
                 </label>
-                <form className="form-inline approve-form ">
-                  <Nav style={{ backgroundColor: "#140d38" }}>
-                    <NavDropdown
-                      id="nav-dropdown-dark-example"
-                      title="TeslaSafe"
-                      menuVariant="dark"
-                      style={{ backgroundColor: "#140d38" }}
-                    >
-                      <NavDropdown.Item style={{ backgroundColor: "#140d38" }}>
-                        TeslaSafe
-                      </NavDropdown.Item>
-                      <NavDropdown.Item style={{ backgroundColor: "#140d38" }}>
-                        Rice
-                      </NavDropdown.Item>
-                      <NavDropdown.Item style={{ backgroundColor: "#140d38" }}>
-                        PAZ
-                      </NavDropdown.Item>
-                      <NavDropdown.Item style={{ backgroundColor: "#140d38" }}>
-                        BNB
-                      </NavDropdown.Item>
-                    </NavDropdown>
-                  </Nav>
+                <form className="form-inline approve-form align-items-baseline ">
+                  <div style={{ width: "25vw" }}>
+                    <PazzDropdown />
+                  </div>
                   <input
                     type="submit"
                     className="form-control is-disabled"
@@ -121,27 +104,10 @@ const ConnectedYourStatsSection = () => {
                 <label className="reinvest-label mt-3 text-center">
                   Reinvest reward (Avalaible BUSD 40,000)
                 </label>
-                <form className="form-inline approve-form reinvest-reward-form d-flex justify-content-center flex-column dropdown-select-form col-lg-12 col-md-6">
-                  <select class="form-control w-75" is="ms-dropdown">
-                    <option
-                      value="TeslaSafe"
-                      data-image="./assets/img/TS-icon.svg"
-                    >
-                      TeslaSafe
-                    </option>
-                    <option
-                      value="RICE"
-                      data-image="./assets/img/Rice-icon.svg"
-                    >
-                      RICE
-                    </option>
-                    <option value="PAZ" data-image="./assets/img/pazz-icon.svg">
-                      PAZ
-                    </option>
-                    <option value="BNB" data-image="./assets/img/BNB-icon.svg">
-                      BNB
-                    </option>
-                  </select>
+                <form className="form-inline approve-form reinvest-reward-form d-flex justify-content-center align-items-center flex-column dropdown-select-form col-lg-12 col-md-6">
+                  <div style={{ width: "26vw" }}>
+                    <PazzDropdown />
+                  </div>
                   <input
                     type="number"
                     className="reinvest-amount mt-3 w-75"

@@ -1,4 +1,5 @@
 import React from "react";
+import StakingDurationDropdown from "../../../Common/StakingDurationDropdown";
 
 const ConnectedLockYourPazz = () => {
   return (
@@ -33,15 +34,13 @@ const ConnectedLockYourPazz = () => {
         <div class="reinvest-duration mt-3">
           <div class="row">
             <div class="col-md-12 d-flex justify-content-center">
-              <form class="form-inline approve-form d-flex justify-content-center mt-4">
+              <form class="form-inline approve-form d-flex align-items-baseline mt-4">
                 <label class="approve-form-label mr-3">
                   Choose your staking duration
                 </label>
-                <select class="form-control" is="ms-dropdown">
-                  <option value="">30 days - 100% Dividends</option>
-                  <option value="">15 days - 100% Dividends</option>
-                  <option value="">10 days - 100% Dividends</option>
-                </select>
+                <div style={{ width: "23vw", paddingRight:'2%' }}>
+                  <StakingDurationDropdown />
+                </div>
                 <input
                   type="submit"
                   class="form-control is-disabled"

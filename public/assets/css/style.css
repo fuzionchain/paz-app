@@ -98,6 +98,32 @@ section {
   );
 }
 
+.Dropdown-option {
+  box-sizing: border-box;
+  color: white !important ;
+  cursor: pointer;
+  display: block;
+  padding: 8px 10px;
+  background-color: #0c0726;
+}
+
+.Dropdown-option.is-selected {
+  background-color: #0c0726 !important;
+  color: white !important ;
+}
+.Dropdown-option:hover {
+  background-color: #0c0726 !important;
+  color: white !important ;
+}
+
+.Dropdown-control {
+  background-color: #0c0726 !important;
+  color: white !important ;
+}
+
+.paz-dropdown {
+}
+
 .btn-main button {
   width: calc(100% - 4px);
   height: calc(100% - 4px);
@@ -261,6 +287,33 @@ section {
   height: 220px;
 }
 
+.liquidity-approve-btn {
+  background: rgb(60, 136, 236);
+  background: linear-gradient(
+    90deg,
+    rgba(60, 136, 236, 1) 31%,
+    rgba(101, 50, 243, 1) 69%
+  );
+  border-radius: 6px;
+  padding: 10px 20px;
+  color: white;
+  width: 18vw;
+  border: 1px solid rgb(60, 136, 236);
+}
+.be-aware-txt{
+  color: yellow;
+  text-align: center;
+  margin-top: 24px;
+}
+.insufficient-balance-btn {
+  background: transparent;
+  border-radius: 6px;
+  padding: 10px 20px;
+  color: white;
+  border: 1px solid rgb(60, 136, 236);
+  width: 18vw;
+}
+
 .buy-btn {
   background: #ffffff;
   border: 1.2px solid #ffffff;
@@ -344,7 +397,6 @@ section {
   border-radius: 0 0 10px 10px;
 }
 .reinvest-label {
-  width: 112%;
   color: #9793bd;
   font-size: 15px;
   display: flex;
