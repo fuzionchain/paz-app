@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const index = () => {
   return (
@@ -17,23 +17,17 @@ const index = () => {
               </a>
               <h5 class="warning-heading text-center">
                 <span class="mr-2">
-                  <img
-                    src="./assets/img/warning.svg"
-                    alt="warning-icon"
-                    class="warning-icon"
-                  />
+                  <img src="./assets/img/warning.svg" alt="warning-icon" class="warning-icon" />
                 </span>
                 Pazzive is not yet deployed to this network.
               </h5>
-              <p class="warning-subheading text-center">
-                Please switch to Binance Smart Chain.
-              </p>
+              <p class="warning-subheading text-center">Please switch to Binance Smart Chain.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default index;
+export default index

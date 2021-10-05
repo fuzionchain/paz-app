@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const NavBar = () => {
   return (
@@ -7,12 +7,7 @@ const NavBar = () => {
         <a class="navbar-brand" href="#">
           <img src="./assets/img/pazzive-logo.svg" alt="pazzive logo" />
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#collapsibleNavbar-2"
-        >
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
@@ -69,7 +64,7 @@ const NavBar = () => {
         </div>
       </nav>
     </div>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

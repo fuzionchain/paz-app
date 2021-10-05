@@ -1,5 +1,5 @@
-import React from "react";
-import StakingDurationDropdown from "../../../common/StakingDurationDropdown";
+import React from 'react'
+import StakingDurationDropdown from '../../../common/StakingDurationDropdown'
 
 const ConnectedLockYourPazz = () => {
   return (
@@ -35,24 +35,18 @@ const ConnectedLockYourPazz = () => {
           <div class="row">
             <div class="col-md-12 d-flex justify-content-center">
               <form class="form-inline approve-form d-flex align-items-baseline mt-4">
-                <label class="approve-form-label mr-3">
-                  Choose your staking duration
-                </label>
-                <div style={{ width: "23vw", paddingRight:'2%' }}>
+                <label class="approve-form-label mr-3">Choose your staking duration</label>
+                <div style={{ width: '23vw', paddingRight: '2%' }}>
                   <StakingDurationDropdown />
                 </div>
-                <input
-                  type="submit"
-                  class="form-control is-disabled"
-                  value="Lock My Tokens"
-                />
+                <input type="submit" class="form-control is-disabled" value="Lock My Tokens" />
               </form>
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ConnectedLockYourPazz;
+export default ConnectedLockYourPazz

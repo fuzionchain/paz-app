@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const index = () => {
   return (
@@ -8,22 +8,11 @@ const index = () => {
         <span class="close account-modal-close float-right">&times;</span>
         <div class="accountModal-inner position-relative">
           <div class="media">
-            <img
-              class="mr-3 mt-3"
-              src="./assets/img/robot.svg"
-              alt="robot-icon"
-            />
+            <img class="mr-3 mt-3" src="./assets/img/robot.svg" alt="robot-icon" />
             <div class="media-body pt-3">
               <input type="text" id="addressInput" class="copiedTxt" />
-              <a
-                id="copyBtn"
-                data-toggle="tooltip"
-                data-original-title="Copy to clipboard"
-              >
-                <span
-                  class="stat-card-heading color-white mb-0"
-                  id="shortAccount"
-                ></span>{" "}
+              <a id="copyBtn" data-toggle="tooltip" data-original-title="Copy to clipboard">
+                <span class="stat-card-heading color-white mb-0" id="shortAccount"></span>{' '}
               </a>
               <br />
               <a id="bscscan-link" target="_blank" class="bscscan-link">
@@ -49,15 +38,11 @@ const index = () => {
               <img src="./assets/img/right-arrow-white.svg" alt="right-arrow" />
             </span>
           </a>
-          <img
-            src="./assets/img/green-dot.svg"
-            alt="green-dot"
-            class="float-right"
-          />
+          <img src="./assets/img/green-dot.svg" alt="green-dot" class="float-right" />
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default index;
+export default index

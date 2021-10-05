@@ -1,7 +1,7 @@
-import React from "react";
-import { Nav, NavDropdown } from "react-bootstrap";
-import PazzDropdown from "../../../common/PazDropDown";
-import AddLiquidityTaxFree from "./AddLiquidityTaxFree/index";
+import React from 'react'
+import { Nav, NavDropdown } from 'react-bootstrap'
+import PazzDropdown from '../../../common/PazDropDown'
+import AddLiquidityTaxFree from './AddLiquidityTaxFree/index'
 
 const ConnectedYourStatsSection = () => {
   return (
@@ -14,20 +14,12 @@ const ConnectedYourStatsSection = () => {
         </div>
         <div className="row">
           <div className="col-lg-6 col-md-12 mt-3">
-            <div className="your-stat-card-1" style={{ height: "175px" }}>
+            <div className="your-stat-card-1" style={{ height: '175px' }}>
               <div className="media">
-                <img
-                  className="mr-3"
-                  src="./assets/img/mobile-icon.svg"
-                  alt="mobile-icon"
-                />
+                <img className="mr-3" src="./assets/img/mobile-icon.svg" alt="mobile-icon" />
                 <div className="media-body pt-3">
-                  <p className="your-stat-subheading mb-0">
-                    Total PAZ Holdings
-                  </p>
-                  <h5 className="your-stat-heading mt-2 color-white">
-                    510,301,281
-                  </h5>
+                  <p className="your-stat-subheading mb-0">Total PAZ Holdings</p>
+                  <h5 className="your-stat-heading mt-2 color-white">510,301,281</h5>
                   <p className="color-white">$43,253</p>
                 </div>
               </div>
@@ -37,13 +29,9 @@ const ConnectedYourStatsSection = () => {
             </div>
           </div>
           <div className="col-lg-6 col-md-12 mt-3">
-            <div className="your-stat-card-2" style={{ height: "175px" }}>
+            <div className="your-stat-card-2" style={{ height: '175px' }}>
               <div className="media">
-                <img
-                  className="mr-3"
-                  src="./assets/img/reward-icon.svg"
-                  alt="reward-icon"
-                />
+                <img className="mr-3" src="./assets/img/reward-icon.svg" alt="reward-icon" />
                 <div className="media-body pt-3">
                   <p className="your-stat-subheading mb-0">Total BUSD Paid</p>
                   <h5 className="your-stat-heading mt-2 color-white">53.254</h5>
@@ -58,54 +46,34 @@ const ConnectedYourStatsSection = () => {
             <div className="pending-BUSD-part mt-3 col-lg-12 col-md-12">
               <div class="col-lg-12 col-md-6 mt-3 stats-pending-busd-rewards">
                 <div class="media">
-                  <img
-                    class="mr-3 mt-2"
-                    src="./assets/img/gift-icon.svg"
-                    alt="gift-icon"
-                  />
+                  <img class="mr-3 mt-2" src="./assets/img/gift-icon.svg" alt="gift-icon" />
                   <div class="media-body pt-3">
-                    <p class="stat-card-subheading mb-0">
-                      Pending BUSD Rewards
-                    </p>
+                    <p class="stat-card-subheading mb-0">Pending BUSD Rewards</p>
                     <p class="stat-card-heading color-white">3,254</p>
                   </div>
                 </div>
-                <button
-                  type="button"
-                  class="claim-btn connect-claim-reward-button"
-                >
+                <button type="button" class="claim-btn connect-claim-reward-button">
                   Claim Reward
                 </button>
               </div>
             </div>
             <div className="reinvest-reward col-lg-12 col-md-12 mt-0">
               <div className="col-lg-12 col-md-6 mt-3 reinvest-part">
-                <label className="pending-BUSD-label">
-                  Automatically reinvest reward in
-                </label>
+                <label className="pending-BUSD-label">Automatically reinvest reward in</label>
                 <form className="form-inline approve-form align-items-baseline ">
-                  <div style={{ width: "25vw" }}>
+                  <div style={{ width: '25vw' }}>
                     <PazzDropdown />
                   </div>
-                  <input
-                    type="submit"
-                    className="form-control is-disabled"
-                    value="Save Changes"
-                  />
+                  <input type="submit" className="form-control is-disabled" value="Save Changes" />
                 </form>
               </div>
             </div>
 
-            <div
-              className="pending-BUSD-part mt-3 col-lg-12 col-md-12"
-              style={{ height: "auto" }}
-            >
+            <div className="pending-BUSD-part mt-3 col-lg-12 col-md-12" style={{ height: 'auto' }}>
               <div className="col-lg-12 col-md-6 mt-3">
-                <label className="reinvest-label mt-3 text-center">
-                  Reinvest reward (Avalaible BUSD 40,000)
-                </label>
+                <label className="reinvest-label mt-3 text-center">Reinvest reward (Avalaible BUSD 40,000)</label>
                 <form className="form-inline approve-form reinvest-reward-form d-flex justify-content-center align-items-center flex-column dropdown-select-form col-lg-12 col-md-6">
-                  <div style={{ width: "26vw" }}>
+                  <div style={{ width: '26vw' }}>
                     <PazzDropdown />
                   </div>
                   <input
@@ -113,11 +81,7 @@ const ConnectedYourStatsSection = () => {
                     className="reinvest-amount mt-3 w-75"
                     placeholder="Enter amount to reinvest tax-free"
                   />
-                  <input
-                    type="submit"
-                    className="form-control is-disabled mt-3 w-75"
-                    value="Re-Invest"
-                  />
+                  <input type="submit" className="form-control is-disabled mt-3 w-75" value="Re-Invest" />
                 </form>
               </div>
             </div>
@@ -133,7 +97,7 @@ const ConnectedYourStatsSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default ConnectedYourStatsSection;
+export default ConnectedYourStatsSection
