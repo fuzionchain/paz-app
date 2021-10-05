@@ -1,5 +1,5 @@
 import React from "react";
-import { useWeb3Context } from "../../../Context/ConnectWeb3";
+import { useWeb3Context } from "../../../contexts/ConnectWeb3";
 
 const YourStatsSection = () => {
   const { setConnect } = useWeb3Context();
