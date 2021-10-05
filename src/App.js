@@ -8,7 +8,7 @@ import CoinStatsSection from "./Common/CoinsStatsSection/index";
 import ConnectedYourStatsSection from "./Components/ConnectScreenComponents/YourStatsSection";
 import ConnectedLockYourPazz from "./Components/ConnectScreenComponents/LockYourPazz/index";
 import Footer from "./Common/Footer/index";
-import { useWeb3Context } from "./Context/ConnectWeb3";
+import { useWeb3Context } from "./contexts/ConnectWeb3";
 
 const App = () => {
   const { isConnect } = useWeb3Context();
