@@ -1,6 +1,6 @@
 import React from "react";
 import { Nav, NavDropdown } from "react-bootstrap";
-import PazzDropdown from "../../../Common/PazDropDown";
+import PazzDropdown from "../../../common/PazDropDown";
 import AddLiquidityTaxFree from "./AddLiquidityTaxFree/index";
 
 const ConnectedYourStatsSection = () => {

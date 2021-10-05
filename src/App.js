@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
 
-import NavBar from "./Components/PrepareScreenComponents/NavBar/index";
-import YourStatsSection from "./Components/PrepareScreenComponents/YourStatsSection";
-import FeeLessSection from "./Components/PrepareScreenComponents/FeeLessSection/index";
-import CoinStatsSection from "./Common/CoinsStatsSection/index";
-import ConnectedYourStatsSection from "./Components/ConnectScreenComponents/YourStatsSection";
-import ConnectedLockYourPazz from "./Components/ConnectScreenComponents/LockYourPazz/index";
-import Footer from "./Common/Footer/index";
+import NavBar from "./components/PrepareScreenComponents/NavBar/index";
+import YourStatsSection from "./components/PrepareScreenComponents/YourStatsSection";
+import FeeLessSection from "./components/PrepareScreenComponents/FeeLessSection/index";
+import CoinStatsSection from "./common/CoinsStatsSection/index";
+import ConnectedYourStatsSection from "./components/ConnectScreenComponents/YourStatsSection";
+import ConnectedLockYourPazz from "./components/ConnectScreenComponents/LockYourPazz/index";
+import Footer from "./common/Footer/index";
 import { useWeb3Context } from "./contexts/ConnectWeb3";
 
 const App = () => {
