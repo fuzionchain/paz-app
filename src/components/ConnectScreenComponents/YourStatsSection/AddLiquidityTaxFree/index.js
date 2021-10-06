@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import pazIcon from '../../../../images/pazzive-icon.svg'
-import BNBIcon from '../../../../images/bnc-icon-circle.svg'
-import ConversionArrow from '../../../../images/arrow.svg'
+
 const AddLiquidityTaxFree = () => {
   const [CurrencyToggle, setCurrencyToggle] = useState(true)
 
@@ -16,7 +14,7 @@ const AddLiquidityTaxFree = () => {
           >
             <div className="media mt-0">
               <div className="media-body pt-3 d-flex ">
-                <img style={{ width: '37%' }} src={pazIcon} alt="" />
+                <img style={{ width: '37%' }} src='./assets/pazIcon' alt="" />
 
                 <p className="your-stat-subheading mb-0 ml-2 d-flex flex-column">
                   PAZ <span>Bal 0</span>
@@ -26,12 +24,12 @@ const AddLiquidityTaxFree = () => {
             </div>
 
             <div className="d-flex justify-content-center mt-2">
-              <img src={ConversionArrow} onClick={() => setCurrencyToggle(!CurrencyToggle)} />
+              <img src='./assets/ConversionArrow' onClick={() => setCurrencyToggle(!CurrencyToggle)} />
             </div>
 
             <div className="media mt-0">
               <div className="media-body pt-3 d-flex ">
-                <img style={{ width: '37%' }} src={BNBIcon} alt="" />
+                <img style={{ width: '37%' }} src='./assets/BNBIcon' alt="" />
 
                 <p className="your-stat-subheading mb-0 ml-2 d-flex flex-column">
                   BNB <span>Bal 0</span>
@@ -49,7 +47,7 @@ const AddLiquidityTaxFree = () => {
             <p class="stat-card-subheading ">0.949535 USDT</p>
           </div>
           <div className="d-flex justify-content-between">
-            <p class="stat-card-subheading ">Sippage</p>
+            <p class="stat-card-subheading ">Slippage</p>
             <p class="stat-card-subheading ">5.05%</p>
           </div>
         </div>
