@@ -1,17 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 import pazIcon from '../../../../images/pazzive-icon.svg'
-const index = () => {
+import BNBIcon from '../../../../images/bnc-icon-circle.svg'
+import ConversionArrow from '../../../../images/arrow.svg'
+const AddLiquidityTaxFree = () => {
+  const [CurrencyToggle, setCurrencyToggle] = useState(true)
+
   return (
     <div class="col-md-6 mt-3">
       <div class="stat-card">
         <div class="media-body pt-3">
           <p class="stat-card-subheading mb-3">Add Liquidity Tax Free Section</p>
-          <div className="your-stat-card-1" style={{ height: '190px' }}>
-            <div className="media">
+          <div
+            className={`your-stat-card-1 d-flex ${CurrencyToggle ? 'flex-column' : 'flex-column-reverse'}`}
+            style={{ height: 'auto' }}
+          >
+            <div className="media mt-0">
               <div className="media-body pt-3 d-flex ">
-                <img src={pazIcon} alt="" />
-                <p className="your-stat-subheading mb-0 ml-2">PAZ</p>
+                <img style={{ width: '37%' }} src={pazIcon} alt="" />
+
+                <p className="your-stat-subheading mb-0 ml-2 d-flex flex-column">
+                  PAZ <span>Bal 0</span>
+                </p>
               </div>
+              <input type="number" className="add-liquidity-amount mt-3 w-75" placeholder="100.00" />
+            </div>
+
+            <div className="d-flex justify-content-center mt-2">
+              <img src={ConversionArrow} onClick={() => setCurrencyToggle(!CurrencyToggle)} />
+            </div>
+
+            <div className="media mt-0">
+              <div className="media-body pt-3 d-flex ">
+                <img style={{ width: '37%' }} src={BNBIcon} alt="" />
+
+                <p className="your-stat-subheading mb-0 ml-2 d-flex flex-column">
+                  BNB <span>Bal 0</span>
+                </p>
+              </div>
+              <input type="number" className="add-liquidity-amount mt-3 w-75" placeholder="2000.00" />
             </div>
           </div>
           <div className="d-flex justify-content-between mt-4">
@@ -39,4 +65,4 @@ const index = () => {
   )
 }
 
-export default index
+export default AddLiquidityTaxFree
