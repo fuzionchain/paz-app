@@ -91,11 +91,7 @@ section {
   font-size: 14px;
   border-radius: 5px;
   /* background: linear-gradient(to right, #12d3ff 0%, #0033cc5c 103%); */
-  background: linear-gradient(
-    90deg,
-    rgba(60, 136, 236, 1) 31%,
-    rgba(101, 50, 243, 1) 69%
-  );
+  background: linear-gradient(90deg, rgba(60, 136, 236, 1) 31%, rgba(101, 50, 243, 1) 69%);
 }
 
 .Dropdown-option {
@@ -103,25 +99,32 @@ section {
   color: white !important ;
   cursor: pointer;
   display: block;
-  padding: 8px 10px;
   background-color: #0c0726;
+  padding: 8px 40px !important;
 }
 
 .Dropdown-option.is-selected {
   background-color: #0c0726 !important;
   color: white !important ;
+  padding: 8px 40px;
+}
+.pazz-app-dropdown-menu {
+  width: 25vw;
 }
 .Dropdown-option:hover {
   background-color: #0c0726 !important;
   color: white !important ;
+  padding: 8px 40px;
 }
 
 .Dropdown-control {
   background-color: #0c0726 !important;
   color: white !important ;
+  padding: 8px 40px;
 }
 
-.paz-dropdown {
+.Dropdown.menu {
+  padding: 8px 40px;
 }
 
 .btn-main button {
@@ -156,6 +159,19 @@ section {
   overflow: hidden;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.add-liquidity-amount {
+  background-color: #3052aa;
+  color: white;
+  padding: 9px !important;
+  border: 2px solid #3f3572 !important;
+  width: 300px;
+  height: 40px;
+}
+
+.add-liquidity-amount::placeholder {
+  color: white;
 }
 
 .bb-btn {
@@ -256,11 +272,7 @@ section {
   font-size: 17px;
 }
 .connect-btn {
-  background: linear-gradient(
-    90deg,
-    rgba(109, 61, 249, 1) 7%,
-    rgba(69, 115, 249, 1) 41%
-  );
+  background: linear-gradient(90deg, rgba(109, 61, 249, 1) 7%, rgba(69, 115, 249, 1) 41%);
   color: white !important;
   border: 2px solid rgba(69, 115, 249, 1);
   padding: 10px 20px;
@@ -276,11 +288,7 @@ section {
 /* your-stats-section */
 .your-stat-card-1 {
   background: rgb(60, 136, 236);
-  background: linear-gradient(
-    90deg,
-    rgba(60, 136, 236, 1) 31%,
-    rgba(101, 50, 243, 1) 69%
-  );
+  background: linear-gradient(90deg, rgba(60, 136, 236, 1) 31%, rgba(101, 50, 243, 1) 69%);
   border-radius: 10px;
   padding: 22px;
   width: 100%;
@@ -289,22 +297,44 @@ section {
 
 .liquidity-approve-btn {
   background: rgb(60, 136, 236);
-  background: linear-gradient(
-    90deg,
-    rgba(60, 136, 236, 1) 31%,
-    rgba(101, 50, 243, 1) 69%
-  );
+  background: linear-gradient(90deg, rgba(60, 136, 236, 1) 31%, rgba(101, 50, 243, 1) 69%);
   border-radius: 6px;
   padding: 10px 20px;
   color: white;
   width: 18vw;
   border: 1px solid rgb(60, 136, 236);
 }
-.be-aware-txt{
+.be-aware-txt {
   color: yellow;
   text-align: center;
-  margin-top: 24px;
+  margin-top: 9px;
 }
+
+.tesla-safe-dropdown-icon {
+  background-image: url('../img/TS-icon.svg') !important;
+  background-repeat: no-repeat;
+  background-position: 8px;
+  background-size: 23px;
+}
+.rice-dropdown-icon {
+  background-image: url('../img/Rice-icon.svg') !important;
+  background-repeat: no-repeat;
+  background-position: 8px;
+  background-size: 25px;
+}
+.paz-dropdown-icon {
+  background-image: url('../img/pazzive-icon.svg') !important;
+  background-repeat: no-repeat;
+  background-position: 8px;
+  background-size: 25px;
+}
+.bnb-dropdown-icon {
+  background-image: url('../img/bnb-icon.svg') !important;
+  background-repeat: no-repeat;
+  background-position: 8px;
+  background-size: 25px;
+}
+
 .insufficient-balance-btn {
   background: transparent;
   border-radius: 6px;
@@ -341,11 +371,7 @@ section {
 
 .your-stat-card-2 {
   background: rgb(59, 138, 236);
-  background: linear-gradient(
-    90deg,
-    rgba(59, 138, 236, 1) 18%,
-    rgba(102, 48, 243, 1) 55%
-  );
+  background: linear-gradient(90deg, rgba(59, 138, 236, 1) 18%, rgba(102, 48, 243, 1) 55%);
   border-radius: 10px;
   padding: 22px;
   width: 100%;
@@ -402,11 +428,18 @@ section {
   display: flex;
   justify-content: center;
 }
+.liquidity-subheading {
+  font-size: 5px;
+}
 .sell-tax {
   background: var(--secondry-color);
   padding: 10px 20px;
-  width: 100%;
+  width: 84vw;
   border-radius: 10px;
+  margin: 0 auto;
+}
+.slippage-count {
+  color: red !important;
 }
 .sell-tax-percentage {
   color: #9793bd;
@@ -536,8 +569,7 @@ section {
   font-size: 12px;
 }
 .footer-icon {
-  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
-    brightness(102%) contrast(102%);
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
   width: 24px;
 }
 .fuzion-seal-logo {
@@ -546,13 +578,13 @@ section {
 }
 
 /* connected screen starts here */
-.re-invest-form input[type="number"] {
+.re-invest-form input[type='number'] {
   padding: 9px !important;
   border: 1px solid #8687f4 !important;
   background: #3949b4;
   width: 371px;
 }
-.re-invest-form input[type="submit"] {
+.re-invest-form input[type='submit'] {
   padding: 9px 18px !important;
   border: 1px solid #f2f2f2 !important;
   background: transparent;
@@ -573,15 +605,15 @@ section {
 .approve-form {
   justify-content: space-between;
 }
-.approve-form input[type="number"] {
+.approve-form input[type='number'] {
   padding: 9px !important;
   border: 2px solid #3f3572 !important;
   background: #0c0726;
-  width: 300px;
+  width: inherit;
   height: 47px;
   color: #adadad;
 }
-.approve-form input[type="submit"] {
+.approve-form input[type='submit'] {
   padding: 9px 18px !important;
   border: 1px solid #f2f2f2 !important;
   background: transparent;
@@ -703,6 +735,9 @@ section {
   color: white;
   font-weight: bold;
   margin-bottom: 10px;
+}
+.liquidity-subheading {
+  font-size: 15px;
 }
 
 .account-modal-content p {
@@ -876,6 +911,9 @@ section {
     right: 3% !important;
     left: 3% !important;
   }
+  .liquidity-subheading {
+    font-size: 12px;
+  }
   .stat-card-heading {
     font-size: 17px;
     font-weight: 600;
@@ -883,10 +921,16 @@ section {
   .account-modal-content {
     width: 62%;
   }
-  .approve-form input[type="number"] {
+  .liquidity-approve-btn {
+    width: auto;
+  }
+  .insufficient-balance-btn {
+    width: auto;
+  }
+  .approve-form input[type='number'] {
     width: 260px;
   }
-  .approve-form input[type="submit"] {
+  .approve-form input[type='submit'] {
     margin-left: 10px;
   }
   .ms-dd .ms-options {
@@ -959,6 +1003,12 @@ section {
     display: flex;
     width: 100%;
     height: 49px;
+  }
+  .pazz-app-dropdown-menu {
+    width: -webkit-fill-available;
+  }
+  .pazzive-drop-down-menu {
+    width: -webkit-fill-available !important;
   }
   .modal-content {
     padding: 7px;
@@ -1036,14 +1086,14 @@ section {
     top: 80%;
     transform: translate(-50%, -50%);
   }
-  .approve-form input[type="submit"] {
+  .approve-form input[type='submit'] {
     width: 100%;
     margin-top: 10px;
     margin-left: 0px;
     height: 44px;
     font-size: 13px;
   }
-  .approve-form input[type="number"] {
+  .approve-form input[type='number'] {
     width: 100%;
     margin-left: 0px !important;
     height: 47px;
@@ -1061,6 +1111,7 @@ section {
   }
   .reinvest-reward {
     height: auto;
+    padding-bottom: 15px !important;
   }
   .pending-BUSD-label {
     padding-top: 0px;
@@ -1104,7 +1155,7 @@ section {
 }
 
 @media only screen and (max-width: 667px) {
-  .approve-form input[type="submit"] {
+  .approve-form input[type='submit'] {
     margin-left: 0px;
     width: 100%;
   }

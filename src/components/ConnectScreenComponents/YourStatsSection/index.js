@@ -1,6 +1,6 @@
 import React from 'react'
 import { Nav, NavDropdown } from 'react-bootstrap'
-import PazzDropdown from '../../../common/PazDropDown'
+import PazzDropdown from '../../../components/PazDropDown'
 import AddLiquidityTaxFree from './AddLiquidityTaxFree/index'
 
 const ConnectedYourStatsSection = () => {
@@ -44,7 +44,7 @@ const ConnectedYourStatsSection = () => {
         <div className="row">
           <div className="col">
             <div className="pending-BUSD-part mt-3 col-lg-12 col-md-12">
-              <div class="col-lg-12 col-md-6 mt-3 stats-pending-busd-rewards">
+              <div class="col-lg-12 col-md-12 mt-3 stats-pending-busd-rewards">
                 <div class="media">
                   <img class="mr-3 mt-2" src="./assets/img/gift-icon.svg" alt="gift-icon" />
                   <div class="media-body pt-3">
@@ -57,31 +57,39 @@ const ConnectedYourStatsSection = () => {
                 </button>
               </div>
             </div>
-            <div className="reinvest-reward col-lg-12 col-md-12 mt-0">
-              <div className="col-lg-12 col-md-6 mt-3 reinvest-part">
+            <div className="reinvest-reward col-lg-12 col-md-12 mt-0" style={{ paddingBottom: '150px' }}>
+              <div className="col-lg-12 mt-3 reinvest-part">
                 <label className="pending-BUSD-label">Automatically reinvest reward in</label>
-                <form className="form-inline approve-form align-items-baseline ">
-                  <div style={{ width: '25vw' }}>
+                <form className="form-inline approve-form align-items-baseline">
+                  <div className="pazz-app-dropdown-menu mt-3">
                     <PazzDropdown />
                   </div>
-                  <input type="submit" className="form-control is-disabled" value="Save Changes" />
+                  <input type="submit" className="form-control is-disabled mt-3" value="Save Changes" />
                 </form>
               </div>
             </div>
 
-            <div className="pending-BUSD-part mt-3 col-lg-12 col-md-12" style={{ height: 'auto' }}>
-              <div className="col-lg-12 col-md-6 mt-3">
+            <div
+              className="pending-BUSD-part mt-3 col-lg-12 col-md-12"
+              style={{ height: 'auto', borderRadius: '11px  ' }}
+            >
+              <div className="col-lg-12 col-md-12 mt-3">
                 <label className="reinvest-label mt-3 text-center">Reinvest reward (Avalaible BUSD 40,000)</label>
-                <form className="form-inline approve-form reinvest-reward-form d-flex justify-content-center align-items-center flex-column dropdown-select-form col-lg-12 col-md-6">
-                  <div style={{ width: '26vw' }}>
+                <form className="form-inline approve-form reinvest-reward-form d-flex justify-content-center align-items-center flex-column dropdown-select-form col-lg-12 col-md-12">
+                  <div className="pazzive-drop-down-menu" style={{ width: 'inherit' }}>
                     <PazzDropdown />
                   </div>
                   <input
                     type="number"
-                    className="reinvest-amount mt-3 w-75"
+                    className="reinvest-amount mt-3"
                     placeholder="Enter amount to reinvest tax-free"
                   />
-                  <input type="submit" className="form-control is-disabled mt-3 w-75" value="Re-Invest" />
+                  <input
+                    type="submit"
+                    className="form-control is-disabled mt-3"
+                    style={{ width: 'inherit' }}
+                    value="Re-Invest"
+                  />
                 </form>
               </div>
             </div>
