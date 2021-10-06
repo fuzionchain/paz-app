@@ -14,9 +14,9 @@ const AddLiquidityTaxFree = () => {
           >
             <div className="media mt-0">
               <div className="media-body pt-3 d-flex ">
-                <img style={{ width: '37%' }} src='./assets/pazIcon' alt="" />
+                <img style={{ width: '37%' }} src="./assets/img/pazzive-icon.svg" alt="" />
 
-                <p className="your-stat-subheading mb-0 ml-2 d-flex flex-column">
+                <p className="your-stat-subheading liquidity-subheading mb-0 ml-2 d-flex flex-column">
                   PAZ <span>Bal 0</span>
                 </p>
               </div>
@@ -24,14 +24,14 @@ const AddLiquidityTaxFree = () => {
             </div>
 
             <div className="d-flex justify-content-center mt-2">
-              <img src='./assets/ConversionArrow' onClick={() => setCurrencyToggle(!CurrencyToggle)} />
+              <img src="./assets/img/arrow.svg" onClick={() => setCurrencyToggle(!CurrencyToggle)} />
             </div>
 
             <div className="media mt-0">
               <div className="media-body pt-3 d-flex ">
-                <img style={{ width: '37%' }} src='./assets/BNBIcon' alt="" />
+                <img style={{ width: '37%' }} src="./assets/img/bnc-icon-circle.svg" alt="" />
 
-                <p className="your-stat-subheading mb-0 ml-2 d-flex flex-column">
+                <p className="your-stat-subheading liquidity-subheading mb-0 ml-2 d-flex flex-column">
                   BNB <span>Bal 0</span>
                 </p>
               </div>
@@ -48,7 +48,7 @@ const AddLiquidityTaxFree = () => {
           </div>
           <div className="d-flex justify-content-between">
             <p class="stat-card-subheading ">Slippage</p>
-            <p class="stat-card-subheading ">5.05%</p>
+            <p class="stat-card-subheading slippage-count ">5.05%</p>
           </div>
         </div>
         <div>

@@ -4,10 +4,10 @@ import './App.css'
 import NavBar from './components/PrepareScreenComponents/NavBar/index'
 import YourStatsSection from './components/PrepareScreenComponents/YourStatsSection'
 import FeeLessSection from './components/PrepareScreenComponents/FeeLessSection/index'
-import CoinStatsSection from './common/CoinsStatsSection/index'
+import CoinStatsSection from './components/CoinsStatsSection/index'
 import ConnectedYourStatsSection from './components/ConnectScreenComponents/YourStatsSection'
 import ConnectedLockYourPazz from './components/ConnectScreenComponents/LockYourPazz/index'
-import Footer from './common/Footer/index'
+import Footer from './components/Footer/index'
 import { useWeb3Context } from './contexts/ConnectWeb3'
 
 const App = () => {
@@ -17,7 +17,7 @@ const App = () => {
       <NavBar />
       {isConnect ? <ConnectedYourStatsSection /> : <YourStatsSection />}
       {isConnect && <ConnectedLockYourPazz />}
-      <FeeLessSection />
+      {!isConnect && <FeeLessSection />}
       <CoinStatsSection />
       <Footer />
     </div>

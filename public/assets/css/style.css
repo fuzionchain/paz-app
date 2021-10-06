@@ -99,25 +99,32 @@ section {
   color: white !important ;
   cursor: pointer;
   display: block;
-  padding: 8px 10px;
   background-color: #0c0726;
+  padding: 8px 40px !important;
 }
 
 .Dropdown-option.is-selected {
   background-color: #0c0726 !important;
   color: white !important ;
+  padding: 8px 40px;
+}
+.pazz-app-dropdown-menu {
+  width: 25vw;
 }
 .Dropdown-option:hover {
   background-color: #0c0726 !important;
   color: white !important ;
+  padding: 8px 40px;
 }
 
 .Dropdown-control {
   background-color: #0c0726 !important;
   color: white !important ;
+  padding: 8px 40px;
 }
 
-.paz-dropdown {
+.Dropdown.menu {
+  padding: 8px 40px;
 }
 
 .btn-main button {
@@ -302,6 +309,32 @@ section {
   text-align: center;
   margin-top: 9px;
 }
+
+.tesla-safe-dropdown-icon {
+  background-image: url('../img/TS-icon.svg') !important;
+  background-repeat: no-repeat;
+  background-position: 8px;
+  background-size: 23px;
+}
+.rice-dropdown-icon {
+  background-image: url('../img/Rice-icon.svg') !important;
+  background-repeat: no-repeat;
+  background-position: 8px;
+  background-size: 25px;
+}
+.paz-dropdown-icon {
+  background-image: url('../img/pazzive-icon.svg') !important;
+  background-repeat: no-repeat;
+  background-position: 8px;
+  background-size: 25px;
+}
+.bnb-dropdown-icon {
+  background-image: url('../img/bnb-icon.svg') !important;
+  background-repeat: no-repeat;
+  background-position: 8px;
+  background-size: 25px;
+}
+
 .insufficient-balance-btn {
   background: transparent;
   border-radius: 6px;
@@ -395,11 +428,18 @@ section {
   display: flex;
   justify-content: center;
 }
+.liquidity-subheading {
+  font-size: 5px;
+}
 .sell-tax {
   background: var(--secondry-color);
   padding: 10px 20px;
-  width: 100%;
+  width: 84vw;
   border-radius: 10px;
+  margin: 0 auto;
+}
+.slippage-count {
+  color: red !important;
 }
 .sell-tax-percentage {
   color: #9793bd;
@@ -569,7 +609,7 @@ section {
   padding: 9px !important;
   border: 2px solid #3f3572 !important;
   background: #0c0726;
-  width: 300px;
+  width: inherit;
   height: 47px;
   color: #adadad;
 }
@@ -695,6 +735,9 @@ section {
   color: white;
   font-weight: bold;
   margin-bottom: 10px;
+}
+.liquidity-subheading {
+  font-size: 15px;
 }
 
 .account-modal-content p {
@@ -868,12 +911,21 @@ section {
     right: 3% !important;
     left: 3% !important;
   }
+  .liquidity-subheading {
+    font-size: 12px;
+  }
   .stat-card-heading {
     font-size: 17px;
     font-weight: 600;
   }
   .account-modal-content {
     width: 62%;
+  }
+  .liquidity-approve-btn {
+    width: auto;
+  }
+  .insufficient-balance-btn {
+    width: auto;
   }
   .approve-form input[type='number'] {
     width: 260px;
@@ -951,6 +1003,12 @@ section {
     display: flex;
     width: 100%;
     height: 49px;
+  }
+  .pazz-app-dropdown-menu {
+    width: -webkit-fill-available;
+  }
+  .pazzive-drop-down-menu {
+    width: -webkit-fill-available !important;
   }
   .modal-content {
     padding: 7px;
@@ -1053,6 +1111,7 @@ section {
   }
   .reinvest-reward {
     height: auto;
+    padding-bottom: 15px !important;
   }
   .pending-BUSD-label {
     padding-top: 0px;

@@ -1,5 +1,5 @@
 import React from 'react'
-import StakingDurationDropdown from '../../../common/StakingDurationDropdown'
+import StakingDurationDropdown from '../../../components/StakingDurationDropdown'
 
 const ConnectedLockYourPazz = () => {
   return (
@@ -36,7 +36,7 @@ const ConnectedLockYourPazz = () => {
             <div class="col-md-12 d-flex justify-content-center">
               <form class="form-inline approve-form d-flex align-items-baseline mt-4">
                 <label class="approve-form-label mr-3">Choose your staking duration</label>
-                <div style={{ width: '23vw', paddingRight: '2%' }}>
+                <div style={{ padding: '0 10px' }}>
                   <StakingDurationDropdown />
                 </div>
                 <input type="submit" class="form-control is-disabled" value="Lock My Tokens" />
