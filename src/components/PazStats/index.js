@@ -2,6 +2,11 @@ import React from 'react'
 import { useWeb3Context } from '../../contexts/ConnectWeb3'
 import PazzDropdown from '../../components/PazDropDown'
 import AddLiquidityTaxFree from './AddLiquidityTaxFree/index'
+import MobileIcon from '../../images/mobile-icon.svg'
+import RewardIcon from '../../images/reward-icon.svg'
+import GiftIcon from '../../images/gift-icon.svg'
+import TaxIcon from '../../images/tax-icon.svg'
+
 
 const YourStatsSection = () => {
   const { setConnect, isConnect } = useWeb3Context()
@@ -20,7 +25,7 @@ const YourStatsSection = () => {
           <div className="col-lg-6 col-md-12 mt-3">
             <div className="your-stat-card-1">
               <div className="media">
-                <img className="mr-3" src="./assets/img/mobile-icon.svg" alt="mobile-icon" />
+                <img className="mr-3" src={MobileIcon} alt="mobile-icon" />
                 <div className="media-body pt-3">
                   <p className="your-stat-subheading">Total PAZ Holdings</p>
                   {!isConnect ? (
@@ -47,7 +52,7 @@ const YourStatsSection = () => {
           <div className="col-lg-6 col-md-12 mt-3">
             <div className="your-stat-card-2">
               <div className="media">
-                <img className="mr-3" src="./assets/img/reward-icon.svg" alt="reward-icon" />
+                <img className="mr-3" src={RewardIcon} alt="reward-icon" />
                 <div className="media-body pt-3">
                   <p className="your-stat-subheading">Total BUSD Paid</p>
                   {!isConnect ? (
@@ -79,7 +84,7 @@ const YourStatsSection = () => {
             <div className="col-lg-6 col-md-12 mt-3">
               <div className="stat-card">
                 <div className="media">
-                  <img className="mr-3 mt-2" src="./assets/img/gift-icon.svg" alt="gift-icon" />
+                  <img className="mr-3 mt-2" src={GiftIcon} alt="gift-icon" />
                   <div className="media-body pt-3">
                     <p className="stat-card-subheading mb-0">Pending BUSD Rewards</p>
 
@@ -98,7 +103,7 @@ const YourStatsSection = () => {
             <div className="col-lg-6 col-md-12 mt-3">
               <div className="stat-card">
                 <div className="media">
-                  <img className="mr-3 mt-2" src="./assets/img/tax-icon.svg" alt="tax-icon" />
+                  <img className="mr-3 mt-2" src={TaxIcon} alt="tax-icon" />
                   <div className="media-body pt-3">
                     <p className="stat-card-subheading mb-0">Current PAZ sell tax</p>
                     <p className="stat-card-heading color-white">21.73%</p>
@@ -113,7 +118,7 @@ const YourStatsSection = () => {
               <div className="pending-BUSD-part mt-3 col-lg-12 col-md-12">
                 <div class="col-lg-12 col-md-12 mt-3 stats-pending-busd-rewards">
                   <div class="media">
-                    <img class="mr-3 mt-2" src="./assets/img/gift-icon.svg" alt="gift-icon" />
+                    <img class="mr-3 mt-2" src={GiftIcon} alt="gift-icon" />
                     <div class="media-body pt-3">
                       <p class="stat-card-subheading mb-0">Pending BUSD Rewards</p>
                       <p class="stat-card-heading color-white">3,254</p>

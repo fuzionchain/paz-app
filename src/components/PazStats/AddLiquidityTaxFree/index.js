@@ -1,4 +1,8 @@
 import React, { useState } from 'react'
+import PazziveIcon from '../../../images/pazzive-icon.svg'
+import Arrow from '../../../images/arrow.svg'
+import BNCIcon from '../../../images/bnc-icon-circle.svg'
+
 
 const AddLiquidityTaxFree = () => {
   const [CurrencyToggle, setCurrencyToggle] = useState(true)
@@ -14,7 +18,7 @@ const AddLiquidityTaxFree = () => {
           >
             <div className="media mt-0">
               <div className="media-body pt-3 d-flex ">
-                <img style={{ width: '37%' }} src="./assets/img/pazzive-icon.svg" alt="" />
+                <img style={{ width: '37%' }} src={PazziveIcon} alt="" />
 
                 <p className="your-stat-subheading liquidity-subheading mb-0 ml-2 d-flex flex-column">
                   PAZ <span>Bal 0</span>
@@ -24,12 +28,12 @@ const AddLiquidityTaxFree = () => {
             </div>
 
             <div className="d-flex justify-content-center mt-2">
-              <img src="./assets/img/arrow.svg" onClick={() => setCurrencyToggle(!CurrencyToggle)} />
+              <img src={Arrow} onClick={() => setCurrencyToggle(!CurrencyToggle)} />
             </div>
 
             <div className="media mt-0">
               <div className="media-body pt-3 d-flex ">
-                <img style={{ width: '37%' }} src="./assets/img/bnc-icon-circle.svg" alt="" />
+                <img style={{ width: '37%' }} src={BNCIcon} alt="" />
 
                 <p className="your-stat-subheading liquidity-subheading mb-0 ml-2 d-flex flex-column">
                   BNB <span>Bal 0</span>

@@ -1,4 +1,5 @@
 import React from 'react'
+import PazziveLogo from '../../images/pazzive-logo.svg'
 import { useWeb3Context } from '../../contexts/ConnectWeb3'
 
 const NavBar = () => {
@@ -10,7 +11,7 @@ const NavBar = () => {
     <div className="custom-container">
       <nav className="navbar navbar-expand-md fixed-top">
         <a className="navbar-brand" href="#">
-          <img src="./assets/img/pazzive-logo.svg" alt="Pazzive Logo" />
+          <img src={PazziveLogo} alt="Pazzive Logo" />
         </a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <svg
