@@ -1,5 +1,5 @@
 import React from 'react'
-import { useWeb3Context } from '../../../contexts/ConnectWeb3'
+import { useWeb3Context } from '../../contexts/ConnectWeb3'
 
 const NavBar = () => {
   const { setConnect } = useWeb3Context()
@@ -48,11 +48,12 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="collapsibleNavbar">
           <ul className="navbar-nav ml-auto mt-2">
             <li className="nav-item">
-              <a className="metamask-btn" onclick="addToken()">
+              <a className="metamask-btn">
                 <span>Add PAZ to Metamask</span>
               </a>
             </li>
             <li className="nav-item ml-2">
+
               <a className="price-btn" href="#">
                 $0.258
               </a>

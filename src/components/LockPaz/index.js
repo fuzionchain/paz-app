@@ -1,5 +1,5 @@
 import React from 'react'
-import StakingDurationDropdown from '../../../components/StakingDurationDropdown'
+import StakingDurationDropdown from '../../components/StakingDurationDropdown'
 
 const ConnectedLockYourPazz = () => {
   return (

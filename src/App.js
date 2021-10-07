@@ -1,12 +1,11 @@
 import React from 'react'
 import './App.css'
 
-import NavBar from './components/PrepareScreenComponents/NavBar/index'
-import YourStatsSection from './components/PrepareScreenComponents/YourStatsSection'
-import FeeLessSection from './components/PrepareScreenComponents/FeeLessSection/index'
+import NavBar from './components/NavBar/index'
+import YourStatsSection from './components/PazStats'
+import FeeLessSection from './components/FeeLessSection/index'
 import CoinStatsSection from './components/CoinsStatsSection/index'
-import ConnectedYourStatsSection from './components/ConnectScreenComponents/YourStatsSection'
-import ConnectedLockYourPazz from './components/ConnectScreenComponents/LockYourPazz/index'
+import ConnectedLockYourPazz from './components/LockPaz/index'
 import Footer from './components/Footer/index'
 import { useWeb3Context } from './contexts/ConnectWeb3'
 
@@ -15,7 +14,7 @@ const App = () => {
   return (
     <div id={isConnect ? 'connected' : 'prepare'}>
       <NavBar />
-      {isConnect ? <ConnectedYourStatsSection /> : <YourStatsSection />}
+      <YourStatsSection />
       {isConnect && <ConnectedLockYourPazz />}
       {!isConnect && <FeeLessSection />}
       <CoinStatsSection />

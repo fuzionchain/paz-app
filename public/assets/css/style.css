@@ -259,7 +259,7 @@ section {
   font-size: 17px;
 }
 .price-btn {
-  background-image: url(../img/pazz-icon.svg);
+  background-image: url(../img/pazzive-icon.svg);
   background-color: #231d4f;
   color: white;
   border: 2px solid #413c67;
@@ -292,7 +292,7 @@ section {
   border-radius: 10px;
   padding: 22px;
   width: 100%;
-  height: 220px;
+  height: auto;
 }
 
 .liquidity-approve-btn {
@@ -375,7 +375,7 @@ section {
   border-radius: 10px;
   padding: 22px;
   width: 100%;
-  height: 220px;
+  height: auto;
 }
 
 .reinvest-reward-form {
