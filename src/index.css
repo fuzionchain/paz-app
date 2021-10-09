@@ -387,7 +387,8 @@ section {
   height: auto;
 }
 
-.reinvest-reward-form {
+.stake-duration-section {
+  padding: 0 10px;
 }
 
 .stats-pending-busd-rewards {
@@ -937,6 +938,9 @@ section {
   .account-modal-content {
     width: 62%;
   }
+  .pazzive-drop-down-menu {
+    width: -webkit-fill-available !important;
+  }
   .liquidity-approve-btn {
     width: auto;
   }
@@ -944,7 +948,7 @@ section {
     width: auto;
   }
   .approve-form input[type='number'] {
-    width: 260px;
+    width: -webkit-fill-available;
   }
   .approve-form input[type='submit'] {
     margin-left: 10px;
@@ -954,6 +958,9 @@ section {
   }
   .ms-dd .ms-dd-header {
     width: 65%;
+  }
+  .pazz-app-dropdown-menu {
+    padding: unset;
   }
   .ms-dd {
     width: 243px !important;
@@ -1014,6 +1021,10 @@ section {
     margin-top: 0px !important;
     width: 100%;
     height: 49px;
+  }
+
+  .claim-btn {
+    width: 36vw;
   }
   .metamask-btn {
     display: flex;
@@ -1154,15 +1165,12 @@ section {
     height: auto;
   }
   .claim-btn {
-    height: 33px;
     border: 1px solid white;
-    padding: 3px 6px;
+    padding: 0px 20px;
     color: white;
     background: transparent;
-    position: absolute;
-    top: 42px;
-    right: 0;
-    font-size: 12px;
+
+    font-size: 13px;
     border-radius: 6px;
   }
   .connect-claim-reward-button {
@@ -1178,10 +1186,34 @@ section {
   .card-connect-btn {
     display: none;
   }
+  .your-stat-card-first .media,
+  .your-stat-card-2 .media {
+    height: 150px;
+  }
+  .stat-card {
+    display: block !important;
+  }
+  .pazz-app-dropdown-menu {
+    padding: unset;
+  }
+  .stake-duration-section {
+    width: -webkit-fill-available;
+    padding: unset;
+  }
 }
 
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 96% !important;
+  }
+}
+
+@media (max-width: 476px) {
+  .stats-pending-busd-rewards {
+    display: flex;
+    flex-direction: column !important; 
+  }
+  .claim-btn{
+    width: 60vw;
   }
 }
