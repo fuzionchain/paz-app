@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import PazziveIcon from '../../../images/pazzive-icon.svg'
 import Arrow from '../../../images/arrow.svg'
 import BNCIcon from '../../../images/bnc-icon-circle.svg'
-
+import WarningIcon from '../../../images/warning-icon.svg'
 
 const AddLiquidityTaxFree = () => {
   const [CurrencyToggle, setCurrencyToggle] = useState(true)
 
   return (
     <div class="col-md-6 mt-3">
-      <div class="stat-card">
+      <div class="your-stat-card">
         <div class="media-body pt-3">
           <p class="stat-card-subheading mb-3">Add Liquidity Tax Free Section</p>
           <div
@@ -56,7 +56,12 @@ const AddLiquidityTaxFree = () => {
           </div>
         </div>
         <div>
-          <p className="be-aware-txt">Please be aware of the high price impact</p>
+          <p className="be-aware-txt">
+            <span className="px-2">
+              <img style={{ paddingBottom: '2px' }} src={WarningIcon} alt="" />
+            </span>
+            Please be aware of the high price impact
+          </p>
           <div className="d-flex justify-content-between">
             <button className="liquidity-approve-btn">Approve</button>
             <button className="insufficient-balance-btn">Insufficient Balance</button>

@@ -7,12 +7,8 @@ import RewardIcon from '../../images/reward-icon.svg'
 import GiftIcon from '../../images/gift-icon.svg'
 import TaxIcon from '../../images/tax-icon.svg'
 
-
 const YourStatsSection = () => {
-  const { setConnect, isConnect } = useWeb3Context()
-  const handleClick = () => {
-    setConnect(true)
-  }
+  const { isConnect, setConnect } = useWeb3Context()
   return (
     <section className="your-stat-section">
       <div className="custom-container">
@@ -23,7 +19,7 @@ const YourStatsSection = () => {
         </div>
         <div className="row">
           <div className="col-lg-6 col-md-12 mt-3">
-            <div className="your-stat-card-1">
+            <div className="your-stat-card-1 your-stat-card-first">
               <div className="media">
                 <img className="mr-3" src={MobileIcon} alt="mobile-icon" />
                 <div className="media-body pt-3">
@@ -66,9 +62,9 @@ const YourStatsSection = () => {
                 </div>
               </div>
               {!isConnect ? (
-                <div className="btn-main mt-3" style={{ width: '100%', height: '46px' }} onClick={handleClick}>
+                <div className="btn-main mt-3" style={{ width: '100%', height: '46px' }}>
                   <span className="mas">Connect Wallet</span>
-                  <button type="button" name="Hover" style={{ background: '#4a4a4a8c' }}>
+                  <button onClick={() => setConnect(true)} name="Connect">
                     Connect Wallet
                   </button>
                 </div>
@@ -80,37 +76,66 @@ const YourStatsSection = () => {
         </div>
 
         {!isConnect ? (
-          <div className="row">
-            <div className="col-lg-6 col-md-12 mt-3">
-              <div className="stat-card">
-                <div className="media">
-                  <img className="mr-3 mt-2" src={GiftIcon} alt="gift-icon" />
-                  <div className="media-body pt-3">
-                    <p className="stat-card-subheading mb-0">Pending BUSD Rewards</p>
-
-                    <p className="stat-card-heading">Connect wallet to view</p>
+          <div
+            className="row pending-section-prepare-screen"
+            style={{
+              pointerEvents: 'none',
+              opacity: '0.4',
+            }}
+          >
+            <div className="col">
+              <div className="pending-BUSD-part mt-3 col-lg-12 col-md-12">
+                <div class="col-lg-12 col-md-12 mt-3 stats-pending-busd-rewards">
+                  <div class="media">
+                    <img class="mr-3 mt-2" src={GiftIcon} alt="gift-icon" />
+                    <div class="media-body pt-3">
+                      <p class="stat-card-subheading mb-0">Pending BUSD Rewards</p>
+                      <p class="stat-card-heading color-white">3,254</p>
+                    </div>
                   </div>
-                </div>
-                <div className="btn-main card-connect-btn" onClick={handleClick}>
-                  <span className="mas">Connect Wallet</span>
-                  <button type="button" name="Hover">
-                    Connect Wallet
+                  <button type="button" class="claim-btn connect-claim-reward-button">
+                    Claim Reward
                   </button>
                 </div>
               </div>
-            </div>
+              <div className="reinvest-reward col-lg-12 col-md-12 mt-0" style={{ paddingBottom: '150px' }}>
+                <div className="col-lg-12 mt-3 reinvest-part">
+                  <label className="pending-BUSD-label">Automatically reinvest reward in</label>
+                  <form className="form-inline approve-form align-items-baseline">
+                    <div className="pazz-app-dropdown-menu mt-3">
+                      <PazzDropdown />
+                    </div>
+                    <input type="submit" className="form-control is-disabled mt-3" value="Save Changes" />
+                  </form>
+                </div>
+              </div>
 
-            <div className="col-lg-6 col-md-12 mt-3">
-              <div className="stat-card">
-                <div className="media">
-                  <img className="mr-3 mt-2" src={TaxIcon} alt="tax-icon" />
-                  <div className="media-body pt-3">
-                    <p className="stat-card-subheading mb-0">Current PAZ sell tax</p>
-                    <p className="stat-card-heading color-white">21.73%</p>
-                  </div>
+              <div
+                className="pending-BUSD-part mt-3 col-lg-12 col-md-12"
+                style={{ height: 'auto', borderRadius: '11px  ' }}
+              >
+                <div className="col-lg-12 col-md-12 mt-3">
+                  <label className="reinvest-label mt-3 text-center">Reinvest reward (Avalaible BUSD 40,000)</label>
+                  <form className="form-inline approve-form reinvest-reward-form d-flex justify-content-center align-items-center flex-column dropdown-select-form col-lg-12 col-md-12">
+                    <div className="pazzive-drop-down-menu" style={{ width: 'inherit' }}>
+                      <PazzDropdown />
+                    </div>
+                    <input
+                      type="number"
+                      className="reinvest-amount mt-3"
+                      placeholder="Enter amount to reinvest tax-free"
+                    />
+                    <input
+                      type="submit"
+                      className="form-control is-disabled mt-3"
+                      style={{ width: '-webkit-fill-available' }}
+                      value="Re-Invest"
+                    />
+                  </form>
                 </div>
               </div>
             </div>
+            <AddLiquidityTaxFree />
           </div>
         ) : (
           <div className="row">
@@ -159,7 +184,7 @@ const YourStatsSection = () => {
                     <input
                       type="submit"
                       className="form-control is-disabled mt-3"
-                      style={{ width: 'inherit' }}
+                      style={{ width: '-webkit-fill-available' }}
                       value="Re-Invest"
                     />
                   </form>

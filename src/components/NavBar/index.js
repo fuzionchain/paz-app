@@ -1,19 +1,21 @@
-import React from 'react'
-import PazziveLogo from '../../images/pazzive-logo.svg'
-import { useWeb3Context } from '../../contexts/ConnectWeb3'
+import React from "react";
+import { useWeb3Context } from "../../contexts/ConnectWeb3";
+import PazziveLogo from "../../images/pazzive-logo.svg";
 
 const NavBar = () => {
-  const { setConnect } = useWeb3Context()
-  const handleClick = () => {
-    setConnect(true)
-  }
+  const {isConnect, setConnect} = useWeb3Context()
   return (
     <div className="custom-container">
       <nav className="navbar navbar-expand-md fixed-top">
         <a className="navbar-brand" href="#">
           <img src={PazziveLogo} alt="Pazzive Logo" />
         </a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavbar"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
@@ -21,7 +23,7 @@ const NavBar = () => {
             width="24"
             height="24"
             viewBox="0 0 172 172"
-            style={{ fill: '#000000' }}
+            style={{ fill: "#000000" }}
           >
             <g
               fill="none"
@@ -37,7 +39,7 @@ const NavBar = () => {
               font-weight="none"
               font-size="none"
               text-anchor="none"
-              style={{ mixBlendMode: 'normal' }}
+              style={{ mixBlendMode: "normal" }}
             >
               <path d="M0,172v-172h172v172z" fill="none"></path>
               <g fill="#ffffff">
@@ -54,24 +56,37 @@ const NavBar = () => {
               </a>
             </li>
             <li className="nav-item ml-2">
-
               <a className="price-btn" href="#">
                 $0.258
               </a>
             </li>
             <li className="nav-item ml-2">
-              <div className="btn-main connectBtn" style={{ marginTop: '-10px' }} onClick={handleClick}>
-                <span className="mas">Connect Wallet</span>
-                <button type="button" name="Hover">
-                  Connect Wallet
-                </button>
+              <div
+                className="btn-main connectBtn"
+                style={{ marginTop: "-10px" }}
+              >
+                {!isConnect ? (
+                  <>
+                    <span className="mas">Connect Wallet</span>
+                    <button onClick={()=>setConnect(true)} name="Connect">
+                      Connect Wallet
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <span className="mas">Disconnect</span>
+                    <button onClick={()=>setConnect(false)} name="Disconnect">
+                      Disconnect
+                    </button>
+                  </>
+                )}
               </div>
             </li>
           </ul>
         </div>
       </nav>
     </div>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;
