@@ -94,6 +94,10 @@ section {
   background: linear-gradient(90deg, rgba(60, 136, 236, 1) 31%, rgba(101, 50, 243, 1) 69%);
 }
 
+.Dropdown-menu {
+  overflow: hidden !important;
+}
+
 .Dropdown-option {
   box-sizing: border-box;
   color: white !important ;
@@ -110,17 +114,16 @@ section {
 }
 .pazz-app-dropdown-menu {
   width: 25vw;
+  padding: 8px 40px;
 }
 .Dropdown-option:hover {
   background-color: #0c0726 !important;
   color: white !important ;
-  padding: 8px 40px;
 }
 
 .Dropdown-control {
   background-color: #0c0726 !important;
   color: white !important ;
-  padding: 8px 40px;
 }
 
 .Dropdown.menu {
@@ -165,7 +168,7 @@ section {
   background-color: #3052aa;
   color: white;
   padding: 9px !important;
-  border: 2px solid #3f3572 !important;
+  border: 0px;
   width: 300px;
   height: 40px;
 }
@@ -350,6 +353,11 @@ section {
   width: 18vw;
 }
 
+.pending-section-prepare-screen:disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
 .buy-btn {
   background: #ffffff;
   border: 1.2px solid #ffffff;
@@ -384,7 +392,8 @@ section {
   height: auto;
 }
 
-.reinvest-reward-form {
+.stake-duration-section {
+  padding: 0 10px;
 }
 
 .stats-pending-busd-rewards {
@@ -408,6 +417,13 @@ section {
 
 .stat-card {
   background: var(--secondry-color);
+  padding: 22px 25px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.your-stat-card {
+  background-color: #231d4f;
   padding: 22px 25px;
   width: 100%;
   border-radius: 10px;
@@ -927,6 +943,9 @@ section {
   .account-modal-content {
     width: 62%;
   }
+  .pazzive-drop-down-menu {
+    width: -webkit-fill-available !important;
+  }
   .liquidity-approve-btn {
     width: auto;
   }
@@ -934,7 +953,7 @@ section {
     width: auto;
   }
   .approve-form input[type='number'] {
-    width: 260px;
+    width: -webkit-fill-available;
   }
   .approve-form input[type='submit'] {
     margin-left: 10px;
@@ -944,6 +963,9 @@ section {
   }
   .ms-dd .ms-dd-header {
     width: 65%;
+  }
+  .pazz-app-dropdown-menu {
+    padding: unset;
   }
   .ms-dd {
     width: 243px !important;
@@ -1004,6 +1026,10 @@ section {
     margin-top: 0px !important;
     width: 100%;
     height: 49px;
+  }
+
+  .claim-btn {
+    width: 36vw;
   }
   .metamask-btn {
     display: flex;
@@ -1144,15 +1170,12 @@ section {
     height: auto;
   }
   .claim-btn {
-    height: 33px;
     border: 1px solid white;
-    padding: 3px 6px;
+    padding: 0px 20px;
     color: white;
     background: transparent;
-    position: absolute;
-    top: 42px;
-    right: 0;
-    font-size: 12px;
+
+    font-size: 13px;
     border-radius: 6px;
   }
   .connect-claim-reward-button {
@@ -1168,10 +1191,34 @@ section {
   .card-connect-btn {
     display: none;
   }
+  .your-stat-card-first .media,
+  .your-stat-card-2 .media {
+    height: 150px;
+  }
+  .stat-card {
+    display: block !important;
+  }
+  .pazz-app-dropdown-menu {
+    padding: unset;
+  }
+  .stake-duration-section {
+    width: -webkit-fill-available;
+    padding: unset;
+  }
 }
 
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 96% !important;
+  }
+}
+
+@media (max-width: 476px) {
+  .stats-pending-busd-rewards {
+    display: flex;
+    flex-direction: column !important;
+  }
+  .claim-btn {
+    width: 60vw;
   }
 }
