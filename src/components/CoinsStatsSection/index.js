@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import TaxIcon from '../../images/tax-icon.svg'
 import LockerIcon from '../../images/locker-icon.svg'
 import SupplyIcon from '../../images/supply-icon.svg'
@@ -7,6 +7,17 @@ import BurntIcon from '../../images/burnt-icon.svg'
 import DiamondIcon from '../../images/diamond-icon.svg'
 
 const CoinStatsSection = () => {
+  const [globalStats, setGlobalStats] = useState([])
+
+  // fetch global stats from blockchain
+  const totalDividentsPaid = async () => {
+    const response = await 'Link will be pasted here'
+    setGlobalStats(await response)
+  }
+
+  useEffect(() => {
+    totalDividentsPaid()
+  }, [])
   return (
     <section>
       <div class="custom-container">
