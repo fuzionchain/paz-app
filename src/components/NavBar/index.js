@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useWeb3Context } from '../../contexts/ConnectWeb3'
 import Web3ModalHook from '../../hooks/ConnectWeb3'
 import PazziveLogo from '../../images/pazzive-logo.svg'
+import ShowAccountModal from '../ShowAccountModal'
 
 const NavBar = () => {
+  const [disconnectModal, setDisconnectModal] = useState(false)
   const { isConnect, setConnect } = useWeb3Context()
-  const [LogInWeb3, LogOutWeb3, addr] = Web3ModalHook()
+  const [LogInWeb3, LogOutWeb3, web3Address] = Web3ModalHook()
+  let p2 = web3Address.toString().slice(42 - 5)
+  const web3AddressSliced = `${web3Address.toString().slice(0, 4)}...${p2}`
 
   return (
     <div className="custom-container">
@@ -69,10 +73,19 @@ const NavBar = () => {
                   </>
                 ) : (
                   <>
-                    <span className="mas">Disconnect</span>
-                    <button onClick={LogOutWeb3} name="Disconnect">
-                      Disconnect
+                    <span className="mas">{web3AddressSliced}</span>
+                    <button onClick={() => setDisconnectModal(true)} name="Disconnect">
+                      <span>{web3AddressSliced}</span>
                     </button>
+                    {disconnectModal && (
+                      <ShowAccountModal
+                        disconnectModal={disconnectModal}
+                        LogOutWeb3={LogOutWeb3}
+                        web3Address={web3Address}
+                        web3AddressSliced={web3AddressSliced}
+                        setDisconnectModal={setDisconnectModal}
+                      />
+                    )}
                   </>
                 )}
               </div>

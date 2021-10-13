@@ -1,23 +1,14 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import TaxIcon from '../../images/tax-icon.svg'
 import LockerIcon from '../../images/locker-icon.svg'
 import SupplyIcon from '../../images/supply-icon.svg'
 import BuyBackIcon from '../../images/buyback-icon.svg'
 import BurntIcon from '../../images/burnt-icon.svg'
 import DiamondIcon from '../../images/diamond-icon.svg'
+import GetGlobalStats from '../../hooks/getGlobalStats'
 
 const CoinStatsSection = () => {
-  const [globalStats, setGlobalStats] = useState([])
-
-  // fetch global stats from blockchain
-  const totalDividentsPaid = async () => {
-    const response = await 'Link will be pasted here'
-    setGlobalStats(await response)
-  }
-
-  useEffect(() => {
-    totalDividentsPaid()
-  }, [])
+  const { totalPaidToHolders, circulatingSupply, totalSupply, burntSupply, marketCap } = GetGlobalStats()
   return (
     <section>
       <div class="custom-container">
@@ -33,7 +24,7 @@ const CoinStatsSection = () => {
                 <img class="mr-3 mt-3 " src={TaxIcon} alt="tax-icon" />
                 <div class="media-body pt-3">
                   <p class="stat-card-subheading mb-0">Total Paid to Holders</p>
-                  <p class="stat-card-heading color-white">$ 1,034,375 BUSD</p>
+                  <p class="stat-card-heading color-white">$ {totalPaidToHolders} BUSD</p>
                 </div>
               </div>
             </div>
@@ -46,7 +37,7 @@ const CoinStatsSection = () => {
                 <img class="mr-3 mt-3" src={LockerIcon} alt="locker-icon" />
                 <div class="media-body pt-3">
                   <p class="stat-card-subheading mb-0">Total Supply</p>
-                  <p class="stat-card-heading color-white">1,999,999,999,999</p>
+                  <p class="stat-card-heading color-white">{totalSupply}</p>
                 </div>
               </div>
             </div>
@@ -57,7 +48,7 @@ const CoinStatsSection = () => {
                 <img class="mr-3 mt-2" src={BurntIcon} alt="burnt-icon" />
                 <div class="media-body pt-3">
                   <p class="stat-card-subheading mb-0">Burnt Supply</p>
-                  <p class="stat-card-heading color-white">100,000,000</p>
+                  <p class="stat-card-heading color-white">{burntSupply}</p>
                 </div>
               </div>
             </div>
@@ -70,7 +61,7 @@ const CoinStatsSection = () => {
                 <img class="mr-3 mt-3" src={SupplyIcon} alt="supply-icon" />
                 <div class="media-body pt-3">
                   <p class="stat-card-subheading mb-0">Circulating Supply</p>
-                  <p class="stat-card-heading color-white">20,000,000,000</p>
+                  <p class="stat-card-heading color-white">{circulatingSupply}</p>
                 </div>
               </div>
             </div>
@@ -81,7 +72,7 @@ const CoinStatsSection = () => {
                 <img class="mr-3 mt-3" src={DiamondIcon} alt="diamond-icon" />
                 <div class="media-body pt-3">
                   <p class="stat-card-subheading mb-0">Market Cap</p>
-                  <p class="stat-card-heading color-white">$1,000,000,000</p>
+                  <p class="stat-card-heading color-white">$ {marketCap}</p>
                 </div>
               </div>
             </div>
