@@ -1009,9 +1009,22 @@ section {
   }
 }
 
-@media only screen and (max-width: 930px) {
+@media only screen and (max-width: 935px) {
   .modal-dialog {
     width: 95% !important;
+  }
+  .claim-btn {
+    width: 125px;
+  }
+  .your-stat-card {
+    padding: 32px 25px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .add-liquidity-tax-free-section {
+    flex: 0 0 100%;
+    max-width: unset;
   }
 }
 

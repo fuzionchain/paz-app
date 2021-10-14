@@ -5,74 +5,86 @@ import SupplyIcon from '../../images/supply-icon.svg'
 import BuyBackIcon from '../../images/buyback-icon.svg'
 import BurntIcon from '../../images/burnt-icon.svg'
 import DiamondIcon from '../../images/diamond-icon.svg'
-import GetGlobalStats from '../../hooks/getGlobalStats'
+import {
+  useTotalPaidToHolders,
+  useTotalSupply,
+  useBurntSupply,
+  useCirculatingSupply,
+  useMarketCap,
+} from '../../hooks/getGlobalStats'
 
 const CoinStatsSection = () => {
-  const { totalPaidToHolders, circulatingSupply, totalSupply, burntSupply, marketCap } = GetGlobalStats()
+  const totalPaidToHolders = useTotalPaidToHolders()
+  const totalSupply = useTotalSupply()
+  const burntSupply = useBurntSupply()
+  const circulatingSupply = useCirculatingSupply()
+  const marketCap = useMarketCap()
+
+  console.log(totalPaidToHolders)
   return (
     <section>
-      <div class="custom-container">
-        <div class="row">
-          <div class="col-md-12">
-            <p class="section-heading">COIN STATS</p>
+      <div className="custom-container">
+        <div className="row">
+          <div className="col-md-12">
+            <p className="section-heading">COIN STATS</p>
           </div>
         </div>
-        <div class="row ">
-          <div class="col-md-12 mt-3">
-            <div class="stat-card d-flex justify-content-center">
-              <div class="media">
-                <img class="mr-3 mt-3 " src={TaxIcon} alt="tax-icon" />
-                <div class="media-body pt-3">
-                  <p class="stat-card-subheading mb-0">Total Paid to Holders</p>
-                  <p class="stat-card-heading color-white">$ {totalPaidToHolders} BUSD</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row ">
-          <div class="col-md-6 mt-3">
-            <div class="stat-card">
-              <div class="media">
-                <img class="mr-3 mt-3" src={LockerIcon} alt="locker-icon" />
-                <div class="media-body pt-3">
-                  <p class="stat-card-subheading mb-0">Total Supply</p>
-                  <p class="stat-card-heading color-white">{totalSupply}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 mt-3">
-            <div class="stat-card">
-              <div class="media">
-                <img class="mr-3 mt-2" src={BurntIcon} alt="burnt-icon" />
-                <div class="media-body pt-3">
-                  <p class="stat-card-subheading mb-0">Burnt Supply</p>
-                  <p class="stat-card-heading color-white">{burntSupply}</p>
+        <div className="row ">
+          <div className="col-md-12 mt-3">
+            <div className="stat-card d-flex justify-content-center">
+              <div className="media">
+                <img className="mr-3 mt-3 " src={TaxIcon} alt="tax-icon" />
+                <div className="media-body pt-3">
+                  <p className="stat-card-subheading mb-0">Total Paid to Holders</p>
+                  <p className="stat-card-heading color-white">$ {totalPaidToHolders} BUSD</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6 mt-3">
-            <div class="stat-card">
-              <div class="media">
-                <img class="mr-3 mt-3" src={SupplyIcon} alt="supply-icon" />
-                <div class="media-body pt-3">
-                  <p class="stat-card-subheading mb-0">Circulating Supply</p>
-                  <p class="stat-card-heading color-white">{circulatingSupply}</p>
+        <div className="row ">
+          <div className="col-md-6 mt-3">
+            <div className="stat-card">
+              <div className="media">
+                <img className="mr-3 mt-3" src={LockerIcon} alt="locker-icon" />
+                <div className="media-body pt-3">
+                  <p className="stat-card-subheading mb-0">Total Supply</p>
+                  <p className="stat-card-heading color-white">{totalSupply}</p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-6 mt-3">
-            <div class="stat-card">
-              <div class="media">
-                <img class="mr-3 mt-3" src={DiamondIcon} alt="diamond-icon" />
-                <div class="media-body pt-3">
-                  <p class="stat-card-subheading mb-0">Market Cap</p>
-                  <p class="stat-card-heading color-white">$ {marketCap}</p>
+          <div className="col-md-6 mt-3">
+            <div className="stat-card">
+              <div className="media">
+                <img className="mr-3 mt-2" src={BurntIcon} alt="burnt-icon" />
+                <div className="media-body pt-3">
+                  <p className="stat-card-subheading mb-0">Burnt Supply</p>
+                  <p className="stat-card-heading color-white">{burntSupply}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-6 mt-3">
+            <div className="stat-card">
+              <div className="media">
+                <img className="mr-3 mt-3" src={SupplyIcon} alt="supply-icon" />
+                <div className="media-body pt-3">
+                  <p className="stat-card-subheading mb-0">Circulating Supply</p>
+                  <p className="stat-card-heading color-white">{circulatingSupply}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6 mt-3">
+            <div className="stat-card">
+              <div className="media">
+                <img className="mr-3 mt-3" src={DiamondIcon} alt="diamond-icon" />
+                <div className="media-body pt-3">
+                  <p className="stat-card-subheading mb-0">Market Cap</p>
+                  <p className="stat-card-heading color-white">$ {marketCap}</p>
                 </div>
               </div>
             </div>

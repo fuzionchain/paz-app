@@ -85,15 +85,15 @@ const YourStatsSection = () => {
           >
             <div className="col">
               <div className="pending-BUSD-part mt-3 col-lg-12 col-md-12">
-                <div class="col-lg-12 col-md-12 mt-3 stats-pending-busd-rewards">
-                  <div class="media">
-                    <img class="mr-3 mt-2" src={GiftIcon} alt="gift-icon" />
-                    <div class="media-body pt-3">
-                      <p class="stat-card-subheading mb-0">Pending BUSD Rewards</p>
-                      <p class="stat-card-heading color-white">3,254</p>
+                <div className="col-lg-12 col-md-12 mt-3 stats-pending-busd-rewards">
+                  <div className="media">
+                    <img className="mr-3 mt-2" src={GiftIcon} alt="gift-icon" />
+                    <div className="media-body pt-3">
+                      <p className="stat-card-subheading mb-0">Pending BUSD Rewards</p>
+                      <p className="stat-card-heading color-white">3,254</p>
                     </div>
                   </div>
-                  <button type="button" class="claim-btn connect-claim-reward-button">
+                  <button type="button" className="claim-btn connect-claim-reward-button">
                     Claim Reward
                   </button>
                 </div>
@@ -141,16 +141,16 @@ const YourStatsSection = () => {
           <div className="row">
             <div className="col">
               <div className="pending-BUSD-part mt-3 col-lg-12 col-md-12">
-                <div class="col-lg-12 col-md-12 mt-3 stats-pending-busd-rewards">
-                  <div class="media">
-                    <img class="mr-3 mt-2" src={GiftIcon} alt="gift-icon" />
-                    <div class="media-body pt-3">
-                      <p class="stat-card-subheading mb-0">Pending BUSD Rewards</p>
-                      <p class="stat-card-heading color-white">3,254</p>
+                <div className="col-lg-12 col-md-12 mt-3 stats-pending-busd-rewards">
+                  <div className="media">
+                    <img className="mr-3 mt-2" src={GiftIcon} alt="gift-icon" />
+                    <div className="media-body pt-3">
+                      <p className="stat-card-subheading mb-0">Pending BUSD Rewards</p>
+                      <p className="stat-card-heading color-white">3,254</p>
                     </div>
                   </div>
-                  <button type="button" class="claim-btn connect-claim-reward-button">
-                    Claim Reward
+                  <button type="button" className="claim-btn connect-claim-reward-button">
+                    Claim Now
                   </button>
                 </div>
               </div>

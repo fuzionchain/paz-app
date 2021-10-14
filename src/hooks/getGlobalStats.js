@@ -1,68 +1,67 @@
 import React, { useState, useEffect } from 'react'
+import { numberWithCommas } from '../utils/numberHelpers'
 
-const GetGlobalStats = () => {
-  const [circulatingSupply, setcirculatingSupply] = useState('')
-  const [totalSupply, setTotalSupply] = useState('')
-  const [totalPaidToHolders, setTotalPaidToHolders] = useState('')
-  const [burntSupply, setBurntSupply] = useState('')
-  const [marketCap, setMarketCap] = useState('')
+export const useTotalPaidToHolders = () => {
+  const [totalPaidToHolders, setTotalPaidToHolders] = useState()
 
-  // Function for inserting commas in the number
-  function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+  const fetchTotalPaidToHolders = () => {
+    const totalPaidHoldersResponse = '232313000'
+    setTotalPaidToHolders(numberWithCommas(totalPaidHoldersResponse))
   }
-
-  // fetch CirculatingSupply from blockchain
-  const fetchCirculatingSupply = async () => {
-    const response = await '2120000000'
-    setcirculatingSupply(await numberWithCommas(response))
-  }
-
-  // TotalPaidToHolders function
-  const fetchTotalPaidToHolders = async () => {
-    const response = await '232313000'
-    setTotalPaidToHolders(await numberWithCommas(response))
-  }
-
-  // TotalSupply function
-  const fetchTotalSuply = async () => {
-    const response = await '1000000000'
-    setTotalSupply(await numberWithCommas(response))
-  }
-
-  // BurntSupply function
-  const fetchBurntSupply = async () => {
-    const response = await '9210000000'
-    setBurntSupply(await numberWithCommas(response))
-  }
-
-  // MarketCap function
-  const fetchMarketCap = async () => {
-    const response = await '2100000000'
-    setMarketCap(await numberWithCommas(response))
-  }
-
-  useEffect(() => {
-    fetchCirculatingSupply()
-  }, [fetchCirculatingSupply])
-
   useEffect(() => {
     fetchTotalPaidToHolders()
   }, [fetchTotalPaidToHolders])
+  return totalPaidToHolders
+}
 
+export const useTotalSupply = () => {
+  const [totalSupply, setTotalSupply] = useState()
+
+  const fetchTotalSupply = () => {
+    const totalSupplyResponse = '112313000'
+    setTotalSupply(numberWithCommas(totalSupplyResponse))
+  }
   useEffect(() => {
-    fetchTotalSuply()
-  }, [fetchTotalSuply])
+    fetchTotalSupply()
+  }, [fetchTotalSupply])
+  return totalSupply
+}
 
+export const useBurntSupply = () => {
+  const [burntSupply, setBurntSupply] = useState()
+
+  const fetchBurntSupply = () => {
+    const burntSupplyResponse = '912313000'
+    setBurntSupply(numberWithCommas(burntSupplyResponse))
+  }
   useEffect(() => {
     fetchBurntSupply()
   }, [fetchBurntSupply])
+  return burntSupply
+}
 
+export const useCirculatingSupply = () => {
+  const [circulatingSupply, setCirculatingSupply] = useState()
+
+  const fetchCirculatingSupply = () => {
+    const circulatingSupplyResponse = '812313000'
+    setCirculatingSupply(numberWithCommas(circulatingSupplyResponse))
+  }
+  useEffect(() => {
+    fetchCirculatingSupply()
+  }, [fetchCirculatingSupply])
+  return circulatingSupply
+}
+
+export const useMarketCap = () => {
+  const [marketCap, setMarketCap] = useState()
+
+  const fetchMarketCap = () => {
+    const marketCapResponse = '712313000'
+    setMarketCap(numberWithCommas(marketCapResponse))
+  }
   useEffect(() => {
     fetchMarketCap()
   }, [fetchMarketCap])
-
-  return { circulatingSupply, totalSupply, totalPaidToHolders, burntSupply, marketCap }
+  return marketCap
 }
-
-export default GetGlobalStats

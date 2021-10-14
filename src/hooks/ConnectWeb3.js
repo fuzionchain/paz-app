@@ -43,7 +43,7 @@ const Web3ModalHook = () => {
       setWeb3Address(info)
     })
     web3 = new Web3(provider)
-    return  web3
+    return web3
   }
   const LogOutWeb3 = useCallback(
     async function () {
@@ -65,7 +65,6 @@ const Web3ModalHook = () => {
     },
     [getweb3, isConnect],
   )
-  console.log(web3Modal)
   return [LogInWeb3, LogOutWeb3, web3Address, getweb3]
 }
 
