@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { numberWithCommas } from '../utils/numberHelpers'
 
 export const useTotalPaidToHolders = () => {
   const [totalPaidToHolders, setTotalPaidToHolders] = useState()
 
   const fetchTotalPaidToHolders = () => {
     const totalPaidHoldersResponse = '232313000'
-    setTotalPaidToHolders(numberWithCommas(totalPaidHoldersResponse))
+    setTotalPaidToHolders(totalPaidHoldersResponse)
   }
   useEffect(() => {
     fetchTotalPaidToHolders()
@@ -19,7 +18,7 @@ export const useTotalSupply = () => {
 
   const fetchTotalSupply = () => {
     const totalSupplyResponse = '112313000'
-    setTotalSupply(numberWithCommas(totalSupplyResponse))
+    setTotalSupply(totalSupplyResponse)
   }
   useEffect(() => {
     fetchTotalSupply()
@@ -32,7 +31,7 @@ export const useBurntSupply = () => {
 
   const fetchBurntSupply = () => {
     const burntSupplyResponse = '912313000'
-    setBurntSupply(numberWithCommas(burntSupplyResponse))
+    setBurntSupply(burntSupplyResponse)
   }
   useEffect(() => {
     fetchBurntSupply()
@@ -45,7 +44,7 @@ export const useCirculatingSupply = () => {
 
   const fetchCirculatingSupply = () => {
     const circulatingSupplyResponse = '812313000'
-    setCirculatingSupply(numberWithCommas(circulatingSupplyResponse))
+    setCirculatingSupply(circulatingSupplyResponse)
   }
   useEffect(() => {
     fetchCirculatingSupply()
@@ -58,7 +57,7 @@ export const useMarketCap = () => {
 
   const fetchMarketCap = () => {
     const marketCapResponse = '712313000'
-    setMarketCap(numberWithCommas(marketCapResponse))
+    setMarketCap(marketCapResponse)
   }
   useEffect(() => {
     fetchMarketCap()
