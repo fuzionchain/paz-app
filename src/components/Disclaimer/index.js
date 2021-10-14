@@ -1,14 +1,35 @@
 import React from 'react'
 
 const DisclaimerModal = () => {
+//   $("#disclaimerModal").modal({ backdrop: "static", keyboard: false });
+// $(".closeModal").click(function () {
+//   $("#disclaimerModal").modal("toggle");
+// });
+
+// // Confirm Terms and service Btn
+// $(".number").on("click", function () {
+//   if ($(".number:checked").length > 1) {
+//     $("#confirmBtn")
+//       .prop("disabled", false)
+//       .addClass("confirmBtn")
+//       .removeClass("is-disabled");
+//   } else {
+//     $("#confirmBtn")
+//       .prop("disabled", true)
+//       .removeClass("confirmBtn")
+//       .addClass("is-disabled");
+//   }
+// });
+
+
   return (
     <div
-      className="modal"
+      className="modal show"
       id="disclaimerModal"
       tabindex="-1"
       role="dialog"
       aria-hidden="true"
-      style="padding-right: 0px"
+      style={{ paddingRight: '0px', display: 'flex' }}
     >
       <div className="modal-dialog" role="document">
         <div className="modal-content" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-once="true">

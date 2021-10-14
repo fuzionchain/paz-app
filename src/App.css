@@ -194,6 +194,10 @@ section {
   animation: ani2 0.7s steps(22) forwards;
 }
 
+.staking-dropdown .Dropdown-menu .Dropdown-option {
+  padding: 8px 10px !important;
+}
+
 .connectBtn button:hover {
   -webkit-animation: ani 0.7s steps(22) forwards;
   animation: ani 0.7s steps(22) forwards;
