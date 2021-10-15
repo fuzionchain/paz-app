@@ -6,7 +6,7 @@ import Fortmatic from 'fortmatic'
 import { useWeb3Context } from '../contexts/ConnectWeb3'
 
 const Web3ModalHook = () => {
-  const [addr, setaddr] = useState(0)
+  const [web3Address, setWeb3Address] = useState(0)
   const { isConnect, setConnect } = useWeb3Context()
   var web3Modal
   var provider
@@ -40,10 +40,9 @@ const Web3ModalHook = () => {
     })
     provider = await web3Modal.connect()
     provider.on('connect', (info) => {
-      setaddr(info)
+      setWeb3Address(info)
     })
     web3 = new Web3(provider)
-
     return web3
   }
   const LogOutWeb3 = useCallback(
@@ -51,7 +50,7 @@ const Web3ModalHook = () => {
       await web3Modal.clearCachedProvider()
       window.location.reload()
       setConnect(false)
-      setaddr('')
+      setWeb3Address('')
     },
     [web3Modal],
   )
@@ -60,14 +59,13 @@ const Web3ModalHook = () => {
       await getweb3().then((response) => {
         response.eth
           .getAccounts()
-          .then((result) => setaddr(result))
+          .then((result) => setWeb3Address(result))
           .then(setConnect(true))
       })
     },
     [getweb3, isConnect],
   )
-
-  return [LogInWeb3, LogOutWeb3, addr]
+  return [LogInWeb3, LogOutWeb3, web3Address, getweb3]
 }
 
 export default Web3ModalHook

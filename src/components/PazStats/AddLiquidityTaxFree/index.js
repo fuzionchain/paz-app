@@ -8,10 +8,10 @@ const AddLiquidityTaxFree = () => {
   const [CurrencyToggle, setCurrencyToggle] = useState(true)
 
   return (
-    <div class="col-md-6 mt-3">
-      <div class="your-stat-card">
-        <div class="media-body pt-3">
-          <p class="stat-card-subheading mb-3">Add Liquidity Tax Free Section</p>
+    <div className="col-md-6 mt-3 add-liquidity-tax-free-section">
+      <div className="your-stat-card">
+        <div className="media-body pt-3">
+          <p className="stat-card-subheading mb-3">Add Liquidity Tax Free Section</p>
           <div
             className={`your-stat-card-1 d-flex ${CurrencyToggle ? 'flex-column' : 'flex-column-reverse'}`}
             style={{ height: 'auto' }}
@@ -43,16 +43,16 @@ const AddLiquidityTaxFree = () => {
             </div>
           </div>
           <div className="d-flex justify-content-between mt-4">
-            <p class="stat-card-subheading ">Total liquidity pool</p>
-            <p class="stat-card-subheading ">1 USDC = 0.949535 USDT</p>
+            <p className="stat-card-subheading ">Total liquidity pool</p>
+            <p className="stat-card-subheading ">1 USDC = 0.949535 USDT</p>
           </div>
           <div className="d-flex justify-content-between">
-            <p class="stat-card-subheading ">Mininmum recieved</p>
-            <p class="stat-card-subheading ">0.949535 USDT</p>
+            <p className="stat-card-subheading ">Mininmum recieved</p>
+            <p className="stat-card-subheading ">0.949535 USDT</p>
           </div>
           <div className="d-flex justify-content-between">
-            <p class="stat-card-subheading ">Slippage</p>
-            <p class="stat-card-subheading slippage-count ">5.05%</p>
+            <p className="stat-card-subheading ">Slippage</p>
+            <p className="stat-card-subheading slippage-count ">5.05%</p>
           </div>
         </div>
         <div>

@@ -194,6 +194,10 @@ section {
   animation: ani2 0.7s steps(22) forwards;
 }
 
+.staking-dropdown .Dropdown-menu .Dropdown-option {
+  padding: 8px 10px !important;
+}
+
 .connectBtn button:hover {
   -webkit-animation: ani 0.7s steps(22) forwards;
   animation: ani 0.7s steps(22) forwards;
@@ -1009,9 +1013,22 @@ section {
   }
 }
 
-@media only screen and (max-width: 930px) {
+@media only screen and (max-width: 935px) {
   .modal-dialog {
     width: 95% !important;
+  }
+  .claim-btn {
+    width: 125px;
+  }
+  .your-stat-card {
+    padding: 32px 25px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .add-liquidity-tax-free-section {
+    flex: 0 0 100%;
+    max-width: unset;
   }
 }
 
