@@ -3,15 +3,14 @@ import Dropdown from 'react-dropdown'
 import 'react-dropdown/style.css'
 
 const PazzDropdown = () => {
-  const pazzdropdownClasses =
-    {
-      boxSizing: 'border-box',
-      color: 'white',
-      cursor: 'pointer',
-      display: 'block',
-      backgroundColor: '#0c0726',
-      padding: '8px 40px',
-    }
+  const pazzdropdownClasses = {
+    boxSizing: 'border-box',
+    color: 'white',
+    cursor: 'pointer',
+    display: 'block',
+    backgroundColor: '#0c0726',
+    padding: '8px 40px',
+  }
 
   const options = [
     {
@@ -21,7 +20,7 @@ const PazzDropdown = () => {
     },
     { value: 'RICE', label: 'RICE', className: 'rice-dropdown-icon' },
     { value: 'PAZ', label: 'PAZ', className: 'paz-dropdown-icon' },
-    { value: 'BNB', label: 'BNB', className: 'bnb-dropdown-icon' },
+    { value: 'BUSD', label: 'BUSD', className: 'busd-dropdown-icon' },
   ]
   const defaultOption = options[0]
   return (

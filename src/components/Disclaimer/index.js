@@ -6,13 +6,6 @@ const DisclaimerModal = () => {
   const [isCheckedFirst, setCheckedFirst] = useState(false)
   const [isCheckedSecond, setCheckedSecond] = useState(false)
 
-  const handleCheckedFirst = (e) => {
-    setCheckedFirst(e.target.checked)
-  }
-
-  const handleCheckedSecond = (e) => {
-    setCheckedSecond(e.target.checked)
-  }
   useEffect(() => {
     if (isCheckedFirst && isCheckedSecond) {
       setBtnDisable(false)
@@ -62,10 +55,15 @@ const DisclaimerModal = () => {
             decisions.
           </p>
           <div className="mb-3 highlight-txt">
-            <input type="checkbox" className="number" value="One" onChange={handleCheckedFirst} />
+            <input type="checkbox" className="number" value="One" onChange={(e) => setCheckedFirst(e.target.checked)} />
             &nbsp;&nbsp;&nbsp;I understand and accept that I will trade/invest PAZZIVE at my own risks
             <br />
-            <input type="checkbox" className="number" value="Two" onChange={handleCheckedSecond} />
+            <input
+              type="checkbox"
+              className="number"
+              value="Two"
+              onChange={(e) => setCheckedSecond(e.target.checked)}
+            />
             &nbsp;&nbsp;&nbsp;I understand and accept that this app works smothly with Metamask/TrustWallet
             <br />
             <div className="d-flex justify-content-center">
