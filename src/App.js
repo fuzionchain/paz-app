@@ -6,7 +6,7 @@ import CoinStatsSection from './components/CoinsStatsSection/index'
 import ConnectedLockYourPazz from './components/LockPaz/index'
 import Footer from './components/Footer/index'
 import { useWeb3Context } from './contexts/ConnectWeb3'
-import DisclaimerModal from './components/Disclaimer'
+import DisclaimerModal from './components/Disclaimer/index'
 
 import './App.css'
 
@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       <div id={isConnect ? 'connected' : 'prepare'}>
-        {/* <DisclaimerModal /> */}
+        <DisclaimerModal />
         <NavBar />
         <CoinStatsSection />
         <YourStatsSection />

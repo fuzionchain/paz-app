@@ -22,7 +22,6 @@ const PazzDropdown = () => {
     { value: 'RICE', label: 'RICE', className: 'rice-dropdown-icon' },
     { value: 'PAZ', label: 'PAZ', className: 'paz-dropdown-icon' },
     { value: 'BNB', label: 'BNB', className: 'bnb-dropdown-icon' },
-    // { value: 'BUSD', label: 'BUSD', className: 'busd-dropdown-icon' },
   ]
   const defaultOption = options[0]
   return (
