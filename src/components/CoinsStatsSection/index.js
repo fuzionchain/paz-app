@@ -21,7 +21,6 @@ const CoinStatsSection = () => {
   const circulatingSupply = useCirculatingSupply()
   const marketCap = useMarketCap()
 
-  console.log(totalPaidToHolders)
   return (
     <section>
       <div className="custom-container">

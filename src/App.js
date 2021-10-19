@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       <div id={isConnect ? 'connected' : 'prepare'}>
-        {/* <DisclaimerModal /> */}
+        <DisclaimerModal />
         <NavBar />
         <CoinStatsSection />
         <YourStatsSection />

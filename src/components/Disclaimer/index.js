@@ -1,46 +1,42 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const DisclaimerModal = () => {
-//   $("#disclaimerModal").modal({ backdrop: "static", keyboard: false });
-// $(".closeModal").click(function () {
-//   $("#disclaimerModal").modal("toggle");
-// });
+  const [show, setShow] = useState(false)
 
-// // Confirm Terms and service Btn
-// $(".number").on("click", function () {
-//   if ($(".number:checked").length > 1) {
-//     $("#confirmBtn")
-//       .prop("disabled", false)
-//       .addClass("confirmBtn")
-//       .removeClass("is-disabled");
-//   } else {
-//     $("#confirmBtn")
-//       .prop("disabled", true)
-//       .removeClass("confirmBtn")
-//       .addClass("is-disabled");
-//   }
-// });
+  const [isCheckedFirst, setCheckedFirst] = useState(false)
+  const [isCheckedSecond, setCheckedSecond] = useState(false)
+  const [btnDisable, setBtnDisable] = useState(true)
 
-
+  const handleFirstCheck = (e) => {
+    setCheckedFirst(e.target.checked)
+  }
+  const handleSecondCheck = (e) => {
+    setCheckedSecond(e.target.checked)
+  }
+  useEffect(() => {
+    if (isCheckedFirst && isCheckedSecond) {
+      setBtnDisable(false)
+    }
+  }, [isCheckedFirst, isCheckedSecond])
   return (
     <div
-      className="modal show"
+      className={`modal ${!show ? 'show' : ''}`}
       id="disclaimerModal"
       tabindex="-1"
       role="dialog"
-      aria-hidden="true"
-      style={{ paddingRight: '0px', display: 'flex' }}
+      aria-hidden={!show ? 'false' : 'true'}
+      style={{ paddingRight: '0px', display: show && 'none' }}
     >
       <div className="modal-dialog" role="document">
-        <div className="modal-content" data-aos="zoom-in-up" data-aos-duration="1500" data-aos-once="true">
+        <div className="modal-content">
           <h4>Disclaimer</h4>
           <p className="pt-2">
             Trading cryptocurrencies carries a
             <span className="highlight-txt">
-              <b>high level of risk,</b>
+              <b> high level of risk,</b>
             </span>{' '}
             and may not be suitable for all investors.
-            <b className="highlight-txt">Before deciding to trade cryptocurrency</b>
+            <b className="highlight-txt"> Before deciding to trade cryptocurrency </b>
             you should carefully consider your investment objectives, level of experience, and risk appetite. The
             possibility exists that you could sustain a loss of some or all of your initial investment and therefore you
             should not invest money that you cannot afford to lose. ICO's, IEO's, STO's and any other form of offering
@@ -65,14 +61,21 @@ const DisclaimerModal = () => {
             decisions.
           </p>
           <div className="mb-3 highlight-txt">
-            <input type="checkbox" className="number" value="One" />
+            <input type="checkbox" className="number" value="One" onChange={handleFirstCheck} />
             &nbsp;&nbsp;&nbsp;I understand and accept that I will trade/invest PAZZIVE at my own risks
             <br />
-            <input type="checkbox" className="number" value="Two" />
+            <input type="checkbox" className="number" value="Two" onChange={handleSecondCheck} />
             &nbsp;&nbsp;&nbsp;I understand and accept that this app works smothly with Metamask/TrustWallet
             <br />
             <div className="d-flex justify-content-center">
-              <input type="submit" id="confirmBtn" value="Confirm" className="mt-3 closeModal" disabled />
+              <input
+                type="button"
+                id="confirmBtn"
+                value="Confirm"
+                className={`mt-3 ${btnDisable ? 'closeModal' : 'confirmBtn'}`}
+                disabled={btnDisable}
+                onClick={() => setShow(true)}
+              />
             </div>
           </div>
         </div>

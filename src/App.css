@@ -685,6 +685,17 @@ section {
   color: white;
   background-color: #161c3b !important;
   width: 100%;
+  animation: fade-in-modal 2s alternate;
+}
+@keyframes fade-in-modal {
+  from {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .modal-dialog {
